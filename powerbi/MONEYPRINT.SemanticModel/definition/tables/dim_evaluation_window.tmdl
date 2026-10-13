@@ -1,0 +1,83 @@
+table dim_evaluation_window
+	lineageTag: 1a799c86-e27f-4374-8152-161b3dc19847
+
+	column evaluation_window
+		dataType: string
+		lineageTag: 4ba2a379-2237-4f3e-9e80-20f25c651b1b
+		summarizeBy: none
+		sourceColumn: evaluation_window
+
+		annotation SummarizationSetBy = Automatic
+
+	column window_type
+		dataType: string
+		lineageTag: 8db65cc6-85b3-4748-bb84-a3fcb6b79ca0
+		summarizeBy: none
+		sourceColumn: window_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column train_start_step
+		dataType: int64
+		formatString: 0
+		lineageTag: 3161e2ec-3f90-4799-87c4-38ec870b8ee8
+		summarizeBy: sum
+		sourceColumn: train_start_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column train_end_step
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ad2cc39-e364-4e61-a896-ed2317457d1e
+		summarizeBy: sum
+		sourceColumn: train_end_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_start_step
+		dataType: int64
+		formatString: 0
+		lineageTag: fbcc416c-578a-4417-95ff-34fd900ad27a
+		summarizeBy: sum
+		sourceColumn: evaluation_start_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_end_step
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f637bd7-f3de-4c79-b988-fd855dd3e00e
+		summarizeBy: sum
+		sourceColumn: evaluation_end_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column evidence_status
+		dataType: string
+		lineageTag: 2862bd97-c2a8-430a-9c43-79f3ac3686dc
+		summarizeBy: none
+		sourceColumn: evidence_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Window Label'
+		dataType: string
+		lineageTag: c289436e-0d97-48bf-8aed-7a62fddacccf
+		summarizeBy: none
+		sourceColumn: window_label
+		sortByColumn: evaluation_window
+
+	partition dim_evaluation_window = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\dim_evaluation_window.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"evaluation_window", type text}, {"window_type", type text}, {"train_start_step", Int64.Type}, {"train_end_step", Int64.Type}, {"evaluation_start_step", Int64.Type}, {"evaluation_end_step", Int64.Type}, {"evidence_status", type text}}),
+				    WithVisualLabel = Table.AddColumn(#"Changed Type", "window_label", each if Text.StartsWith([evaluation_window], "fold_") then "Fold " & Text.End([evaluation_window], 1) else "Exploratory 632–743", type text)
+				in
+				    WithVisualLabel
+
+	annotation PBI_ResultType = Table
+

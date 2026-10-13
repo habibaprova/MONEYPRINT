@@ -1,0 +1,999 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "transaction_amount_distribution.amount_band": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "transaction_amount_distribution",
+			          "ConceptualProperty": "amount_band"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "amount_band": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "transaction_amount_distribution.transaction_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "transaction_amount_distribution",
+			          "ConceptualProperty": "transaction_type"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "dim_transaction_type.transaction_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_transaction_type",
+			          "ConceptualProperty": "transaction_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "transaction_type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.total_transactions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Total Transactions"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "executive_kpi_summary.fraud_labels": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Fraud Labels"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fraud Labels": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.fraud_label_prevalence": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Fraud Label Prevalence"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fraud Label Prevalence": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.total_synthetic_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Total Synthetic Amount"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "executive_kpi_summary.capacity_precision": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Capacity Precision"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Capacity Precision": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.capacity_recall": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Capacity Recall"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Capacity Recall": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.capacity_false_positives": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Capacity False Positives"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Capacity False Positives": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.selected_case_context": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Selected Case Context"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Selected Case Context": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.selected_contributions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Selected Contributions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Selected Contributions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.ablation_rocauc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Ablation ROC-AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ablation ROC-AUC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.ablation_prauc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Ablation PR-AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ablation PR-AUC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.validation_rocauc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Validation ROC-AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Validation ROC-AUC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.validation_prauc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Validation PR-AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Validation PR-AUC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.validation_prevalence": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Validation Prevalence"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Validation Prevalence": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.historical_split_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Historical Split Share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Historical Split Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_simulated_step.simulated_step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_simulated_step",
+			          "ConceptualProperty": "simulated_step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "simulated_step": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_investigation_capacity.capacity_measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_investigation_capacity",
+			          "ConceptualProperty": "capacity_measure"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "phase4_investigation_capacity.evaluation_window": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_investigation_capacity",
+			          "ConceptualProperty": "evaluation_window"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "phase4_selected_model_investigation_examples.case_rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "case_rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "case_rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_selected_model_investigation_examples.split_step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "split_step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Step": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_selected_model_investigation_examples.transaction_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "transaction_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_selected_model_investigation_examples.synthetic_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "synthetic_amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (units)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_selected_model_investigation_examples.risk_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "risk_score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Score": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_selected_model_investigation_examples.label_for_retrospective_review": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_selected_model_investigation_examples",
+			          "ConceptualProperty": "label_for_retrospective_review"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Retrospective label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_model_feature_ablation.feature_set": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_model_feature_ablation",
+			          "ConceptualProperty": "feature_set"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "feature_set": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_evaluation_window.evaluation_window": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_evaluation_window",
+			          "ConceptualProperty": "evaluation_window"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "evaluation_window": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_evaluation_window.train_end_step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_evaluation_window",
+			          "ConceptualProperty": "train_end_step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Train through": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_evaluation_window.evaluation_start_step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_evaluation_window",
+			          "ConceptualProperty": "evaluation_start_step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "From": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_evaluation_window.evaluation_end_step": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_evaluation_window",
+			          "ConceptualProperty": "evaluation_end_step"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Through": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "split_distribution_comparison.split": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "split_distribution_comparison",
+			          "ConceptualProperty": "split"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "split": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "split_distribution_comparison.split_protocol": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "split_distribution_comparison",
+			          "ConceptualProperty": "split_protocol"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "executive_kpi_summary.transactions_display": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Transactions Display"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Transactions Display": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.amount_display": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Amount Display"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount Display": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "transaction_amount_distribution.amount_band_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "transaction_amount_distribution",
+			          "ConceptualProperty": "Amount Band Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount Band Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_evaluation_window.window_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_evaluation_window",
+			          "ConceptualProperty": "Window Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Window Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "split_distribution_comparison.protocol_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "split_distribution_comparison",
+			          "ConceptualProperty": "Protocol Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Protocol Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_investigation_capacity.budget_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_investigation_capacity",
+			          "ConceptualProperty": "Budget Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "phase4_investigation_capacity.window_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "phase4_investigation_capacity",
+			          "ConceptualProperty": "Window Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Window Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.type_transactions": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Type Transactions"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type Transactions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.type_share_of_population": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Type Share of Population"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type Share of Population": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.type_synthetic_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Type Synthetic Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type Synthetic Amount": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.type_fraud_labels": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Type Fraud Labels"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type Fraud Labels": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.type_fraud_label_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Type Fraud Label Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Type Fraud Label Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.selected_type_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Selected Type Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Selected Type Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.comparison_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Comparison Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Comparison Value": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ux_metric_selector.metric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ux_metric_selector",
+			          "ConceptualProperty": "Metric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metric": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "executive_kpi_summary.budget_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "executive_kpi_summary",
+			          "ConceptualProperty": "Budget Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

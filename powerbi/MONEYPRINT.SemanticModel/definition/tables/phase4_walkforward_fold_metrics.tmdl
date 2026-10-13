@@ -1,0 +1,374 @@
+table phase4_walkforward_fold_metrics
+	lineageTag: 1811cc76-45f7-4ae5-8c5b-7f5dfa0f9fc7
+
+	column fold
+		dataType: string
+		lineageTag: 7e4b596e-3193-4621-bad4-d9a4215d325e
+		summarizeBy: none
+		sourceColumn: fold
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_set
+		dataType: string
+		lineageTag: 99fc9084-5b20-4c02-b920-cdd87cfff88c
+		summarizeBy: none
+		sourceColumn: feature_set
+
+		annotation SummarizationSetBy = Automatic
+
+	column method
+		dataType: string
+		lineageTag: 4738106e-3e72-44d9-a6cc-4bd7349fe28e
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column split
+		dataType: string
+		lineageTag: f30bffee-0bbb-4689-bf1f-861390e75cf7
+		summarizeBy: none
+		sourceColumn: split
+
+		annotation SummarizationSetBy = Automatic
+
+	column population
+		dataType: string
+		lineageTag: 5d10d4f8-5d92-4d4f-a308-0d2ef2438431
+		summarizeBy: none
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 77e1f0cc-d1da-460c-8ab3-dba962a34d09
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: f5256ef7-45b0-4e9d-ad1e-3996ce889a59
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_prevalence
+		dataType: double
+		lineageTag: 82623ba4-b4dc-4d02-aaad-1118ae316503
+		summarizeBy: sum
+		sourceColumn: fraud_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pr_auc_average_precision
+		dataType: double
+		lineageTag: 77bba2a0-1f5d-446e-9ff8-30e7a753a819
+		summarizeBy: sum
+		sourceColumn: pr_auc_average_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roc_auc
+		dataType: double
+		lineageTag: 4737c0bc-f89d-42ff-b9e1-cc2ce5eddfe8
+		summarizeBy: sum
+		sourceColumn: roc_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alerts_at_100
+		dataType: int64
+		formatString: 0
+		lineageTag: 47b87b50-4f12-47c5-860c-017401071508
+		summarizeBy: sum
+		sourceColumn: alerts_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives_at_100
+		dataType: int64
+		formatString: 0
+		lineageTag: e265868f-cc2d-48a4-a213-ff74351cc1d7
+		summarizeBy: sum
+		sourceColumn: true_positives_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives_at_100
+		dataType: int64
+		formatString: 0
+		lineageTag: c64897ff-5808-4fc0-8280-17fdcbffd06a
+		summarizeBy: sum
+		sourceColumn: false_positives_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+	column precision_at_100
+		dataType: double
+		lineageTag: 76c14a78-dcad-4f14-94c9-ac2789eb6e64
+		summarizeBy: sum
+		sourceColumn: precision_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_at_100
+		dataType: double
+		lineageTag: 1391fadf-b2e9-43cd-8586-7d568d736bb8
+		summarizeBy: sum
+		sourceColumn: recall_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column f1_at_100
+		dataType: double
+		lineageTag: efc48406-750d-4e37-9a0a-983f8b68b398
+		summarizeBy: sum
+		sourceColumn: f1_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alerts_at_500
+		dataType: int64
+		formatString: 0
+		lineageTag: 379ce411-953f-4160-8ed6-3b322947d11c
+		summarizeBy: sum
+		sourceColumn: alerts_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives_at_500
+		dataType: int64
+		formatString: 0
+		lineageTag: 198d365b-b7af-4e48-aa74-afcd3bdd93d3
+		summarizeBy: sum
+		sourceColumn: true_positives_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives_at_500
+		dataType: int64
+		formatString: 0
+		lineageTag: 464c38b8-9d3c-45f3-8475-1240f21c5954
+		summarizeBy: sum
+		sourceColumn: false_positives_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+	column precision_at_500
+		dataType: double
+		lineageTag: 942aa717-7872-4e2b-8ed4-1c6a2851b2c1
+		summarizeBy: sum
+		sourceColumn: precision_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_at_500
+		dataType: double
+		lineageTag: 35645ed7-e23d-4f53-a1e5-907e514493eb
+		summarizeBy: sum
+		sourceColumn: recall_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column f1_at_500
+		dataType: double
+		lineageTag: 036166cb-f5d2-4f92-b9ee-fd6b08832af1
+		summarizeBy: sum
+		sourceColumn: f1_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alert_rate_target
+		dataType: double
+		lineageTag: 8da101af-d840-4e60-a09c-102cd6ea7356
+		summarizeBy: sum
+		sourceColumn: alert_rate_target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column alerts_at_fixed_rate
+		dataType: int64
+		formatString: 0
+		lineageTag: 8729dd70-df73-4e95-bd4e-434ff1a340d9
+		summarizeBy: sum
+		sourceColumn: alerts_at_fixed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column realized_alert_rate
+		dataType: double
+		lineageTag: 59deb8cb-77c8-441e-9f4a-ba472aaca95d
+		summarizeBy: sum
+		sourceColumn: realized_alert_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column true_positives_at_fixed_rate
+		dataType: int64
+		formatString: 0
+		lineageTag: 75e258e9-9519-4233-b6a5-ae5674e3188b
+		summarizeBy: sum
+		sourceColumn: true_positives_at_fixed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives_at_fixed_rate
+		dataType: int64
+		formatString: 0
+		lineageTag: e408d91a-8339-43b1-99b5-4a64da30dc21
+		summarizeBy: sum
+		sourceColumn: false_positives_at_fixed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column precision_at_fixed_rate
+		dataType: double
+		lineageTag: 09e35f04-ab90-4a8c-8259-c0922d563bd0
+		summarizeBy: sum
+		sourceColumn: precision_at_fixed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_at_fixed_rate
+		dataType: double
+		lineageTag: 5904ee2f-756e-46f7-8a40-eb42ff10f06f
+		summarizeBy: sum
+		sourceColumn: recall_at_fixed_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column protocol_version
+		dataType: string
+		lineageTag: a2784151-a31a-4d70-9802-5700218f7e8f
+		summarizeBy: none
+		sourceColumn: protocol_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_id
+		dataType: string
+		lineageTag: 90c7303a-87f7-4886-8328-db70356c3984
+		summarizeBy: none
+		sourceColumn: model_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_configuration
+		dataType: string
+		lineageTag: 0fcfe679-e63d-4b09-90e8-4338fabd9994
+		summarizeBy: none
+		sourceColumn: feature_configuration
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_selected_phase4_model
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cfae47cf-6101-4418-b4e3-7dae23ce509a
+		summarizeBy: none
+		sourceColumn: is_selected_phase4_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column result_status
+		dataType: string
+		lineageTag: 29824096-b182-40d9-aba4-733562f43c75
+		summarizeBy: none
+		sourceColumn: result_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_provenance
+		dataType: string
+		lineageTag: c0234a55-965d-4bcd-b33f-1a6e5eff29fe
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition phase4_walkforward_fold_metrics = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\phase4_walkforward_fold_metrics.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"fold", type text},
+				        {"feature_set", type text},
+				        {"method", type text},
+				        {"split", type text},
+				        {"population", type text},
+				        {"transaction_count", Int64.Type},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_prevalence", type number},
+				        {"pr_auc_average_precision", type number},
+				        {"roc_auc", type number},
+				        {"alerts_at_100", Int64.Type},
+				        {"true_positives_at_100", Int64.Type},
+				        {"false_positives_at_100", Int64.Type},
+				        {"precision_at_100", type number},
+				        {"recall_at_100", type number},
+				        {"f1_at_100", type number},
+				        {"alerts_at_500", Int64.Type},
+				        {"true_positives_at_500", Int64.Type},
+				        {"false_positives_at_500", Int64.Type},
+				        {"precision_at_500", type number},
+				        {"recall_at_500", type number},
+				        {"f1_at_500", type number},
+				        {"alert_rate_target", type number},
+				        {"alerts_at_fixed_rate", Int64.Type},
+				        {"realized_alert_rate", type number},
+				        {"true_positives_at_fixed_rate", Int64.Type},
+				        {"false_positives_at_fixed_rate", Int64.Type},
+				        {"precision_at_fixed_rate", type number},
+				        {"recall_at_fixed_rate", type number},
+				        {"protocol_version", type text},
+				        {"model_id", type text},
+				        {"feature_configuration", type text},
+				        {"is_selected_phase4_model", type logical},
+				        {"result_status", type text},
+				        {"source_provenance", type text}
+				    })
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

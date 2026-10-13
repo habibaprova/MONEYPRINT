@@ -1,0 +1,60 @@
+relationship 383ec4d0-848b-4bb4-a97b-5102f40d13ee
+	fromColumn: transaction_type_overview.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship f977bf7b-c720-4464-8c99-64f6c6d5f508
+	fromColumn: transaction_amount_distribution.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship fc298998-bd05-4a86-8c98-01e317122565
+	fromColumn: fraud_by_transaction_type.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship 92cdf1f0-3f25-4a95-bf99-7279679b7ae3
+	fromColumn: transaction_trends_by_step.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship 955b737c-95b4-4e4f-9512-c909de16806e
+	fromColumn: transaction_trends_by_hour.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship 69ae69f4-8ca1-4731-9411-0dc46b8d9473
+	fromColumn: phase4_selected_model_investigation_examples.transaction_type
+	toColumn: dim_transaction_type.transaction_type
+
+relationship 16f48f04-7fb3-46e0-a394-551e52728f97
+	fromColumn: transaction_trends_by_step.simulated_step
+	toColumn: dim_simulated_step.simulated_step
+
+relationship 6d54842f-de3d-447e-981e-e3af00b39029
+	fromColumn: phase4_selected_model_investigation_examples.split_step
+	toColumn: dim_simulated_step.simulated_step
+
+relationship 5db99734-7f88-44e8-b263-4976af53ef28
+	fromColumn: transaction_trends_by_hour.simulated_hour
+	toColumn: dim_simulated_hour.simulated_hour
+
+relationship 31c06660-871c-48a6-b1f2-9f9463183f09
+	fromColumn: phase4_walkforward_fold_metrics.fold
+	toColumn: dim_evaluation_window.evaluation_window
+
+relationship 774e5a6f-6412-4b39-88ff-a52f65c2ac3f
+	fromColumn: phase4_investigation_capacity.evaluation_window
+	toColumn: dim_evaluation_window.evaluation_window
+
+relationship 7626ae7e-dc66-469e-86d1-9445163693d3
+	fromColumn: phase4_selected_model_investigation_examples.evaluation_window
+	toColumn: dim_evaluation_window.evaluation_window
+
+relationship 0cf4d032-2a90-4865-8616-69afc6913f92
+	fromColumn: phase4_walkforward_fold_metrics.method
+	toColumn: dim_model_method.method
+
+relationship 4fe7ff39-3d03-4a61-b674-c20afc6def36
+	fromColumn: phase4_investigation_capacity.method
+	toColumn: dim_model_method.method
+
+relationship 4ab8c2ac-8af8-47ae-bb90-9f8655fcf317
+	fromColumn: phase4_selected_model_investigation_examples.method
+	toColumn: dim_model_method.method
+

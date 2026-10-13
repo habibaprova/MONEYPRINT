@@ -1,0 +1,111 @@
+table transaction_trends_by_hour
+	lineageTag: 7c260fdd-2ae4-4821-b984-b7877f61715f
+
+	column simulated_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b0f0e5e-520a-453a-a5f9-b988b50671dd
+		summarizeBy: none
+		sourceColumn: simulated_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_type
+		dataType: string
+		lineageTag: 42522556-e4c0-4e4a-8d55-b195b97b46bf
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 184fbbe7-fe60-43e4-b977-3f1fd062565e
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_synthetic_amount
+		dataType: double
+		lineageTag: 301a4913-fe6c-4fa1-9373-ee6071165ca7
+		summarizeBy: sum
+		sourceColumn: total_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_synthetic_amount
+		dataType: double
+		lineageTag: 5c578e33-7a97-4de4-9692-9f583f5816a3
+		summarizeBy: sum
+		sourceColumn: mean_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 12af5f52-afe0-4afa-bad0-e1be86d204c0
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_label_prevalence
+		dataType: double
+		lineageTag: ffe8f87c-569e-4f59-8e75-54e5e4cf34ea
+		summarizeBy: sum
+		sourceColumn: fraud_label_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_provenance
+		dataType: string
+		lineageTag: 49b3d245-9174-4f9b-b897-f0bd0457369b
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_interpretation
+		dataType: string
+		lineageTag: b75353d1-775e-4bab-865a-6627beee1b9e
+		summarizeBy: none
+		sourceColumn: time_interpretation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transaction_trends_by_hour = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\transaction_trends_by_hour.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"simulated_hour", Int64.Type},
+				        {"transaction_type", type text},
+				        {"transaction_count", Int64.Type},
+				        {"total_synthetic_amount", type number},
+				        {"mean_synthetic_amount", type number},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_label_prevalence", type number},
+				        {"source_provenance", type text},
+				        {"time_interpretation", type text}
+				    })
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

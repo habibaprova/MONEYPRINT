@@ -1,0 +1,225 @@
+table phase4_selected_model_investigation_examples
+	lineageTag: f786ba79-ed04-4788-9cf0-844eafbe1ba2
+
+	column case_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: fc80a541-1b80-4da6-83ba-f2656c4845e5
+		summarizeBy: sum
+		sourceColumn: case_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column protocol_version
+		dataType: string
+		lineageTag: ca872e18-d3e6-4185-bd1d-2e6640358803
+		summarizeBy: none
+		sourceColumn: protocol_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_id
+		dataType: string
+		lineageTag: 3feebd18-39b8-47b1-bb04-1bd27c2b7e39
+		summarizeBy: none
+		sourceColumn: model_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column method
+		dataType: string
+		lineageTag: 8e793739-65bc-4d94-9895-00e0b6b78662
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_display_name
+		dataType: string
+		lineageTag: a5055b44-13a8-491c-a07c-afa9382b9cd6
+		summarizeBy: none
+		sourceColumn: model_display_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_source
+		dataType: string
+		lineageTag: 58f66645-38ea-4f0f-82a1-d73373cd49f3
+		summarizeBy: none
+		sourceColumn: score_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_window
+		dataType: string
+		lineageTag: 028dcacd-079e-469d-ba1b-ed59078b07a7
+		summarizeBy: none
+		sourceColumn: evaluation_window
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_status
+		dataType: string
+		lineageTag: 27cb74fd-7cc2-49e0-8faa-a48b5e818346
+		summarizeBy: none
+		sourceColumn: evaluation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column split_step
+		dataType: int64
+		formatString: 0
+		lineageTag: f32497d0-1849-42b9-bc83-ea024b86b461
+		summarizeBy: sum
+		sourceColumn: split_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column simulated_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: b57518fb-6d34-45a1-80c7-beac8e4e2910
+		summarizeBy: none
+		sourceColumn: simulated_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_type
+		dataType: string
+		lineageTag: 8bb98725-a7be-4303-a58f-c730a3847d21
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column synthetic_amount
+		dataType: double
+		lineageTag: 9fb25bba-9ed6-45f1-95a4-d567fbb33542
+		summarizeBy: sum
+		sourceColumn: synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sender_pre_balance
+		dataType: double
+		lineageTag: c9a487a6-2bb5-48e8-bcdb-e2e925b26286
+		summarizeBy: sum
+		sourceColumn: sender_pre_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_to_sender_pre_balance
+		dataType: double
+		lineageTag: 98b7e8eb-7a87-43a4-9d54-78f9277cb437
+		summarizeBy: sum
+		sourceColumn: amount_to_sender_pre_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sender_balance_covers_amount
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f516833c-dfba-408d-ac85-4cb923b28f16
+		summarizeBy: none
+		sourceColumn: sender_balance_covers_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_score
+		dataType: double
+		lineageTag: 2c4ebf08-3626-433a-ad51-d68472f995ec
+		summarizeBy: sum
+		sourceColumn: risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_model_contributions
+		dataType: string
+		lineageTag: f62a7a08-e821-4a4a-83aa-6af89fdfaeb2
+		summarizeBy: none
+		sourceColumn: top_model_contributions
+
+		annotation SummarizationSetBy = Automatic
+
+	column explanation_caveat
+		dataType: string
+		lineageTag: 1ac45143-6f64-45ef-b3d4-fb4843094798
+		summarizeBy: none
+		sourceColumn: explanation_caveat
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_for_retrospective_review
+		dataType: int64
+		formatString: 0
+		lineageTag: 28e7e8a6-3aea-4ecc-8c58-55c26c80613c
+		summarizeBy: sum
+		sourceColumn: label_for_retrospective_review
+
+		annotation SummarizationSetBy = Automatic
+
+	column population_warning
+		dataType: string
+		lineageTag: f3c5dcdd-0bc4-42cd-812b-755cd1501ae9
+		summarizeBy: none
+		sourceColumn: population_warning
+
+		annotation SummarizationSetBy = Automatic
+
+	column contribution_display
+		dataType: string
+		lineageTag: f50a4f60-ac46-4805-a063-d0ce90ef41dc
+		summarizeBy: none
+		sourceColumn: contribution_display
+
+	partition phase4_selected_model_investigation_examples = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\phase4_selected_model_investigation_examples.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"case_rank", Int64.Type},
+				        {"protocol_version", type text},
+				        {"model_id", type text},
+				        {"method", type text},
+				        {"model_display_name", type text},
+				        {"score_source", type text},
+				        {"evaluation_window", type text},
+				        {"evaluation_status", type text},
+				        {"split_step", Int64.Type},
+				        {"simulated_hour", Int64.Type},
+				        {"transaction_type", type text},
+				        {"synthetic_amount", type number},
+				        {"sender_pre_balance", type number},
+				        {"amount_to_sender_pre_balance", type number},
+				        {"sender_balance_covers_amount", type logical},
+				        {"risk_score", type number},
+				        {"top_model_contributions", type text},
+				        {"explanation_caveat", type text},
+				        {"label_for_retrospective_review", Int64.Type},
+				        {"population_warning", type text}
+				    }),
+				    WithContributionText = Table.AddColumn(Typed, "contribution_display", each
+				        let Items = try Json.Document([top_model_contributions]) otherwise null
+				        in if Value.Is(Items, type list) then Text.Combine(List.Transform(Items, (Item) =>
+				            Text.From(Item[input]) & ": " & Number.ToText(Number.From(Item[standardized_log_odds_contribution]), "+0.00;-0.00;0.00", "en-US")), "#(lf)")
+				        else null, type text)
+				in
+				    WithContributionText
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

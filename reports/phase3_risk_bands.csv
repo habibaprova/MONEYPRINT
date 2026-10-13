@@ -1,0 +1,17 @@
+split,population,risk_band,transaction_count,fraud_count,fraud_prevalence,mean_score,score_threshold_source
+validation,all_transactions,very_high,79,79,1.0,0.9984768033027649,validation eligible-population score quantiles
+validation,all_transactions,high,709,675,0.9520451339915373,0.7784733772277832,validation eligible-population score quantiles
+validation,all_transactions,moderate,9321,426,0.045703250724171224,0.014650427736341953,validation eligible-population score quantiles
+validation,all_transactions,low,181038,0,0.0,4.7483933940384304e-07,validation eligible-population score quantiles
+validation,transfer_cash_out,very_high,79,79,1.0,0.9984768033027649,validation eligible-population score quantiles
+validation,transfer_cash_out,high,709,675,0.9520451339915373,0.7784733772277832,validation eligible-population score quantiles
+validation,transfer_cash_out,moderate,7083,426,0.060144006776789494,0.019138826057314873,validation eligible-population score quantiles
+validation,transfer_cash_out,low,70830,0,0.0,2.3290621697924507e-07,validation eligible-population score quantiles
+test,all_transactions,very_high,60,60,1.0,0.998519778251648,validation eligible-population score quantiles
+test,all_transactions,high,694,690,0.9942363112391931,0.7689249515533447,validation eligible-population score quantiles
+test,all_transactions,moderate,4610,502,0.10889370932754881,0.02298162505030632,validation eligible-population score quantiles
+test,all_transactions,low,84102,0,0.0,4.747909940761019e-07,validation eligible-population score quantiles
+test,transfer_cash_out,very_high,60,60,1.0,0.998519778251648,validation eligible-population score quantiles
+test,transfer_cash_out,high,694,690,0.9942363112391931,0.7689249515533447,validation eligible-population score quantiles
+test,transfer_cash_out,moderate,3617,502,0.13878905170030412,0.029217351227998734,validation eligible-population score quantiles
+test,transfer_cash_out,low,33608,0,0.0,2.1638780367538857e-07,validation eligible-population score quantiles

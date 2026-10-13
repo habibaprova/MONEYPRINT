@@ -1,0 +1,197 @@
+table phase4_model_feature_ablation
+	lineageTag: 87287bd1-dbdd-4022-a909-d2c1e19604f3
+
+	column protocol_version
+		dataType: string
+		lineageTag: 0c00008d-5956-4fb1-b43b-fbe241cdc022
+		summarizeBy: none
+		sourceColumn: protocol_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_set
+		dataType: string
+		lineageTag: 0f05841e-2d06-40f2-9f48-c531306d8db9
+		summarizeBy: none
+		sourceColumn: feature_set
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_configuration
+		dataType: string
+		lineageTag: 8e8899a7-1360-47b4-a666-d7d71ee4f7fa
+		summarizeBy: none
+		sourceColumn: feature_configuration
+
+		annotation SummarizationSetBy = Automatic
+
+	column fold
+		dataType: string
+		lineageTag: 4b8cfda5-7649-4e2c-a5ca-07b0e393ef29
+		summarizeBy: none
+		sourceColumn: fold
+
+		annotation SummarizationSetBy = Automatic
+
+	column validation_prevalence
+		dataType: double
+		lineageTag: 071ba14b-86bc-46d3-bed1-ffdae537390e
+		summarizeBy: sum
+		sourceColumn: validation_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pr_auc_average_precision
+		dataType: double
+		lineageTag: 7da56b6a-e4e7-4cdc-bcee-89654bdc76a9
+		summarizeBy: sum
+		sourceColumn: pr_auc_average_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roc_auc
+		dataType: double
+		lineageTag: ab816016-66d2-4344-a609-f7f63aa5ef71
+		summarizeBy: sum
+		sourceColumn: roc_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column precision_at_100
+		dataType: double
+		lineageTag: af989f20-4be0-493e-b553-af8d54b15194
+		summarizeBy: sum
+		sourceColumn: precision_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_at_100
+		dataType: double
+		lineageTag: 6aed51de-a76a-49e2-aff1-6c1ddea3ab0b
+		summarizeBy: sum
+		sourceColumn: recall_at_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column precision_at_500
+		dataType: double
+		lineageTag: 88eb5d81-85f4-4144-868e-26583430a402
+		summarizeBy: sum
+		sourceColumn: precision_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall_at_500
+		dataType: double
+		lineageTag: 4ef0fa53-b3b4-487e-a7c9-f578847f99ce
+		summarizeBy: sum
+		sourceColumn: recall_at_500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_fold_validation_pr_auc
+		dataType: double
+		lineageTag: 62fd4b29-3351-4f6c-9c6e-5f0b4a999dc0
+		summarizeBy: sum
+		sourceColumn: mean_fold_validation_pr_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sd_fold_validation_pr_auc
+		dataType: double
+		lineageTag: b4b8caa3-ee66-4e5b-8b7a-bbeecc5a00f9
+		summarizeBy: sum
+		sourceColumn: sd_fold_validation_pr_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_fold_validation_roc_auc
+		dataType: double
+		lineageTag: 888919cc-17ff-4a32-accd-6e673a6961ff
+		summarizeBy: sum
+		sourceColumn: mean_fold_validation_roc_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_train_pr_auc_in_sample
+		dataType: double
+		lineageTag: c386daf4-72a9-4d75-854c-6dea9b2bbed4
+		summarizeBy: sum
+		sourceColumn: mean_train_pr_auc_in_sample
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_selected_phase4_model
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4ea565a-186a-4812-9699-9bc72fc14f1e
+		summarizeBy: none
+		sourceColumn: is_selected_phase4_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_provenance
+		dataType: string
+		lineageTag: f452ac5a-26c4-4954-8227-c7f88586aca0
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition phase4_model_feature_ablation = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\phase4_model_feature_ablation.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"protocol_version", type text},
+				        {"feature_set", type text},
+				        {"feature_configuration", type text},
+				        {"fold", type text},
+				        {"validation_prevalence", type number},
+				        {"pr_auc_average_precision", type number},
+				        {"roc_auc", type number},
+				        {"precision_at_100", type number},
+				        {"recall_at_100", type number},
+				        {"precision_at_500", type number},
+				        {"recall_at_500", type number},
+				        {"mean_fold_validation_pr_auc", type number},
+				        {"sd_fold_validation_pr_auc", type number},
+				        {"mean_fold_validation_roc_auc", type number},
+				        {"mean_train_pr_auc_in_sample", type number},
+				        {"is_selected_phase4_model", type logical},
+				        {"source_provenance", type text}
+				    })
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

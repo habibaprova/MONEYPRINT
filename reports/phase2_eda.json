@@ -1,0 +1,876 @@
+{
+  "dataset": "PS_20174392719_1491204439457_log.csv",
+  "source_schema": [
+    {
+      "name": "step",
+      "type": "BIGINT"
+    },
+    {
+      "name": "type",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "nameOrig",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "oldbalanceOrg",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "newbalanceOrig",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "nameDest",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "oldbalanceDest",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "newbalanceDest",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "isFraud",
+      "type": "BIGINT"
+    },
+    {
+      "name": "isFlaggedFraud",
+      "type": "BIGINT"
+    }
+  ],
+  "transaction_summary_by_type": [
+    {
+      "transaction_type": "CASH_IN",
+      "transaction_count": 1399284,
+      "total_amount": 236367391912.4597,
+      "mean_amount": 168920.24200409616,
+      "median_amount": 143427.71000000002,
+      "p90_amount": 343358.13999999996,
+      "p95_amount": 412005.1325,
+      "p99_amount": 550870.8624999999,
+      "max_amount": 1915267.9,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "flagged_fraud_count": 0
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "transaction_count": 2237500,
+      "total_amount": 394412995224.4917,
+      "mean_amount": 176273.96434614155,
+      "median_amount": 147072.185,
+      "p90_amount": 355191.977,
+      "p95_amount": 427877.16349999973,
+      "p99_amount": 579654.072599998,
+      "max_amount": 10000000.0,
+      "fraud_count": 4116,
+      "fraud_rate": 0.0018395530726256983,
+      "flagged_fraud_count": 0
+    },
+    {
+      "transaction_type": "DEBIT",
+      "transaction_count": 41432,
+      "total_amount": 227199221.27999994,
+      "mean_amount": 5483.665313767135,
+      "median_amount": 3048.99,
+      "p90_amount": 9500.107000000002,
+      "p95_amount": 14795.3545,
+      "p99_amount": 50817.98380000013,
+      "max_amount": 569077.51,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "flagged_fraud_count": 0
+    },
+    {
+      "transaction_type": "PAYMENT",
+      "transaction_count": 2151495,
+      "total_amount": 28093371138.37003,
+      "mean_amount": 13057.604660187464,
+      "median_amount": 9482.19,
+      "p90_amount": 28810.73400000001,
+      "p95_amount": 37835.658999999934,
+      "p99_amount": 59500.1066,
+      "max_amount": 238637.98,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "flagged_fraud_count": 0
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "transaction_count": 532909,
+      "total_amount": 485291987263.1703,
+      "mean_amount": 910647.0096454935,
+      "median_amount": 486308.39,
+      "p90_amount": 1782296.6380000005,
+      "p95_amount": 2674586.939999994,
+      "p99_amount": 10000000.0,
+      "max_amount": 92445516.64,
+      "fraud_count": 4097,
+      "fraud_rate": 0.007687991758442811,
+      "flagged_fraud_count": 16
+    }
+  ],
+  "fraud_amount_comparison": [
+    {
+      "transaction_type": "CASH_OUT",
+      "is_fraud": 0,
+      "transaction_count": 2233384,
+      "mean_amount": 173917.15575138901,
+      "median_amount": 146946.56,
+      "p95_amount": 426154.64300000004,
+      "max_amount": 2847566.62,
+      "sender_pre_balance_zero": 1025762,
+      "amount_exceeds_sender_pre_balance": 1981098
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "is_fraud": 1,
+      "transaction_count": 4116,
+      "mean_amount": 1455102.5859645286,
+      "median_amount": 435516.905,
+      "p95_amount": 7841465.035,
+      "max_amount": 10000000.0,
+      "sender_pre_balance_zero": 37,
+      "amount_exceeds_sender_pre_balance": 24
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "is_fraud": 0,
+      "transaction_count": 528812,
+      "mean_amount": 906229.007812153,
+      "median_amount": 486521.91000000003,
+      "p95_amount": 2646555.8044999936,
+      "max_amount": 92445516.64,
+      "sender_pre_balance_zero": 282779,
+      "amount_exceeds_sender_pre_balance": 507507
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "is_fraud": 1,
+      "transaction_count": 4097,
+      "mean_amount": 1480891.6729338542,
+      "median_amount": 445705.76,
+      "p95_amount": 8098658.151999999,
+      "max_amount": 10000000.0,
+      "sender_pre_balance_zero": 4,
+      "amount_exceeds_sender_pre_balance": 5
+    }
+  ],
+  "hourly_step_trends": [
+    {
+      "simulated_hour": 0,
+      "transaction_count": 71587,
+      "total_amount": 9133130823.00001,
+      "fraud_count": 300,
+      "fraud_rate": 0.004190705016273904
+    },
+    {
+      "simulated_hour": 1,
+      "transaction_count": 27111,
+      "total_amount": 3200401133.5800014,
+      "fraud_count": 358,
+      "fraud_rate": 0.013204972151525211
+    },
+    {
+      "simulated_hour": 2,
+      "transaction_count": 9018,
+      "total_amount": 1555136461.3300004,
+      "fraud_count": 372,
+      "fraud_rate": 0.04125083166999335
+    },
+    {
+      "simulated_hour": 3,
+      "transaction_count": 2007,
+      "total_amount": 917807529.1600002,
+      "fraud_count": 326,
+      "fraud_rate": 0.16243148978574987
+    },
+    {
+      "simulated_hour": 4,
+      "transaction_count": 1241,
+      "total_amount": 452670433.9399998,
+      "fraud_count": 274,
+      "fraud_rate": 0.22078968573730862
+    },
+    {
+      "simulated_hour": 5,
+      "transaction_count": 1641,
+      "total_amount": 637355461.2700001,
+      "fraud_count": 366,
+      "fraud_rate": 0.2230347349177331
+    },
+    {
+      "simulated_hour": 6,
+      "transaction_count": 3420,
+      "total_amount": 733140777.3199997,
+      "fraud_count": 358,
+      "fraud_rate": 0.10467836257309941
+    },
+    {
+      "simulated_hour": 7,
+      "transaction_count": 8988,
+      "total_amount": 1342656886.2099988,
+      "fraud_count": 328,
+      "fraud_rate": 0.03649310191366266
+    },
+    {
+      "simulated_hour": 8,
+      "transaction_count": 26915,
+      "total_amount": 4771771726.7199955,
+      "fraud_count": 368,
+      "fraud_rate": 0.013672673230540592
+    },
+    {
+      "simulated_hour": 9,
+      "transaction_count": 283518,
+      "total_amount": 57230312371.26995,
+      "fraud_count": 341,
+      "fraud_rate": 0.0012027455046945872
+    },
+    {
+      "simulated_hour": 10,
+      "transaction_count": 425729,
+      "total_amount": 90728860570.56001,
+      "fraud_count": 375,
+      "fraud_rate": 0.0008808420380100957
+    },
+    {
+      "simulated_hour": 11,
+      "transaction_count": 445992,
+      "total_amount": 86836289140.7699,
+      "fraud_count": 324,
+      "fraud_rate": 0.0007264704299628692
+    },
+    {
+      "simulated_hour": 12,
+      "transaction_count": 483418,
+      "total_amount": 95365234623.52995,
+      "fraud_count": 339,
+      "fraud_rate": 0.0007012564695563673
+    },
+    {
+      "simulated_hour": 13,
+      "transaction_count": 468474,
+      "total_amount": 89606322363.92024,
+      "fraud_count": 346,
+      "fraud_rate": 0.0007385682022908422
+    },
+    {
+      "simulated_hour": 14,
+      "transaction_count": 439653,
+      "total_amount": 83019857921.19005,
+      "fraud_count": 353,
+      "fraud_rate": 0.0008029059280841937
+    },
+    {
+      "simulated_hour": 15,
+      "transaction_count": 416686,
+      "total_amount": 88134439201.48009,
+      "fraud_count": 341,
+      "fraud_rate": 0.0008183620280019007
+    },
+    {
+      "simulated_hour": 16,
+      "transaction_count": 441612,
+      "total_amount": 103510274373.14015,
+      "fraud_count": 345,
+      "fraud_rate": 0.0007812287709573109
+    },
+    {
+      "simulated_hour": 17,
+      "transaction_count": 439941,
+      "total_amount": 86449998969.93022,
+      "fraud_count": 353,
+      "fraud_rate": 0.0008023803191791627
+    },
+    {
+      "simulated_hour": 18,
+      "transaction_count": 580509,
+      "total_amount": 90907288926.89978,
+      "fraud_count": 343,
+      "fraud_rate": 0.0005908607790749153
+    },
+    {
+      "simulated_hour": 19,
+      "transaction_count": 647814,
+      "total_amount": 96483920076.50006,
+      "fraud_count": 342,
+      "fraud_rate": 0.0005279293130435587
+    },
+    {
+      "simulated_hour": 20,
+      "transaction_count": 553728,
+      "total_amount": 74928896033.22995,
+      "fraud_count": 340,
+      "fraud_rate": 0.0006140198797965788
+    },
+    {
+      "simulated_hour": 21,
+      "transaction_count": 247806,
+      "total_amount": 33951419898.479977,
+      "fraud_count": 347,
+      "fraud_rate": 0.0014002889356997006
+    },
+    {
+      "simulated_hour": 22,
+      "transaction_count": 194555,
+      "total_amount": 26461247101.590015,
+      "fraud_count": 351,
+      "fraud_rate": 0.001804117087712986
+    },
+    {
+      "simulated_hour": 23,
+      "transaction_count": 141257,
+      "total_amount": 18034511954.749958,
+      "fraud_count": 323,
+      "fraud_rate": 0.002286612344874944
+    }
+  ],
+  "receiver_concentration": {
+    "unique_receivers": 2722362,
+    "all_transactions": 6362620,
+    "all_amount": 1144392944759.7947,
+    "max_receiver_transactions": 113,
+    "top_receiver_transaction_share": 1.7759979379563763e-05,
+    "top_10_transaction_share": 0.00016093999012985216,
+    "top_10_by_count_amount_share": 0.0005578712483272113,
+    "top_10_amount_share": 0.0022856129331337463
+  },
+  "account_frequency_summary": [
+    {
+      "account_role": "receiver",
+      "unique_accounts": 2722362,
+      "repeated_accounts": 459658,
+      "rows_in_repeated_accounts": 4099916,
+      "median_transactions": 1.0,
+      "p90_transactions": 5.0,
+      "p99_transactions": 25.0,
+      "max_transactions": 113
+    },
+    {
+      "account_role": "sender",
+      "unique_accounts": 6353307,
+      "repeated_accounts": 9298,
+      "rows_in_repeated_accounts": 18611,
+      "median_transactions": 1.0,
+      "p90_transactions": 1.0,
+      "p99_transactions": 1.0,
+      "max_transactions": 3
+    }
+  ],
+  "account_frequency_bins": [
+    {
+      "account_role": "receiver",
+      "frequency_bin": "1",
+      "account_count": 2262704,
+      "transaction_rows": 2262704
+    },
+    {
+      "account_role": "receiver",
+      "frequency_bin": "2",
+      "account_count": 77054,
+      "transaction_rows": 154108
+    },
+    {
+      "account_role": "receiver",
+      "frequency_bin": "3-5",
+      "account_count": 139225,
+      "transaction_rows": 536432
+    },
+    {
+      "account_role": "receiver",
+      "frequency_bin": "6-10",
+      "account_count": 113093,
+      "transaction_rows": 869418
+    },
+    {
+      "account_role": "receiver",
+      "frequency_bin": "11-25",
+      "account_count": 104706,
+      "transaction_rows": 1668167
+    },
+    {
+      "account_role": "receiver",
+      "frequency_bin": "26+",
+      "account_count": 25580,
+      "transaction_rows": 871791
+    },
+    {
+      "account_role": "sender",
+      "frequency_bin": "1",
+      "account_count": 6344009,
+      "transaction_rows": 6344009
+    },
+    {
+      "account_role": "sender",
+      "frequency_bin": "2",
+      "account_count": 9283,
+      "transaction_rows": 18566
+    },
+    {
+      "account_role": "sender",
+      "frequency_bin": "3-5",
+      "account_count": 15,
+      "transaction_rows": 45
+    }
+  ],
+  "sender_balance_by_type": [
+    {
+      "transaction_type": "CASH_IN",
+      "transaction_count": 1399284,
+      "pre_balance_zero": 13464,
+      "post_balance_zero": 0,
+      "amount_exceeds_pre_balance": 477536,
+      "delta_matches_positive_amount": 1399251,
+      "delta_matches_negative_amount": 0,
+      "unchanged_balance": 33,
+      "other_balance_delta": 0
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "transaction_count": 2237500,
+      "pre_balance_zero": 1025799,
+      "post_balance_zero": 1985211,
+      "amount_exceeds_pre_balance": 1981122,
+      "delta_matches_positive_amount": 17,
+      "delta_matches_negative_amount": 256377,
+      "unchanged_balance": 1025801,
+      "other_balance_delta": 955339
+    },
+    {
+      "transaction_type": "DEBIT",
+      "transaction_count": 41432,
+      "pre_balance_zero": 6158,
+      "post_balance_zero": 11786,
+      "amount_exceeds_pre_balance": 11786,
+      "delta_matches_positive_amount": 0,
+      "delta_matches_negative_amount": 29646,
+      "unchanged_balance": 6158,
+      "other_balance_delta": 5628
+    },
+    {
+      "transaction_type": "PAYMENT",
+      "transaction_count": 2151495,
+      "pre_balance_zero": 774245,
+      "post_balance_zero": 1101124,
+      "amount_exceeds_pre_balance": 1101124,
+      "delta_matches_positive_amount": 0,
+      "delta_matches_negative_amount": 1050371,
+      "unchanged_balance": 774245,
+      "other_balance_delta": 326879
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "transaction_count": 532909,
+      "pre_balance_zero": 282783,
+      "post_balance_zero": 511445,
+      "amount_exceeds_pre_balance": 507512,
+      "delta_matches_positive_amount": 0,
+      "delta_matches_negative_amount": 25380,
+      "unchanged_balance": 282800,
+      "other_balance_delta": 224729
+    }
+  ],
+  "receiver_balance_by_type": [
+    {
+      "transaction_type": "CASH_IN",
+      "receiver_prefix": "C-prefix",
+      "transaction_count": 1399284,
+      "pre_balance_zero": 163573,
+      "post_balance_zero": 270871,
+      "delta_matches_positive_amount": 0,
+      "delta_matches_negative_amount": 1032039,
+      "unchanged_balance": 160005,
+      "other_balance_delta": 207240
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "receiver_prefix": "C-prefix",
+      "transaction_count": 2237500,
+      "pre_balance_zero": 324187,
+      "post_balance_zero": 11425,
+      "delta_matches_positive_amount": 2025840,
+      "delta_matches_negative_amount": 16,
+      "unchanged_balance": 1619,
+      "other_balance_delta": 210058
+    },
+    {
+      "transaction_type": "DEBIT",
+      "receiver_prefix": "C-prefix",
+      "transaction_count": 41432,
+      "pre_balance_zero": 0,
+      "post_balance_zero": 468,
+      "delta_matches_positive_amount": 37987,
+      "delta_matches_negative_amount": 0,
+      "unchanged_balance": 0,
+      "other_balance_delta": 3445
+    },
+    {
+      "transaction_type": "PAYMENT",
+      "receiver_prefix": "M-prefix",
+      "transaction_count": 2151495,
+      "pre_balance_zero": 2151495,
+      "post_balance_zero": 2151495,
+      "delta_matches_positive_amount": 0,
+      "delta_matches_negative_amount": 0,
+      "unchanged_balance": 2151495,
+      "other_balance_delta": 0
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "receiver_prefix": "C-prefix",
+      "transaction_count": 532909,
+      "pre_balance_zero": 65133,
+      "post_balance_zero": 5174,
+      "delta_matches_positive_amount": 474846,
+      "delta_matches_negative_amount": 0,
+      "unchanged_balance": 4174,
+      "other_balance_delta": 53889
+    }
+  ],
+  "balance_zero_patterns": [
+    {
+      "transaction_type": "CASH_IN",
+      "transaction_count": 1399284,
+      "sender_pre_zero": 13464,
+      "sender_post_zero": 0,
+      "sender_both_zero": 0,
+      "receiver_pre_zero": 163573,
+      "receiver_post_zero": 270871,
+      "receiver_both_zero": 160005
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "transaction_count": 2237500,
+      "sender_pre_zero": 1025799,
+      "sender_post_zero": 1985211,
+      "sender_both_zero": 1025799,
+      "receiver_pre_zero": 324187,
+      "receiver_post_zero": 11425,
+      "receiver_both_zero": 1608
+    },
+    {
+      "transaction_type": "DEBIT",
+      "transaction_count": 41432,
+      "sender_pre_zero": 6158,
+      "sender_post_zero": 11786,
+      "sender_both_zero": 6158,
+      "receiver_pre_zero": 0,
+      "receiver_post_zero": 468,
+      "receiver_both_zero": 0
+    },
+    {
+      "transaction_type": "PAYMENT",
+      "transaction_count": 2151495,
+      "sender_pre_zero": 774245,
+      "sender_post_zero": 1101124,
+      "sender_both_zero": 774245,
+      "receiver_pre_zero": 2151495,
+      "receiver_post_zero": 2151495,
+      "receiver_both_zero": 2151495
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "transaction_count": 532909,
+      "sender_pre_zero": 282783,
+      "sender_post_zero": 511445,
+      "sender_both_zero": 282783,
+      "receiver_pre_zero": 65133,
+      "receiver_post_zero": 5174,
+      "receiver_both_zero": 4174
+    }
+  ],
+  "balance_by_label": [
+    {
+      "transaction_type": "CASH_IN",
+      "is_fraud": 0,
+      "transaction_count": 1399284,
+      "sender_candidate_mismatch_count": 33,
+      "sender_unchanged_count": 33,
+      "receiver_unchanged_count": 160005
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "is_fraud": 0,
+      "transaction_count": 2233384,
+      "sender_candidate_mismatch_count": 1981099,
+      "sender_unchanged_count": 1025764,
+      "receiver_unchanged_count": 1600
+    },
+    {
+      "transaction_type": "CASH_OUT",
+      "is_fraud": 1,
+      "transaction_count": 4116,
+      "sender_candidate_mismatch_count": 24,
+      "sender_unchanged_count": 37,
+      "receiver_unchanged_count": 18
+    },
+    {
+      "transaction_type": "DEBIT",
+      "is_fraud": 0,
+      "transaction_count": 41432,
+      "sender_candidate_mismatch_count": 11786,
+      "sender_unchanged_count": 6158,
+      "receiver_unchanged_count": 0
+    },
+    {
+      "transaction_type": "PAYMENT",
+      "is_fraud": 0,
+      "transaction_count": 2151495,
+      "sender_candidate_mismatch_count": 1101124,
+      "sender_unchanged_count": 774245,
+      "receiver_unchanged_count": 2151495
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "is_fraud": 0,
+      "transaction_count": 528812,
+      "sender_candidate_mismatch_count": 507508,
+      "sender_unchanged_count": 282780,
+      "receiver_unchanged_count": 106
+    },
+    {
+      "transaction_type": "TRANSFER",
+      "is_fraud": 1,
+      "transaction_count": 4097,
+      "sender_candidate_mismatch_count": 21,
+      "sender_unchanged_count": 20,
+      "receiver_unchanged_count": 4068
+    }
+  ],
+  "representative_balance_exceptions": [
+    {
+      "step": 1,
+      "transaction_type": "CASH_OUT",
+      "amount": 23261.3,
+      "sender_pre_balance": 20411.53,
+      "sender_post_balance": 0.0,
+      "sender_delta": -20411.53,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 25742.0,
+      "receiver_post_balance": 0.0,
+      "receiver_delta": -25742.0,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "CASH_OUT",
+      "amount": 32282.57,
+      "sender_pre_balance": 14375.74,
+      "sender_post_balance": 0.0,
+      "sender_delta": -14375.74,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 97055.04,
+      "receiver_post_balance": 60738.03,
+      "receiver_delta": -36317.009999999995,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "DEBIT",
+      "amount": 1668.11,
+      "sender_pre_balance": 1080.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -1080.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 17145.04,
+      "receiver_post_balance": 9672.67,
+      "receiver_delta": -7472.370000000001,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "DEBIT",
+      "amount": 1939.39,
+      "sender_pre_balance": 1029.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -1029.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 351593.17,
+      "receiver_post_balance": 353532.56,
+      "receiver_delta": 1939.390000000014,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "PAYMENT",
+      "amount": 353.9,
+      "sender_pre_balance": 3.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -3.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "M-prefix",
+      "receiver_pre_balance": 0.0,
+      "receiver_post_balance": 0.0,
+      "receiver_delta": 0.0,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "PAYMENT",
+      "amount": 365.0,
+      "sender_pre_balance": 319.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -319.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "M-prefix",
+      "receiver_pre_balance": 0.0,
+      "receiver_post_balance": 0.0,
+      "receiver_delta": 0.0,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "TRANSFER",
+      "amount": 7276.69,
+      "sender_pre_balance": 93.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -93.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 1463.0,
+      "receiver_post_balance": 0.0,
+      "receiver_delta": -1463.0,
+      "label_is_fraud": 0
+    },
+    {
+      "step": 1,
+      "transaction_type": "TRANSFER",
+      "amount": 17488.56,
+      "sender_pre_balance": 14180.0,
+      "sender_post_balance": 0.0,
+      "sender_delta": -14180.0,
+      "amount_exceeds_sender_pre_balance": true,
+      "receiver_prefix": "C-prefix",
+      "receiver_pre_balance": 182385.22,
+      "receiver_post_balance": 199873.79,
+      "receiver_delta": 17488.570000000007,
+      "label_is_fraud": 0
+    }
+  ],
+  "total_records": 6362620,
+  "fraud_records": 8213,
+  "chronological_split": {
+    "strategy": "contiguous ranges of distinct ascending step values; no row shuffle",
+    "target_step_proportions": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "parquet_path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\data\\processed\\transaction_features.parquet",
+    "compression": "ZSTD",
+    "total_records": 6362620,
+    "fraud_records": 8213,
+    "split_step_count": 743,
+    "train_end_rank": 520,
+    "validation_end_rank": 631,
+    "train_end_step": 520,
+    "validation_end_step": 631,
+    "splits": [
+      {
+        "split": "train",
+        "transaction_count": 6082007,
+        "fraud_count": 5781,
+        "distinct_steps": 520
+      },
+      {
+        "split": "validation",
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "distinct_steps": 111
+      },
+      {
+        "split": "test",
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "distinct_steps": 112
+      }
+    ],
+    "predictor_columns": [
+      "amount",
+      "transaction_type",
+      "simulated_hour",
+      "sender_pre_balance",
+      "amount_to_sender_pre_balance",
+      "sender_balance_covers_amount",
+      "recipient_prior_transaction_count",
+      "recipient_prior_received_amount"
+    ],
+    "target_column": "label_is_fraud",
+    "output_columns": [
+      "amount",
+      "amount_to_sender_pre_balance",
+      "label_is_fraud",
+      "recipient_prior_received_amount",
+      "recipient_prior_transaction_count",
+      "sender_balance_covers_amount",
+      "sender_pre_balance",
+      "simulated_hour",
+      "split",
+      "split_step",
+      "transaction_type"
+    ],
+    "unexpected_null_rows": 0,
+    "ratio_null_count": 2102449,
+    "zero_sender_pre_balance_count": 2102449,
+    "mixed_step_count": 0
+  },
+  "feature_policy": {
+    "predictors": [
+      "amount",
+      "transaction_type",
+      "simulated_hour",
+      "sender_pre_balance",
+      "amount_to_sender_pre_balance",
+      "sender_balance_covers_amount",
+      "recipient_prior_transaction_count",
+      "recipient_prior_received_amount"
+    ],
+    "split_metadata": [
+      "split_step",
+      "split"
+    ],
+    "target_only": [
+      "label_is_fraud"
+    ],
+    "excluded_from_feature_output": [
+      "isFraud (renamed only as target label_is_fraud)",
+      "isFlaggedFraud",
+      "newbalanceOrig",
+      "oldbalanceDest",
+      "newbalanceDest",
+      "nameOrig",
+      "nameDest",
+      "future-derived aggregates"
+    ],
+    "simulated_hour_interpretation": "step modulo 24 under PaySim's hourly-step convention; this is a simulated hour index, not a wall-clock time or timezone",
+    "recipient_history": "prior destination transaction count and amount aggregate all transactions at recipient-step grain, then sum only strictly earlier steps; same-step transactions do not contribute to each other",
+    "amount_to_sender_pre_balance": "amount divided by sender pre-transaction balance; null only when the pre-transaction balance is zero",
+    "sender_balance_covers_amount": "pre-transaction balance >= amount; available at decision time, but may encode a PaySim simulation artifact"
+  },
+  "interpretation_limitations": [
+    "Balance differences are descriptive diagnostics, not evidence of fraud.",
+    "The signed sender equation (CASH_IN positive, other types negative) is a candidate comparison only; high deviations require simulator-specific context.",
+    "The receiver account prefix and balance fields do not establish the real-world economic role of a transaction.",
+    "PaySim labels fraud only in selected transaction types and its balance generation may make classification artificially easy.",
+    "All test-split label summaries are descriptive; test labels were not used to design features, thresholds, or models."
+  ],
+  "balance_comparison": {
+    "tolerance_currency_units": 0.01,
+    "method": "round absolute residuals to cents, then allow a one-cent difference",
+    "sender_candidate_equation": "CASH_IN: +amount; other types: -amount",
+    "interpretation": "empirical diagnostic only; not a validated accounting rule or fraud signal"
+  }
+}

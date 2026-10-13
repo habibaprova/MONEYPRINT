@@ -1,0 +1,144 @@
+{
+  "protocol_version": "phase4_walkforward_v1",
+  "selected_model_id": "phase4_walkforward_v1_plus_balance",
+  "selected_feature_set": "plus_balance",
+  "training_steps": [
+    1,
+    631
+  ],
+  "reserved_evaluation_steps": [
+    632,
+    743
+  ],
+  "reserved_period_status": "exploratory and previously accessed; not pristine",
+  "score_generation": "frozen joblib model predict_proba only; no fit or retraining",
+  "scored_investigation_population_rows": 37979,
+  "source_model": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\models\\phase4_walkforward_v1_final_model.joblib",
+  "source_model_sha256": "672706c4a1c4f66fcffb2eec171e4f4ae74353888934486d77e1f7c0685dca4e",
+  "source_phase4_report": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase4_walkforward_v1.json",
+  "source_phase4_report_sha256": "cabfd43bc9d9745029877517d15ac62d7eabd005366ac24b8223a6fcd8694ee9",
+  "source_feature_parquet": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\data\\processed\\transaction_features.parquet",
+  "source_parquet_sha256": "3fbd1e28278e15b5101ab0111ecaa51199436bf5c115ac1d17c9c6ce57f71e15",
+  "validation": {
+    "transactions": 6362620,
+    "fraud_labels": 8213,
+    "executive_kpis": 4,
+    "amount_distribution_bins": 31,
+    "step_trend_transactions": 6362620,
+    "hour_trend_transactions": 6362620,
+    "phase4_fold_metric_rows": 48,
+    "selected_model_fold_metric_rows": 8,
+    "feature_ablation_rows": 16,
+    "capacity_rows": 15,
+    "selected_model_example_rows": 500,
+    "selected_model_example_cap": 500,
+    "selected_model_examples_true_positives_at_500": 456,
+    "split_protocols_checked": 2,
+    "all_checks_passed": true
+  },
+  "sample_warning": "Investigation examples are top-ranked cases, not representative population data; do not estimate prevalence from them.",
+  "runtime_thread_plan": {
+    "physical_cores": 20,
+    "logical_cpus": 28,
+    "reserved_physical_cores": 4,
+    "usable_physical_cores": 16,
+    "blas_threads": 16,
+    "openmp_threads": 1,
+    "parallel_fit_jobs": 1,
+    "reserved_fraction": 0.2,
+    "total_memory_bytes": 68470386688,
+    "available_memory_bytes": 27020603392,
+    "environment": {
+      "OPENBLAS_NUM_THREADS": "16",
+      "MKL_NUM_THREADS": "16",
+      "BLIS_NUM_THREADS": "16",
+      "VECLIB_MAXIMUM_THREADS": "16",
+      "NUMEXPR_NUM_THREADS": "16",
+      "OMP_NUM_THREADS": "1",
+      "OMP_THREAD_LIMIT": "1",
+      "LOKY_MAX_CPU_COUNT": "16"
+    }
+  },
+  "files": {
+    "executive_kpi_summary.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\executive_kpi_summary.csv",
+      "rows": 4,
+      "bytes": 586
+    },
+    "transaction_type_overview.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\transaction_type_overview.csv",
+      "rows": 5,
+      "bytes": 995
+    },
+    "transaction_amount_distribution.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\transaction_amount_distribution.csv",
+      "rows": 31,
+      "bytes": 4027
+    },
+    "transaction_trends_by_step.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\transaction_trends_by_step.csv",
+      "rows": 2729,
+      "bytes": 615432
+    },
+    "transaction_trends_by_hour.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\transaction_trends_by_hour.csv",
+      "rows": 120,
+      "bytes": 23222
+    },
+    "fraud_by_transaction_type.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\fraud_by_transaction_type.csv",
+      "rows": 5,
+      "bytes": 954
+    },
+    "phase4_walkforward_fold_metrics.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\phase4_walkforward_fold_metrics.csv",
+      "rows": 48,
+      "bytes": 26393
+    },
+    "phase4_model_feature_ablation.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\phase4_model_feature_ablation.csv",
+      "rows": 16,
+      "bytes": 5349
+    },
+    "phase4_investigation_capacity.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\phase4_investigation_capacity.csv",
+      "rows": 15,
+      "bytes": 5374
+    },
+    "phase4_selected_model_investigation_examples.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\phase4_selected_model_investigation_examples.csv",
+      "rows": 500,
+      "bytes": 395446
+    },
+    "split_distribution_comparison.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\split_distribution_comparison.csv",
+      "rows": 36,
+      "bytes": 8687
+    },
+    "dim_transaction_type.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\dim_transaction_type.csv",
+      "rows": 5,
+      "bytes": 77
+    },
+    "dim_simulated_hour.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\dim_simulated_hour.csv",
+      "rows": 24,
+      "bytes": 1563
+    },
+    "dim_simulated_step.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\dim_simulated_step.csv",
+      "rows": 743,
+      "bytes": 27131
+    },
+    "dim_evaluation_window.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\dim_evaluation_window.csv",
+      "rows": 5,
+      "bytes": 603
+    },
+    "dim_model_method.csv": {
+      "path": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\exports\\dim_model_method.csv",
+      "rows": 6,
+      "bytes": 900
+    }
+  }
+}

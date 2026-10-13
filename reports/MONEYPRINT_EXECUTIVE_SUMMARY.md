@@ -1,0 +1,9 @@
+# MONEYPRINT Executive Summary
+
+MONEYPRINT is a synthetic transaction-risk intelligence portfolio project built with Python, SQL, DuckDB, scikit-learn, and Power BI Desktop. It uses PaySim to demonstrate transaction monitoring, explainable ranking, data-quality review, and investigation-capacity reporting. It is not a bKash deployment and does not use real customer data.
+
+The source contains 6,362,620 transactions and 8,213 synthetic fraud labels (0.1291%). Fraud labels occur in CASH_OUT and TRANSFER. The project preserves chronological ordering and evaluates four expanding validation windows. Its selected Phase 4 model is balanced Logistic Regression using amount, transaction type, simulated hour, sender pre-balance, and sender balance ratios/coverage. Selection used mean eligible-population validation ROC-AUC (0.996989); mean validation PR-AUC was 0.690274. In the previously accessed later period, precision@500 was 91.2% and recall@500 was 36.42% for TRANSFER/CASH_OUT.
+
+These scores describe synthetic PaySim behavior, not proven real-world fraud detection. Pre-balance features may exploit simulator-specific balance clipping; time and fraud prevalence shift across periods. The later period is exploratory, not a pristine holdout. Dashboard examples are selected by model score and must not be interpreted as a representative sample.
+
+The Power BI package provides compact population summaries, simulated-time trends, fold/ablation/capacity tables, historical split diagnostics, and a capped list scored by the frozen Phase 4 model. The editable three-page Power BI report preserves the approved theme and uses native navigation, population summaries, a saved ranked queue, selected-case details, and reliability evidence. The final handover records packaged PBIX and screenshot verification. The model and exports remain frozen.

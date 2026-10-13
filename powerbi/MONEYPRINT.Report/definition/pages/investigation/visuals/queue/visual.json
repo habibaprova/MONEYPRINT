@@ -1,0 +1,439 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "queue",
+  "position": {
+    "x": 208,
+    "y": 168,
+    "z": 12,
+    "height": 356,
+    "width": 690,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "case_rank"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.case_rank",
+              "nativeQueryRef": "Rank",
+              "displayName": "Rank",
+              "format": "0"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "split_step"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.split_step",
+              "nativeQueryRef": "Step",
+              "displayName": "Step",
+              "format": "0"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "transaction_type"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.transaction_type",
+              "nativeQueryRef": "Type",
+              "displayName": "Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "synthetic_amount"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.synthetic_amount",
+              "nativeQueryRef": "Amount",
+              "displayName": "Amount (units)",
+              "format": "#,0.00"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "risk_score"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.risk_score",
+              "nativeQueryRef": "Score",
+              "displayName": "Score",
+              "format": "0.0000"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "phase4_selected_model_investigation_examples"
+                    }
+                  },
+                  "Property": "label_for_retrospective_review"
+                }
+              },
+              "queryRef": "phase4_selected_model_investigation_examples.label_for_retrospective_review",
+              "nativeQueryRef": "Retrospective label",
+              "displayName": "Retrospective label",
+              "format": "0"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "phase4_selected_model_investigation_examples"
+                  }
+                },
+                "Property": "case_rank"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#474538'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#474538'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 500 ranked cases • select a row'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#474538'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FAF9EF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "729014a000f554deff3a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "case_rank"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "03ebd3a050ea4803c1b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "split_step"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "637ba02b72e904bcca34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "transaction_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "717bf283ee36ac5d7060",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "synthetic_amount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c032b7e65456efff2ede",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "risk_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "77ed7883297678cd6829",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "phase4_selected_model_investigation_examples"
+              }
+            },
+            "Property": "label_for_retrospective_review"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

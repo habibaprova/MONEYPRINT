@@ -1,0 +1,241 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 51
+          },
+          "nodeIndex": "dim_evaluation_window",
+          "nodeLineageTag": "1a799c86-e27f-4374-8152-161b3dc19847",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 63
+          },
+          "nodeIndex": "dim_model_method",
+          "nodeLineageTag": "e564df4e-e352-4cf6-945f-2549bef8710b",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 99
+          },
+          "nodeIndex": "dim_simulated_hour",
+          "nodeLineageTag": "fd3aa13c-1beb-4c51-a5d5-96926bc5bc2b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 87
+          },
+          "nodeIndex": "dim_simulated_step",
+          "nodeLineageTag": "c3d48464-cba2-495a-85cd-82c67dca4c9a",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 63
+          },
+          "nodeIndex": "executive_kpi_summary",
+          "nodeLineageTag": "68063c6d-4f60-422d-9ebf-23f0d2dd0bd7",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 111
+          },
+          "nodeIndex": "dim_transaction_type",
+          "nodeLineageTag": "f25dce1d-73c2-449f-86c9-6549d835cd6e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1704,
+            "y": 123
+          },
+          "nodeIndex": "fraud_by_transaction_type",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1988,
+            "y": 123
+          },
+          "nodeIndex": "phase4_investigation_capacity",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2606,
+            "y": -25
+          },
+          "nodeIndex": "phase4_model_feature_ablation",
+          "nodeLineageTag": "87287bd1-dbdd-4022-a909-d2c1e19604f3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2840,
+            "y": 25
+          },
+          "nodeIndex": "phase4_selected_model_investigation_examples",
+          "nodeLineageTag": "f786ba79-ed04-4788-9cf0-844eafbe1ba2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2322,
+            "y": -25
+          },
+          "nodeIndex": "phase4_walkforward_fold_metrics",
+          "nodeLineageTag": "1811cc76-45f7-4ae5-8c5b-7f5dfa0f9fc7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3124,
+            "y": 25
+          },
+          "nodeIndex": "split_distribution_comparison",
+          "nodeLineageTag": "cacc90f4-1c68-4231-9c3e-b4e67e92acb6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3408,
+            "y": 51
+          },
+          "nodeIndex": "transaction_amount_distribution",
+          "nodeLineageTag": "2f22c659-120f-4763-8160-bd9dbd19182d",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3692,
+            "y": 27
+          },
+          "nodeIndex": "transaction_trends_by_hour",
+          "nodeLineageTag": "7c260fdd-2ae4-4821-b984-b7877f61715f",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3976,
+            "y": 25
+          },
+          "nodeIndex": "transaction_trends_by_step",
+          "nodeLineageTag": "b90770c1-4428-440e-9639-4a7ed74a227c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4260,
+            "y": 25
+          },
+          "nodeIndex": "transaction_type_overview",
+          "nodeLineageTag": "db79e1a6-76ec-43c2-95f5-541e69991efc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4544,
+            "y": 111
+          },
+          "nodeIndex": "ux_metric_selector",
+          "nodeLineageTag": "9825cdab-ff3d-428f-b687-6bad20ee30d8",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

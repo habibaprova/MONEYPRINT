@@ -1,0 +1,7 @@
+method,display_name,feature_set,is_selected_phase4_model,protocol_version,performance_source
+amount_raw,amount_raw,amount_raw,False,phase4_walkforward_v1,Phase 4 walk-forward validation only
+amount_type_train_percentile,amount_type_train_percentile,amount_type_train_percentile,False,phase4_walkforward_v1,Phase 4 walk-forward validation only
+logistic_amount_type_balanced,logistic_amount_type_balanced,amount_type,False,phase4_walkforward_v1,Phase 4 walk-forward validation only
+logistic_full_context_balanced,logistic_full_context_balanced,full_context,False,phase4_walkforward_v1,Phase 4 walk-forward validation only
+logistic_plus_balance_balanced,Phase 4 Plus-Balance Logistic Regression,plus_balance,True,phase4_walkforward_v1,Phase 4 walk-forward validation only
+logistic_plus_hour_balanced,logistic_plus_hour_balanced,plus_hour,False,phase4_walkforward_v1,Phase 4 walk-forward validation only

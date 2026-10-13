@@ -1,0 +1,56 @@
+{
+  "tooltips": [
+    {
+      "type": "CASH_IN",
+      "transactions": 1399284,
+      "share": 0.21992261049693365,
+      "amount": 236367391912.46014,
+      "fraud": 0,
+      "rate": 0.0
+    },
+    {
+      "type": "CASH_OUT",
+      "transactions": 2237500,
+      "share": 0.35166330851127364,
+      "amount": 394412995224.48975,
+      "fraud": 4116,
+      "rate": 0.0018395530726256983
+    },
+    {
+      "type": "DEBIT",
+      "transactions": 41432,
+      "share": 0.006511782881894566,
+      "amount": 227199221.28,
+      "fraud": 0,
+      "rate": 0.0
+    },
+    {
+      "type": "PAYMENT",
+      "transactions": 2151495,
+      "share": 0.3381460781879163,
+      "amount": 28093371138.370003,
+      "fraud": 0,
+      "rate": 0.0
+    },
+    {
+      "type": "TRANSFER",
+      "transactions": 532909,
+      "share": 0.08375621992198183,
+      "amount": 485291987263.17096,
+      "fraud": 4097,
+      "rate": 0.007687991758442811
+    }
+  ],
+  "added_measures": [
+    "Type Transactions",
+    "Type Share of Population",
+    "Type Synthetic Amount",
+    "Type Fraud Labels",
+    "Type Fraud Label Rate",
+    "Selected Type Label",
+    "Comparison Value",
+    "Comparison Title",
+    "Budget Status"
+  ],
+  "relationships_sha256": "9683dc0e4a26125fb565ccfa8737e334a33bd94235c78e9559c83c5de44026e5"
+}

@@ -1,0 +1,23 @@
+table ux_metric_selector
+	lineageTag: 9825cdab-ff3d-428f-b687-6bad20ee30d8
+
+	column Metric
+		dataType: string
+		lineageTag: dc50a097-1ab7-41c6-9e8a-7c522fbf5c0c
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: Sort
+
+	column Sort
+		dataType: int64
+		isHidden
+		lineageTag: 9f3f3f83-bda3-41cb-8d77-cff4db82bc24
+		summarizeBy: none
+		sourceColumn: Sort
+
+	partition ux_metric_selector = m
+		mode: import
+		source = #table(type table [Metric=text, Sort=Int64.Type], {{"Transaction count", 1}, {"Synthetic amount", 2}, {"Fraud count", 3}})
+
+	annotation PBI_ResultType = Table
+

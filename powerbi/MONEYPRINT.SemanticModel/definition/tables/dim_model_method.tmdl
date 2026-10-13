@@ -1,0 +1,64 @@
+table dim_model_method
+	lineageTag: e564df4e-e352-4cf6-945f-2549bef8710b
+
+	column method
+		dataType: string
+		lineageTag: 77cd3230-0910-4fb8-965b-a3366eab050d
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column display_name
+		dataType: string
+		lineageTag: 847e65cd-2387-4823-9bef-573659642bcf
+		summarizeBy: none
+		sourceColumn: display_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_set
+		dataType: string
+		lineageTag: 3102b091-567c-4c2a-936a-e9515c780143
+		summarizeBy: none
+		sourceColumn: feature_set
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_selected_phase4_model
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6d15b894-7af0-4d34-9c8b-d4ee725d0345
+		summarizeBy: none
+		sourceColumn: is_selected_phase4_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column protocol_version
+		dataType: string
+		lineageTag: b87a1ae0-4c96-4620-88a2-a546e0991edf
+		summarizeBy: none
+		sourceColumn: protocol_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column performance_source
+		dataType: string
+		lineageTag: ae8fb32e-74df-4a60-aa11-a05bf917d97d
+		summarizeBy: none
+		sourceColumn: performance_source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_model_method = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\dim_model_method.csv"),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"method", type text}, {"display_name", type text}, {"feature_set", type text}, {"is_selected_phase4_model", type logical}, {"protocol_version", type text}, {"performance_source", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,6 @@
+evaluation_window,window_type,train_start_step,train_end_step,evaluation_start_step,evaluation_end_step,evidence_status
+fold_1,walk_forward_validation,1,250,251,350,Walk-forward validation; fold-local training
+fold_2,walk_forward_validation,1,350,351,450,Walk-forward validation; fold-local training
+fold_3,walk_forward_validation,1,450,451,540,Walk-forward validation; fold-local training
+fold_4,walk_forward_validation,1,540,541,631,Walk-forward validation; fold-local training
+reserved_final_exploratory,previously_accessed_later_period,1,631,632,743,"Exploratory, previously accessed; not pristine"

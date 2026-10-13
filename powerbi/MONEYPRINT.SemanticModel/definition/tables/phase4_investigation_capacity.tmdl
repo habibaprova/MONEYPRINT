@@ -1,0 +1,223 @@
+table phase4_investigation_capacity
+	lineageTag: e36e8466-fd0c-4f42-9947-ebf949f5e509
+
+	column protocol_version
+		dataType: string
+		lineageTag: bb935ba3-d947-47a1-81bd-2c9fa0159857
+		summarizeBy: none
+		sourceColumn: protocol_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_id
+		dataType: string
+		lineageTag: 1e78036f-64cc-419d-b571-04eee07436c4
+		summarizeBy: none
+		sourceColumn: model_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column method
+		dataType: string
+		lineageTag: 26a515ee-5fb5-407c-ab33-e5360af05b9c
+		summarizeBy: none
+		sourceColumn: method
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_display_name
+		dataType: string
+		lineageTag: a40f4842-6700-4778-960b-a0a56f751760
+		summarizeBy: none
+		sourceColumn: model_display_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_window
+		dataType: string
+		lineageTag: 1798ff50-8588-4c7c-a22d-84ca4136905d
+		summarizeBy: none
+		sourceColumn: evaluation_window
+
+		annotation SummarizationSetBy = Automatic
+
+	column evaluation_status
+		dataType: string
+		lineageTag: b32bdcc1-66fa-43ae-ab06-d502cf8778ae
+		summarizeBy: none
+		sourceColumn: evaluation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column population
+		dataType: string
+		lineageTag: 581bccd2-a9b4-4687-8569-4c41d6417f9f
+		summarizeBy: none
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bbae509-fd53-4fba-8686-dcbcd0241707
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 01c866b3-f7d1-4d8c-9bce-0b27f495a8cd
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_prevalence
+		dataType: double
+		lineageTag: 1da162a5-7884-45df-8eb0-ae281dfbaf72
+		summarizeBy: sum
+		sourceColumn: fraud_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column capacity_measure
+		dataType: string
+		lineageTag: 361ce339-6c72-4396-a9c6-68c871d70f34
+		summarizeBy: none
+		sourceColumn: capacity_measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_count
+		dataType: int64
+		formatString: 0
+		lineageTag: b24e5fff-dab3-4f72-85f6-8e7871aa47b2
+		summarizeBy: sum
+		sourceColumn: alert_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column true_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: c2b56964-c052-41ca-baa1-55a9619c9d2f
+		summarizeBy: sum
+		sourceColumn: true_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: 7199ebf6-bc4a-44b4-b56a-041ef2ecbdee
+		summarizeBy: sum
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = Automatic
+
+	column precision
+		dataType: double
+		lineageTag: 1c02268f-2363-4d67-9651-a456ee94c6b1
+		summarizeBy: sum
+		sourceColumn: precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall
+		dataType: double
+		lineageTag: 8a52759a-aa89-4a3a-9793-b9308887e15e
+		summarizeBy: sum
+		sourceColumn: recall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pr_auc_average_precision
+		dataType: double
+		lineageTag: bded4c4b-6914-4c21-8170-7932ba0c23a5
+		summarizeBy: sum
+		sourceColumn: pr_auc_average_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roc_auc
+		dataType: double
+		lineageTag: 3d8dcfd3-c23f-4b61-ae3e-f75d1c9be54d
+		summarizeBy: sum
+		sourceColumn: roc_auc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_provenance
+		dataType: string
+		lineageTag: ca9d5da8-952f-477d-9a05-4f0d7dea0d87
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Label'
+		dataType: string
+		lineageTag: 086c44ec-ac10-492a-9281-c3d45130bc25
+		summarizeBy: none
+		sourceColumn: budget_label
+		sortByColumn: capacity_measure
+
+	column 'Window Label'
+		dataType: string
+		lineageTag: 977c1b8a-9c5a-4394-b506-e920bda09cf3
+		summarizeBy: none
+		sourceColumn: window_label
+		sortByColumn: evaluation_window
+
+	partition phase4_investigation_capacity = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\phase4_investigation_capacity.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"protocol_version", type text},
+				        {"model_id", type text},
+				        {"method", type text},
+				        {"model_display_name", type text},
+				        {"evaluation_window", type text},
+				        {"evaluation_status", type text},
+				        {"population", type text},
+				        {"transaction_count", Int64.Type},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_prevalence", type number},
+				        {"capacity_measure", type text},
+				        {"alert_count", Int64.Type},
+				        {"true_positives", Int64.Type},
+				        {"false_positives", Int64.Type},
+				        {"precision", type number},
+				        {"recall", type number},
+				        {"pr_auc_average_precision", type number},
+				        {"roc_auc", type number},
+				        {"source_provenance", type text}
+				    }),
+				    WithVisualLabel = Table.AddColumn(Typed, "budget_label", each if [capacity_measure] = "top_100" then "Top 100" else if [capacity_measure] = "top_500" then "Top 500" else "0.5%", type text),
+				    WithWindowLabel = Table.AddColumn(WithVisualLabel, "window_label", each if Text.StartsWith([evaluation_window], "fold_") then "Fold " & Text.End([evaluation_window], 1) else "Exploratory 632–743", type text)
+				in
+				    WithWindowLabel
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

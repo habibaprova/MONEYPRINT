@@ -1,0 +1,34 @@
+.venv/
+data/raw/
+data/processed/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.tmp
+*.temp
+*.log
+*.bak
+Thumbs.db
+.DS_Store
+
+# Local secrets and Power BI caches / development copies
+.env
+.env.*
+!.env.example
+**/.pbi/
+powerbi/backups/
+powerbi/visual_qa/
+powerbi/interactivity/
+powerbi/MONEYPRINT_UX.Report/
+powerbi/MONEYPRINT_UX.SemanticModel/
+powerbi/MONEYPRINT_UX.pbip
+powerbi/MONEYPRINT_UX.pbix
+
+# Publish only the reviewed report images; retain desktop QA captures locally.
+powerbi/screenshots/*
+!powerbi/screenshots/overview.png
+!powerbi/screenshots/investigation.png
+!powerbi/screenshots/reliability.png

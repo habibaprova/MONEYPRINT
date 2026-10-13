@@ -1,0 +1,90 @@
+{
+  "files": {
+    "executive_kpi_summary.csv": {
+      "rows": 4,
+      "sha256": "11430f63d1a51b5de4e615eb36d68431492b32759f6d3508ebed5e882843e634"
+    },
+    "transaction_type_overview.csv": {
+      "rows": 5,
+      "sha256": "d1ddd30ce7a2d864c43c25c0e02b0d4b01f10c00308ee307075a2ddc2a57592a"
+    },
+    "transaction_amount_distribution.csv": {
+      "rows": 31,
+      "sha256": "275787abddf8ce1ce20e73d31cf755b249c9b04b6fb5b6cbb7a54dd8599dc5d1"
+    },
+    "transaction_trends_by_step.csv": {
+      "rows": 2729,
+      "sha256": "8fc10d14680395295d34806b3dd622f79f88b837c8aa096441365a5bedb86b20"
+    },
+    "transaction_trends_by_hour.csv": {
+      "rows": 120,
+      "sha256": "364072951e1661ec72cc9d2f416aab4a0c06de17de5721bceb5c903e02affef8"
+    },
+    "fraud_by_transaction_type.csv": {
+      "rows": 5,
+      "sha256": "41d2d09f83c929c632b981d87bcaa39a1d51bb329697b109b1ac8fad6663c8f0"
+    },
+    "phase4_walkforward_fold_metrics.csv": {
+      "rows": 48,
+      "sha256": "20c2865889359c5b6b8023fa7f227891df44760d1e572031b24b45fb9d31dcce"
+    },
+    "phase4_model_feature_ablation.csv": {
+      "rows": 16,
+      "sha256": "839f925c1ea249a547d1a53342a4b37a130a1b19e13455d09fcba89419db0559"
+    },
+    "phase4_investigation_capacity.csv": {
+      "rows": 15,
+      "sha256": "efb3fea59bdf15b161420448002b30fc1b964d66862aff9687d6de97248d6187"
+    },
+    "phase4_selected_model_investigation_examples.csv": {
+      "rows": 500,
+      "sha256": "0f9d02269e5d155278570e6da58b3c4994096d8a718f34a9704c8ec756e76cea"
+    },
+    "split_distribution_comparison.csv": {
+      "rows": 36,
+      "sha256": "b27861fd40c1260fa05588c99f9fdeb610915594924670bdba3de103518c67bd"
+    },
+    "dim_transaction_type.csv": {
+      "rows": 5,
+      "sha256": "edcfa552b881d40808d7dd2e402998be614f60f9de7fb471ce998e2faeafcf09"
+    },
+    "dim_simulated_hour.csv": {
+      "rows": 24,
+      "sha256": "66f2c8637dba42f320498d91296147af7ab100f58fd093abea9a9b98cb0648e1"
+    },
+    "dim_simulated_step.csv": {
+      "rows": 743,
+      "sha256": "52cfbcf6cab9e4a3d6e1e15812c9e8a6cac91cb71a2cfefd1160d33a3e6430ee"
+    },
+    "dim_evaluation_window.csv": {
+      "rows": 5,
+      "sha256": "e94342d9757f1e6c1d8cd46ed5f93f0cfd71ebfa133a3fc70d0acbc90bcdede6"
+    },
+    "dim_model_method.csv": {
+      "rows": 6,
+      "sha256": "c80db82ed078b6b5ac341bc6564d0227778bc4e2fab7863bc475babbdd513365"
+    }
+  },
+  "capacity_top500": {
+    "protocol_version": "phase4_walkforward_v1",
+    "model_id": "phase4_walkforward_v1_plus_balance",
+    "method": "logistic_plus_balance_balanced",
+    "model_display_name": "Phase 4 Plus-Balance Logistic Regression",
+    "evaluation_window": "reserved_final_exploratory",
+    "evaluation_status": "previously_accessed_exploratory_later_period",
+    "population": "TRANSFER/CASH_OUT",
+    "transaction_count": "37979",
+    "fraud_count": "1252",
+    "fraud_prevalence": "0.03296558624503015",
+    "capacity_measure": "top_500",
+    "alert_count": "500",
+    "true_positives": "456",
+    "false_positives": "44",
+    "precision": "0.912",
+    "recall": "0.36421725239616615",
+    "pr_auc_average_precision": "0.8731416106441414",
+    "roc_auc": "0.9963952249874755",
+    "source_provenance": "saved Phase 4 v1 JSON metrics"
+  },
+  "checks_passed": true
+}

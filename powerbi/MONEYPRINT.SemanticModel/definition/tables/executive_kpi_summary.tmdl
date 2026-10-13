@@ -1,0 +1,162 @@
+table executive_kpi_summary
+	lineageTag: 68063c6d-4f60-422d-9ebf-23f0d2dd0bd7
+
+	measure 'Total Transactions' = CALCULATE(MAX(executive_kpi_summary[metric_value]), executive_kpi_summary[metric_key] = "total_transactions")
+		formatString: #,0
+		lineageTag: 5f85e0be-9125-43ed-aaff-36531b760c85
+
+	measure 'Fraud Labels' = CALCULATE(MAX(executive_kpi_summary[metric_value]), executive_kpi_summary[metric_key] = "fraud_labels")
+		formatString: #,0
+		lineageTag: b054f97f-28e9-4730-b2d6-523c41d4b934
+
+	measure 'Fraud Label Prevalence' = CALCULATE(MAX(executive_kpi_summary[metric_value]), executive_kpi_summary[metric_key] = "fraud_label_prevalence")
+		formatString: 0.0000%
+		lineageTag: 98252ce6-5a2e-4aac-a1b3-bcdb4c69f795
+
+	measure 'Total Synthetic Amount' = CALCULATE(MAX(executive_kpi_summary[metric_value]), executive_kpi_summary[metric_key] = "total_synthetic_amount")
+		formatString: #,0.00
+		lineageTag: 7ecfa3f3-0d8f-48dc-84cd-8fde572be2d6
+
+	measure 'Validation ROC-AUC' = CALCULATE(AVERAGE(phase4_walkforward_fold_metrics[roc_auc]), phase4_walkforward_fold_metrics[is_selected_phase4_model] = TRUE(), phase4_walkforward_fold_metrics[split] = "validation", phase4_walkforward_fold_metrics[population] = "transfer_cash_out")
+		formatString: 0.00%
+		lineageTag: d5a51366-0388-4299-a31b-bbd7db9359ed
+
+	measure 'Validation PR-AUC' = CALCULATE(AVERAGE(phase4_walkforward_fold_metrics[pr_auc_average_precision]), phase4_walkforward_fold_metrics[is_selected_phase4_model] = TRUE(), phase4_walkforward_fold_metrics[split] = "validation", phase4_walkforward_fold_metrics[population] = "transfer_cash_out")
+		formatString: 0.00%
+		lineageTag: 8151d6dc-a8cc-4782-828e-980c385ded4a
+
+	measure 'Validation Prevalence' = CALCULATE(AVERAGE(phase4_walkforward_fold_metrics[fraud_prevalence]), phase4_walkforward_fold_metrics[is_selected_phase4_model] = TRUE(), phase4_walkforward_fold_metrics[split] = "validation", phase4_walkforward_fold_metrics[population] = "transfer_cash_out")
+		formatString: 0.00%
+		lineageTag: d591eb45-30d0-486f-ae09-4e95e1b047d6
+
+	measure 'Ablation ROC-AUC' = MAX(phase4_model_feature_ablation[mean_fold_validation_roc_auc])
+		formatString: 0.00%
+		lineageTag: dd55d487-6a80-40ec-b6af-fbe8af272b0c
+
+	measure 'Ablation PR-AUC' = MAX(phase4_model_feature_ablation[mean_fold_validation_pr_auc])
+		formatString: 0.00%
+		lineageTag: 6238ef56-9185-46b6-8672-947439ed544b
+
+	measure 'Capacity Precision' = IF(ISFILTERED(phase4_investigation_capacity[Budget Label]) && NOT HASONEVALUE(phase4_investigation_capacity[Budget Label]), BLANK(), VAR W = SELECTEDVALUE(phase4_investigation_capacity[evaluation_window], "reserved_final_exploratory") VAR K = SELECTEDVALUE(phase4_investigation_capacity[capacity_measure], "top_500") RETURN CALCULATE(MAX(phase4_investigation_capacity[precision]), phase4_investigation_capacity[evaluation_window] = W, phase4_investigation_capacity[capacity_measure] = K, phase4_investigation_capacity[model_id] = "phase4_walkforward_v1_plus_balance", phase4_investigation_capacity[population] = "TRANSFER/CASH_OUT"))
+		formatString: 0.00%
+		lineageTag: d76303a1-488b-48b7-95ab-e3cee5c3b471
+
+	measure 'Capacity Recall' = IF(ISFILTERED(phase4_investigation_capacity[Budget Label]) && NOT HASONEVALUE(phase4_investigation_capacity[Budget Label]), BLANK(), VAR W = SELECTEDVALUE(phase4_investigation_capacity[evaluation_window], "reserved_final_exploratory") VAR K = SELECTEDVALUE(phase4_investigation_capacity[capacity_measure], "top_500") RETURN CALCULATE(MAX(phase4_investigation_capacity[recall]), phase4_investigation_capacity[evaluation_window] = W, phase4_investigation_capacity[capacity_measure] = K, phase4_investigation_capacity[model_id] = "phase4_walkforward_v1_plus_balance", phase4_investigation_capacity[population] = "TRANSFER/CASH_OUT"))
+		formatString: 0.00%
+		lineageTag: fdbdc95f-5aae-43df-ae88-6f40ec483f5b
+
+	measure 'Capacity False Positives' = IF(ISFILTERED(phase4_investigation_capacity[Budget Label]) && NOT HASONEVALUE(phase4_investigation_capacity[Budget Label]), BLANK(), VAR W = SELECTEDVALUE(phase4_investigation_capacity[evaluation_window], "reserved_final_exploratory") VAR K = SELECTEDVALUE(phase4_investigation_capacity[capacity_measure], "top_500") RETURN CALCULATE(MAX(phase4_investigation_capacity[false_positives]), phase4_investigation_capacity[evaluation_window] = W, phase4_investigation_capacity[capacity_measure] = K, phase4_investigation_capacity[model_id] = "phase4_walkforward_v1_plus_balance", phase4_investigation_capacity[population] = "TRANSFER/CASH_OUT"))
+		formatString: #,0
+		lineageTag: 7c30cc6a-b154-490f-ad61-45f9922cf18a
+
+	measure 'Selected Case Context' = IF(HASONEVALUE(phase4_selected_model_investigation_examples[case_rank]), "Step " & SELECTEDVALUE(phase4_selected_model_investigation_examples[split_step]) & " | " & SELECTEDVALUE(phase4_selected_model_investigation_examples[transaction_type]) & UNICHAR(10) & "Amount: " & FORMAT(SELECTEDVALUE(phase4_selected_model_investigation_examples[synthetic_amount]), "#,0.00") & UNICHAR(10) & "Pre-balance: " & FORMAT(SELECTEDVALUE(phase4_selected_model_investigation_examples[sender_pre_balance]), "#,0.00") & UNICHAR(10) & "Amount / pre-balance: " & IF(ISBLANK(SELECTEDVALUE(phase4_selected_model_investigation_examples[amount_to_sender_pre_balance])), "undefined (zero balance)", FORMAT(SELECTEDVALUE(phase4_selected_model_investigation_examples[amount_to_sender_pre_balance]), "0.000")) & UNICHAR(10) & "Score: " & FORMAT(SELECTEDVALUE(phase4_selected_model_investigation_examples[risk_score]), "0.0000"), "Select one row in the ranked queue")
+		lineageTag: c3209d81-9d00-42ba-a358-8471c5521dc8
+
+	measure 'Selected Contributions' = IF(HASONEVALUE(phase4_selected_model_investigation_examples[case_rank]), COALESCE(SELECTEDVALUE(phase4_selected_model_investigation_examples[contribution_display]), "No saved contributions available"), "Select one case. Contributions are associational, not causal.")
+		lineageTag: 6a7d6e4e-d727-4453-a438-4b80b10cdf7d
+
+	measure 'Historical Split Share' = CALCULATE(MAX(split_distribution_comparison[transaction_share]), split_distribution_comparison[transaction_type] = "ALL")
+		formatString: 0.0%
+		lineageTag: 24b000f5-5fc1-4c21-bbc0-73b70e2d9c94
+
+	measure 'Transactions Display' = FORMAT([Total Transactions], "#,0")
+		lineageTag: bbbeead4-4a03-4799-9781-ad794aa1eaa8
+
+	measure 'Amount Display' = FORMAT([Total Synthetic Amount] / 1000000000000, "0.000") & " T"
+		lineageTag: 327ed8c2-dfb2-4f7c-8dff-74f6029a77c9
+
+	measure 'Type Transactions' = SUM(transaction_type_overview[transaction_count])
+		formatString: #,0
+		lineageTag: 1e817b82-1a83-4d88-aa39-167012b2c5ff
+
+	measure 'Type Share of Population' = DIVIDE([Type Transactions], CALCULATE(SUM(transaction_type_overview[transaction_count]), REMOVEFILTERS(dim_transaction_type), REMOVEFILTERS(transaction_type_overview)))
+		formatString: 0.00%
+		lineageTag: 8c78c129-c5e1-432f-ab08-29d6cf70dded
+
+	measure 'Type Synthetic Amount' = SUM(transaction_type_overview[total_synthetic_amount])
+		formatString: #,0.00
+		lineageTag: c18286fe-621c-4c5d-880d-080f0cc2834e
+
+	measure 'Type Fraud Labels' = SUM(transaction_type_overview[fraud_count])
+		formatString: #,0
+		lineageTag: 420232a5-40df-419c-af15-f90262428d6c
+
+	measure 'Type Fraud Label Rate' = DIVIDE([Type Fraud Labels], [Type Transactions])
+		formatString: 0.0000%
+		lineageTag: 24a977a2-d714-44be-9a5a-2e20ee903ce2
+
+	measure 'Selected Type Label' = VAR N = COUNTROWS(VALUES(dim_transaction_type[transaction_type])) VAR AllN = CALCULATE(COUNTROWS(VALUES(dim_transaction_type[transaction_type])), REMOVEFILTERS(dim_transaction_type)) RETURN SWITCH(TRUE(), N = AllN, "Selected type: All", N = 1, "Selected type: " & SELECTEDVALUE(dim_transaction_type[transaction_type]), N = 0, "Selected types: None", "Selected types: Multiple")
+		lineageTag: f73ae213-7d06-4198-95ab-58f6825949ee
+
+	measure 'Comparison Value' = SWITCH(SELECTEDVALUE(ux_metric_selector[Metric], "Transaction count"), "Synthetic amount", [Type Synthetic Amount] / 1000000000, "Fraud count", [Type Fraud Labels], [Type Transactions])
+		formatString: #,0.##
+		lineageTag: 7e30f7c7-6447-40cf-ad59-97d9b24bff56
+
+	measure 'Comparison Title' = SWITCH(SELECTEDVALUE(ux_metric_selector[Metric], "Transaction count"), "Synthetic amount", "Synthetic Amount by Type (billions of units)", "Fraud count", "Fraud Labels by Type", "Transactions by Type")
+		lineageTag: 39ed562d-2af8-4500-b7dc-9f24bb440dc8
+
+	measure 'Budget Status' = "Budget: " & IF(SELECTEDVALUE(phase4_investigation_capacity[Budget Label]) = "0.5%", "Alert rate 0.5%", SELECTEDVALUE(phase4_investigation_capacity[Budget Label], "Top 500 (default)"))
+		lineageTag: fba960df-689b-4a9f-8455-3552a37fccb1
+
+	column metric_key
+		dataType: string
+		lineageTag: 171052a1-ecc5-46b6-afd1-f33ff3ff5bc5
+		summarizeBy: none
+		sourceColumn: metric_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_label
+		dataType: string
+		lineageTag: ac363f66-a507-4672-8b85-6b124449aeb2
+		summarizeBy: none
+		sourceColumn: metric_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_value
+		dataType: double
+		lineageTag: 24fe590b-67a4-45e7-a23d-0c53dbf93bad
+		summarizeBy: sum
+		sourceColumn: metric_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit
+		dataType: string
+		lineageTag: 47b237e1-2366-4689-9ebd-5377a2c22aff
+		summarizeBy: none
+		sourceColumn: unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_scope
+		dataType: string
+		lineageTag: 22dc6f4c-076b-40df-a374-e28bf2623087
+		summarizeBy: none
+		sourceColumn: data_scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_provenance
+		dataType: string
+		lineageTag: d6395710-4c97-42a0-8771-6bbf86a93e6d
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition executive_kpi_summary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\executive_kpi_summary.csv"),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"metric_key", type text}, {"metric_label", type text}, {"metric_value", type number}, {"unit", type text}, {"data_scope", type text}, {"source_provenance", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

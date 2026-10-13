@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "source": "Power BI Desktop native PDF export of delivered MONEYPRINT.pbix at 100 percent report zoom",
+  "native_export_sha256": "90206f60f697963df153b2bb025a6c260020f1634026661a24aa5b2781d79e98",
+  "public_image_count": 3,
+  "public_images": {
+    "overview.png": {
+      "sha256": "7b6b95d8a6503627459e767dd6a0d38323ab915eb3a8431304b0a2c63cf08967",
+      "dimensions": [
+        1600,
+        926
+      ]
+    },
+    "investigation.png": {
+      "sha256": "5298062dd32da4380e4adc596f25ae50202045c620b8e627f465d7ae5319e96a",
+      "dimensions": [
+        1600,
+        926
+      ]
+    },
+    "reliability.png": {
+      "sha256": "35c305d6b60efee22372b2dc2afeedf6a528496c375afb81833b85210f8f282a",
+      "dimensions": [
+        1600,
+        926
+      ]
+    }
+  },
+  "all_public_images_visually_reviewed": true,
+  "cursor_overlays_present": false,
+  "desktop_notifications_present": false,
+  "report_values_or_visuals_retouched": false,
+  "investigation_state": "Top 500, exploratory capacity, no selected case",
+  "superseded_captures_removed_from_current_tree": 26,
+  "original_captures_retained_in_git_ignored_local_backup": true,
+  "pbix_sha256": "3a3284e79055001ec58e863f870ca5e13d65ed0b22569c963ceec021d8ce5bc6",
+  "pbix_unchanged": true,
+  "protected_file_count": 29,
+  "protected_hashes_unchanged": true
+}

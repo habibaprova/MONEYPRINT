@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a247c16910f06e0dae90",
+  "displayName": "Executive Overview",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F0EDCF'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "volume",
+      "target": "selected_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "selected_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "fraud",
+      "target": "selected_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "type_filter",
+      "target": "selected_type",
+      "type": "DataFilter"
+    }
+  ]
+}

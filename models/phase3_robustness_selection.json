@@ -1,0 +1,72 @@
+{
+  "selected_feature_set": "full_context",
+  "selection_population": "TRANSFER and CASH_OUT only",
+  "selection_metric": "validation PR-AUC (average precision)",
+  "validation_pr_auc": 0.4743952331627032,
+  "selected_investigation_budget": 500,
+  "budget_selection_metric": "validation F1 at K; ties choose smaller K",
+  "validation_precision_at_budget": 0.562,
+  "validation_recall_at_budget": 0.5017857142857143,
+  "validation_false_positives_at_budget": 219,
+  "test_labels_used_for_selection": false,
+  "frozen_before_alternative_test_load": true,
+  "split_rule": "nearest whole-step cumulative transaction shares to 70% and 85%",
+  "boundaries": {
+    "train_end_step": 323,
+    "validation_end_step": 377,
+    "train_end_cumulative_transactions": 4463587,
+    "validation_end_cumulative_transactions": 5406876,
+    "total_transactions": 6362620,
+    "train_cumulative_share": 0.7015328591052113,
+    "validation_end_cumulative_share": 0.8497876660872408,
+    "train_target_fraction": 0.7,
+    "validation_end_target_fraction": 0.85,
+    "train_boundary_absolute_row_error": 9753.0,
+    "validation_boundary_absolute_row_error": 1351.0
+  },
+  "feature_sets": {
+    "amount_type": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type"
+      ]
+    },
+    "plus_hour": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "plus_balance": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "full_context": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "recipient_prior_transaction_count",
+        "recipient_prior_received_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "selected_method": "logistic_full_context_unweighted",
+  "selection_population": "TRANSFER and CASH_OUT only",
+  "selection_metric": "validation PR-AUC (average precision)",
+  "validation_eligible_pr_auc": 0.9140202378032647,
+  "candidate_budgets": [
+    100,
+    500
+  ],
+  "selected_budget": 500,
+  "budget_selection_metric": "validation F1 at K; ties choose smaller K",
+  "validation_precision_at_selected_budget": 0.99,
+  "validation_recall_at_selected_budget": 0.4194915254237288,
+  "validation_false_positives_at_selected_budget": 5,
+  "test_labels_used_for_selection": false,
+  "frozen_before_test": true,
+  "risk_band_thresholds": {
+    "moderate": 3.387714605196379e-05,
+    "high": 0.3755722641944885,
+    "very_high": 0.9968135952949524
+  },
+  "risk_band_threshold_source": "validation TRANSFER/CASH_OUT scores only",
+  "feature_sets": {
+    "amount_type": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type"
+      ]
+    },
+    "plus_hour": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "plus_balance": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "full_context": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "recipient_prior_transaction_count",
+        "recipient_prior_received_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    }
+  },
+  "split_steps": {
+    "train": 520,
+    "validation": 111,
+    "test": 112
+  }
+}

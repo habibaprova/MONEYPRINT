@@ -1,0 +1,6 @@
+transaction_type,type_sort
+CASH_IN,1
+CASH_OUT,2
+DEBIT,3
+PAYMENT,4
+TRANSFER,5

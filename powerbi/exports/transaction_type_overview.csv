@@ -1,0 +1,6 @@
+transaction_type,transaction_count,total_synthetic_amount,mean_synthetic_amount,median_synthetic_amount,p95_synthetic_amount,fraud_count,fraud_label_prevalence,data_scope,source_provenance
+CASH_IN,1399284,236367391912.46014,168920.24200409648,143427.71000000002,412005.1325,0,0.0,full_dataset_population,data/processed/transaction_features.parquet
+CASH_OUT,2237500,394412995224.48975,176273.96434614068,147072.185,427877.16349999973,4116,0.0018395530726256983,full_dataset_population,data/processed/transaction_features.parquet
+DEBIT,41432,227199221.28,5483.6653137671365,3048.99,14795.3545,0,0.0,full_dataset_population,data/processed/transaction_features.parquet
+PAYMENT,2151495,28093371138.370003,13057.604660187453,9482.19,37835.658999999934,0,0.0,full_dataset_population,data/processed/transaction_features.parquet
+TRANSFER,532909,485291987263.17096,910647.0096454947,486308.39,2674586.939999994,4097,0.007687991758442811,full_dataset_population,data/processed/transaction_features.parquet

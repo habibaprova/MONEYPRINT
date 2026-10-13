@@ -1,0 +1,45 @@
+let
+    Source = Csv.Document(
+        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\phase4_walkforward_fold_metrics.csv"),
+        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+    ),
+    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+        {"fold", type text},
+        {"feature_set", type text},
+        {"method", type text},
+        {"split", type text},
+        {"population", type text},
+        {"transaction_count", Int64.Type},
+        {"fraud_count", Int64.Type},
+        {"fraud_prevalence", type number},
+        {"pr_auc_average_precision", type number},
+        {"roc_auc", type number},
+        {"alerts_at_100", Int64.Type},
+        {"true_positives_at_100", Int64.Type},
+        {"false_positives_at_100", Int64.Type},
+        {"precision_at_100", type number},
+        {"recall_at_100", type number},
+        {"f1_at_100", type number},
+        {"alerts_at_500", Int64.Type},
+        {"true_positives_at_500", Int64.Type},
+        {"false_positives_at_500", Int64.Type},
+        {"precision_at_500", type number},
+        {"recall_at_500", type number},
+        {"f1_at_500", type number},
+        {"alert_rate_target", type number},
+        {"alerts_at_fixed_rate", Int64.Type},
+        {"realized_alert_rate", type number},
+        {"true_positives_at_fixed_rate", Int64.Type},
+        {"false_positives_at_fixed_rate", Int64.Type},
+        {"precision_at_fixed_rate", type number},
+        {"recall_at_fixed_rate", type number},
+        {"protocol_version", type text},
+        {"model_id", type text},
+        {"feature_configuration", type text},
+        {"is_selected_phase4_model", type logical},
+        {"result_status", type text},
+        {"source_provenance", type text}
+    })
+in
+    Typed

@@ -1,0 +1,46 @@
+{
+  "pbix": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\powerbi\\MONEYPRINT.pbix",
+  "bytes": 460982,
+  "sha256": "3a3284e79055001ec58e863f870ca5e13d65ed0b22569c963ceec021d8ce5bc6",
+  "pages": [
+    "Executive Overview",
+    "Investigation Desk",
+    "Behind the Score"
+  ],
+  "canvas": [
+    1280,
+    720
+  ],
+  "visual_count": 54,
+  "protected_files": 29,
+  "protected_hashes_unchanged": true,
+  "relationships_unchanged": true,
+  "reliability_content_unchanged": true,
+  "source_csv_count": 16,
+  "native_tooltips": true,
+  "switch_method": "disconnected three-row metadata selector + numeric SWITCH and dynamic format string",
+  "added_measures": [
+    "Type Transactions",
+    "Type Share of Population",
+    "Type Synthetic Amount",
+    "Type Fraud Labels",
+    "Type Fraud Label Rate",
+    "Selected Type Label",
+    "Comparison Value",
+    "Comparison Title",
+    "Budget Status"
+  ],
+  "desktop_pbix_reopen_verified": true,
+  "limitations": [
+    "Transient mouse-down pressed appearance not captured; native state formatting checked in Desktop."
+  ],
+  "desktop_checks_passed": [
+    "All five native type tooltips reconciled to population summary",
+    "All three metrics, dynamic title and number formats",
+    "All/single/multiple selection indicators and slicer reset",
+    "Three navigation destinations, rose hover and persistent current page",
+    "Top 100/500 single selection; Fold 1/2; default reset; queue unaffected",
+    "Rank 8 context and contributions, repeated in reopened PBIX",
+    "Reliability Fold 3 selection and clearing; all pages reopened"
+  ]
+}

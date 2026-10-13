@@ -1,0 +1,66 @@
+table fraud_by_transaction_type
+	lineageTag: 205dc3a2-d54b-4c80-8bf0-e9e17d1897be
+
+	column transaction_type
+		dataType: string
+		lineageTag: 92b464a9-07fc-4649-bcb6-ab942cbdb3c9
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+	column transaction_count
+		dataType: int64
+		lineageTag: 90f67295-71e0-48e3-99c0-ad083a42b8b2
+		summarizeBy: none
+		sourceColumn: transaction_count
+
+	column fraud_count
+		dataType: int64
+		lineageTag: c665fac4-fced-4065-8cea-7ff73485fe10
+		summarizeBy: none
+		sourceColumn: fraud_count
+
+	column fraud_label_prevalence
+		dataType: double
+		lineageTag: dc5e60cd-ae85-444f-a73c-05a1ae208da3
+		summarizeBy: none
+		sourceColumn: fraud_label_prevalence
+
+	column data_scope
+		dataType: string
+		lineageTag: 56f0d302-4252-4a45-a54b-24daa0b2e8f0
+		summarizeBy: none
+		sourceColumn: data_scope
+
+	column source_provenance
+		dataType: string
+		lineageTag: 62f32679-c303-451f-b1f0-54cdad6b9603
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+	column label_definition
+		dataType: string
+		lineageTag: 03779a3b-64f8-4e91-ae01-87fa21384cf6
+		summarizeBy: none
+		sourceColumn: label_definition
+
+	partition fraud_by_transaction_type = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\fraud_by_transaction_type.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"transaction_type", type text},
+				        {"transaction_count", Int64.Type},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_label_prevalence", type number},
+				        {"data_scope", type text},
+				        {"source_provenance", type text},
+				        {"label_definition", type text}
+				    })
+				in
+				    Typed
+

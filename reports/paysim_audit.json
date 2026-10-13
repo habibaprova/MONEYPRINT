@@ -1,0 +1,124 @@
+{
+  "dataset": "PS_20174392719_1491204439457_log.csv",
+  "total_records": 6362620,
+  "columns": [
+    {
+      "name": "step",
+      "type": "BIGINT"
+    },
+    {
+      "name": "type",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "amount",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "nameOrig",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "oldbalanceOrg",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "newbalanceOrig",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "nameDest",
+      "type": "VARCHAR"
+    },
+    {
+      "name": "oldbalanceDest",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "newbalanceDest",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "isFraud",
+      "type": "BIGINT"
+    },
+    {
+      "name": "isFlaggedFraud",
+      "type": "BIGINT"
+    }
+  ],
+  "missing_values": {
+    "step": 0,
+    "type": 0,
+    "amount": 0,
+    "nameOrig": 0,
+    "oldbalanceOrg": 0,
+    "newbalanceOrig": 0,
+    "nameDest": 0,
+    "oldbalanceDest": 0,
+    "newbalanceDest": 0,
+    "isFraud": 0,
+    "isFlaggedFraud": 0
+  },
+  "duplicate_rows": 0,
+  "transaction_types": {
+    "CASH_IN": 1399284,
+    "CASH_OUT": 2237500,
+    "DEBIT": 41432,
+    "PAYMENT": 2151495,
+    "TRANSFER": 532909
+  },
+  "fraud": {
+    "fraud_records": 8213,
+    "non_fraud_records": 6354407,
+    "fraud_rate": 0.001290820448180152,
+    "flagged_fraud_records": 16,
+    "flagged_fraud_rate": 2.51468734577894e-06,
+    "by_transaction_type": {
+      "CASH_IN": {
+        "fraud_records": 0,
+        "total_records": 1399284,
+        "fraud_rate": 0.0
+      },
+      "CASH_OUT": {
+        "fraud_records": 4116,
+        "total_records": 2237500,
+        "fraud_rate": 0.0018395530726256983
+      },
+      "DEBIT": {
+        "fraud_records": 0,
+        "total_records": 41432,
+        "fraud_rate": 0.0
+      },
+      "PAYMENT": {
+        "fraud_records": 0,
+        "total_records": 2151495,
+        "fraud_rate": 0.0
+      },
+      "TRANSFER": {
+        "fraud_records": 4097,
+        "total_records": 532909,
+        "fraud_rate": 0.007687991758442811
+      }
+    }
+  },
+  "time_step": {
+    "min": 1,
+    "max": 743
+  },
+  "repeated_accounts": {
+    "sender_accounts_repeated": 9298,
+    "sender_rows_in_repeated_accounts": 18611,
+    "receiver_accounts_repeated": 459658,
+    "receiver_rows_in_repeated_accounts": 4099916
+  },
+  "balance_consistency": {
+    "tolerance": 0.01,
+    "sender_checked": 6362620,
+    "sender_inconsistent": 3777817,
+    "sender_inconsistent_rate": 0.5937517877855348,
+    "receiver_checked": 1932193,
+    "receiver_inconsistent": 1518834,
+    "receiver_inconsistent_rate": 0.7860674373626237
+  }
+}

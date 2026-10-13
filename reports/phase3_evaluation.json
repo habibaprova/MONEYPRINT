@@ -1,0 +1,2593 @@
+{
+  "dataset": "transaction_features.parquet",
+  "evaluation_scope": {
+    "primary_population": "all transactions",
+    "secondary_population": "TRANSFER and CASH_OUT only",
+    "eligible_types": [
+      "TRANSFER",
+      "CASH_OUT"
+    ],
+    "pr_auc_definition": "scikit-learn average_precision_score",
+    "final_corrected_model_test_passes": 1,
+    "preliminary_discarded_saga_test_passes": 1,
+    "preliminary_test_metrics_used_for_any_selection": false,
+    "preliminary_run_discard_reason": "all initial SAGA models reached max_iter without convergence; replacement solver chosen using train-only solver diagnostics",
+    "test_labels_used_for_selection": false
+  },
+  "split_audit": {
+    "split_summary": [
+      {
+        "split": "train",
+        "transaction_count": 6082007,
+        "fraud_count": 5781,
+        "fraud_prevalence": 0.0009505086067806235,
+        "distinct_steps": 520,
+        "total_amount": 1097273436388.3813,
+        "mean_amount": 180413.05055853789,
+        "median_amount": 75131.44,
+        "p95_amount": 519726.70900000003
+      },
+      {
+        "split": "validation",
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "distinct_steps": 111,
+        "total_amount": 30719414207.920002,
+        "mean_amount": 160710.9408356919,
+        "median_amount": 67312.03,
+        "p95_amount": 485733.63699999906
+      },
+      {
+        "split": "test",
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "distinct_steps": 112,
+        "total_amount": 16400094163.470007,
+        "mean_amount": 183310.91323486026,
+        "median_amount": 74786.95999999999,
+        "p95_amount": 516514.6375
+      }
+    ],
+    "type_mix_and_amounts": [
+      {
+        "split": "train",
+        "transaction_type": "CASH_IN",
+        "transaction_count": 1335450,
+        "transaction_share": 0.21957390052329764,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 225669588176.91016,
+        "mean_amount": 168983.92914516467,
+        "median_amount": 143413.16,
+        "p95_amount": 412481.43450000015
+      },
+      {
+        "split": "train",
+        "transaction_type": "CASH_OUT",
+        "transaction_count": 2147137,
+        "transaction_share": 0.35303099782686864,
+        "fraud_count": 2900,
+        "fraud_prevalence_within_type": 0.001350635753563932,
+        "total_amount": 377982661350.9601,
+        "mean_amount": 176040.30918891533,
+        "median_amount": 147386.92,
+        "p95_amount": 428516.8459999999
+      },
+      {
+        "split": "train",
+        "transaction_type": "DEBIT",
+        "transaction_count": 39138,
+        "transaction_share": 0.006435046852132857,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 219159215.56000003,
+        "mean_amount": 5599.6529091931125,
+        "median_amount": 3088.8050000000003,
+        "p95_amount": 15184.873500000005
+      },
+      {
+        "split": "train",
+        "transaction_type": "PAYMENT",
+        "transaction_count": 2053690,
+        "transaction_share": 0.3376664972598683,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 26912199162.27995,
+        "mean_amount": 13104.314264703995,
+        "median_amount": 9525.74,
+        "p95_amount": 37954.63849999999
+      },
+      {
+        "split": "train",
+        "transaction_type": "TRANSFER",
+        "transaction_count": 506592,
+        "transaction_share": 0.08329355753783249,
+        "fraud_count": 2881,
+        "fraud_prevalence_within_type": 0.005687022298022867,
+        "total_amount": 466489828482.67084,
+        "mean_amount": 920839.311482753,
+        "median_amount": 491598.35,
+        "p95_amount": 2690003.420499999
+      },
+      {
+        "split": "validation",
+        "transaction_type": "CASH_IN",
+        "transaction_count": 43121,
+        "transaction_share": 0.22559077568572877,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 7238713894.279997,
+        "mean_amount": 167869.80576238947,
+        "median_amount": 143951.92,
+        "p95_amount": 405700.55
+      },
+      {
+        "split": "validation",
+        "transaction_type": "CASH_OUT",
+        "transaction_count": 61211,
+        "transaction_share": 0.3202299800676966,
+        "fraud_count": 590,
+        "fraud_prevalence_within_type": 0.009638790413487771,
+        "total_amount": 10484673785.770004,
+        "mean_amount": 171287.41216072283,
+        "median_amount": 137282.48,
+        "p95_amount": 401013.445
+      },
+      {
+        "split": "validation",
+        "transaction_type": "DEBIT",
+        "transaction_count": 1582,
+        "transaction_share": 0.008276352754686184,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 5639004.24,
+        "mean_amount": 3564.478027812895,
+        "median_amount": 2423.955,
+        "p95_amount": 10083.960499999946
+      },
+      {
+        "split": "validation",
+        "transaction_type": "PAYMENT",
+        "transaction_count": 67743,
+        "transaction_share": 0.35440263252889137,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 823301727.3899996,
+        "mean_amount": 12153.310709445988,
+        "median_amount": 8394.03,
+        "p95_amount": 36506.227999999996
+      },
+      {
+        "split": "validation",
+        "transaction_type": "TRANSFER",
+        "transaction_count": 17490,
+        "transaction_share": 0.09150025896299707,
+        "fraud_count": 590,
+        "fraud_prevalence_within_type": 0.033733562035448826,
+        "total_amount": 12167085796.240002,
+        "mean_amount": 695659.5652510007,
+        "median_amount": 395987.55,
+        "p95_amount": 2266664.3344999994
+      },
+      {
+        "split": "test",
+        "transaction_type": "CASH_IN",
+        "transaction_count": 20713,
+        "transaction_share": 0.2315181186148928,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 3459089841.270003,
+        "mean_amount": 167000.90963501198,
+        "median_amount": 143254.7,
+        "p95_amount": 400692.3219999992
+      },
+      {
+        "split": "test",
+        "transaction_type": "CASH_OUT",
+        "transaction_count": 29152,
+        "transaction_share": 0.32584445487671293,
+        "fraud_count": 626,
+        "fraud_prevalence_within_type": 0.02147365532381998,
+        "total_amount": 5945660087.760001,
+        "mean_amount": 203953.762615258,
+        "median_amount": 147037.805,
+        "p95_amount": 436128.9114999998
+      },
+      {
+        "split": "test",
+        "transaction_type": "DEBIT",
+        "transaction_count": 712,
+        "transaction_share": 0.0079583305389757,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 2401001.4800000004,
+        "mean_amount": 3372.1930898876412,
+        "median_amount": 2544.545,
+        "p95_amount": 9238.677999999993
+      },
+      {
+        "split": "test",
+        "transaction_type": "PAYMENT",
+        "transaction_count": 30062,
+        "transaction_share": 0.33601591666107794,
+        "fraud_count": 0,
+        "fraud_prevalence_within_type": 0.0,
+        "total_amount": 357870248.70000005,
+        "mean_amount": 11904.40585124077,
+        "median_amount": 9196.04,
+        "p95_amount": 32292.402999999995
+      },
+      {
+        "split": "test",
+        "transaction_type": "TRANSFER",
+        "transaction_count": 8827,
+        "transaction_share": 0.09866317930834059,
+        "fraud_count": 626,
+        "fraud_prevalence_within_type": 0.07091877194969978,
+        "total_amount": 6635072984.26,
+        "mean_amount": 751679.2777002379,
+        "median_amount": 392478.94,
+        "p95_amount": 2457893.715999997
+      }
+    ],
+    "hourly_patterns": [
+      {
+        "split": "test",
+        "simulated_hour": 0,
+        "transaction_count": 183,
+        "fraud_count": 38,
+        "fraud_prevalence": 0.20765027322404372
+      },
+      {
+        "split": "test",
+        "simulated_hour": 1,
+        "transaction_count": 724,
+        "fraud_count": 38,
+        "fraud_prevalence": 0.052486187845303865
+      },
+      {
+        "split": "test",
+        "simulated_hour": 2,
+        "transaction_count": 105,
+        "fraud_count": 56,
+        "fraud_prevalence": 0.5333333333333333
+      },
+      {
+        "split": "test",
+        "simulated_hour": 3,
+        "transaction_count": 109,
+        "fraud_count": 50,
+        "fraud_prevalence": 0.45871559633027525
+      },
+      {
+        "split": "test",
+        "simulated_hour": 4,
+        "transaction_count": 42,
+        "fraud_count": 42,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "test",
+        "simulated_hour": 5,
+        "transaction_count": 38,
+        "fraud_count": 38,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "test",
+        "simulated_hour": 6,
+        "transaction_count": 50,
+        "fraud_count": 50,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "test",
+        "simulated_hour": 7,
+        "transaction_count": 96,
+        "fraud_count": 30,
+        "fraud_prevalence": 0.3125
+      },
+      {
+        "split": "test",
+        "simulated_hour": 8,
+        "transaction_count": 2021,
+        "fraud_count": 72,
+        "fraud_prevalence": 0.035625927758535375
+      },
+      {
+        "split": "test",
+        "simulated_hour": 9,
+        "transaction_count": 7087,
+        "fraud_count": 36,
+        "fraud_prevalence": 0.0050797234372795255
+      },
+      {
+        "split": "test",
+        "simulated_hour": 10,
+        "transaction_count": 62,
+        "fraud_count": 62,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "test",
+        "simulated_hour": 11,
+        "transaction_count": 5033,
+        "fraud_count": 60,
+        "fraud_prevalence": 0.01192131929266839
+      },
+      {
+        "split": "test",
+        "simulated_hour": 12,
+        "transaction_count": 4600,
+        "fraud_count": 46,
+        "fraud_prevalence": 0.01
+      },
+      {
+        "split": "test",
+        "simulated_hour": 13,
+        "transaction_count": 10604,
+        "fraud_count": 52,
+        "fraud_prevalence": 0.004903809883062995
+      },
+      {
+        "split": "test",
+        "simulated_hour": 14,
+        "transaction_count": 6501,
+        "fraud_count": 54,
+        "fraud_prevalence": 0.008306414397784956
+      },
+      {
+        "split": "test",
+        "simulated_hour": 15,
+        "transaction_count": 8084,
+        "fraud_count": 52,
+        "fraud_prevalence": 0.006432459178624443
+      },
+      {
+        "split": "test",
+        "simulated_hour": 16,
+        "transaction_count": 10445,
+        "fraud_count": 68,
+        "fraud_prevalence": 0.0065102920057443755
+      },
+      {
+        "split": "test",
+        "simulated_hour": 17,
+        "transaction_count": 52,
+        "fraud_count": 52,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "test",
+        "simulated_hour": 18,
+        "transaction_count": 6810,
+        "fraud_count": 50,
+        "fraud_prevalence": 0.007342143906020558
+      },
+      {
+        "split": "test",
+        "simulated_hour": 19,
+        "transaction_count": 8112,
+        "fraud_count": 52,
+        "fraud_prevalence": 0.00641025641025641
+      },
+      {
+        "split": "test",
+        "simulated_hour": 20,
+        "transaction_count": 9319,
+        "fraud_count": 52,
+        "fraud_prevalence": 0.005579997853846979
+      },
+      {
+        "split": "test",
+        "simulated_hour": 21,
+        "transaction_count": 990,
+        "fraud_count": 56,
+        "fraud_prevalence": 0.05656565656565657
+      },
+      {
+        "split": "test",
+        "simulated_hour": 22,
+        "transaction_count": 5522,
+        "fraud_count": 86,
+        "fraud_prevalence": 0.015574067366896052
+      },
+      {
+        "split": "test",
+        "simulated_hour": 23,
+        "transaction_count": 2877,
+        "fraud_count": 60,
+        "fraud_prevalence": 0.020855057351407715
+      },
+      {
+        "split": "train",
+        "simulated_hour": 0,
+        "transaction_count": 68045,
+        "fraud_count": 196,
+        "fraud_prevalence": 0.0028804467631714306
+      },
+      {
+        "split": "train",
+        "simulated_hour": 1,
+        "transaction_count": 25093,
+        "fraud_count": 260,
+        "fraud_prevalence": 0.010361455385964212
+      },
+      {
+        "split": "train",
+        "simulated_hour": 2,
+        "transaction_count": 8203,
+        "fraud_count": 256,
+        "fraud_prevalence": 0.031208094599536756
+      },
+      {
+        "split": "train",
+        "simulated_hour": 3,
+        "transaction_count": 1476,
+        "fraud_count": 228,
+        "fraud_prevalence": 0.15447154471544716
+      },
+      {
+        "split": "train",
+        "simulated_hour": 4,
+        "transaction_count": 1026,
+        "fraud_count": 196,
+        "fraud_prevalence": 0.19103313840155944
+      },
+      {
+        "split": "train",
+        "simulated_hour": 5,
+        "transaction_count": 1525,
+        "fraud_count": 250,
+        "fraud_prevalence": 0.16393442622950818
+      },
+      {
+        "split": "train",
+        "simulated_hour": 6,
+        "transaction_count": 1886,
+        "fraud_count": 248,
+        "fraud_prevalence": 0.13149522799575822
+      },
+      {
+        "split": "train",
+        "simulated_hour": 7,
+        "transaction_count": 8840,
+        "fraud_count": 246,
+        "fraud_prevalence": 0.027828054298642532
+      },
+      {
+        "split": "train",
+        "simulated_hour": 8,
+        "transaction_count": 23509,
+        "fraud_count": 250,
+        "fraud_prevalence": 0.01063422519035263
+      },
+      {
+        "split": "train",
+        "simulated_hour": 9,
+        "transaction_count": 274342,
+        "fraud_count": 257,
+        "fraud_prevalence": 0.0009367869301820356
+      },
+      {
+        "split": "train",
+        "simulated_hour": 10,
+        "transaction_count": 419757,
+        "fraud_count": 269,
+        "fraud_prevalence": 0.0006408469662209326
+      },
+      {
+        "split": "train",
+        "simulated_hour": 11,
+        "transaction_count": 434917,
+        "fraud_count": 222,
+        "fraud_prevalence": 0.0005104422223090843
+      },
+      {
+        "split": "train",
+        "simulated_hour": 12,
+        "transaction_count": 462225,
+        "fraud_count": 247,
+        "fraud_prevalence": 0.0005343717886310779
+      },
+      {
+        "split": "train",
+        "simulated_hour": 13,
+        "transaction_count": 446143,
+        "fraud_count": 248,
+        "fraud_prevalence": 0.0005558755824926089
+      },
+      {
+        "split": "train",
+        "simulated_hour": 14,
+        "transaction_count": 419394,
+        "fraud_count": 259,
+        "fraud_prevalence": 0.0006175577142257638
+      },
+      {
+        "split": "train",
+        "simulated_hour": 15,
+        "transaction_count": 404175,
+        "fraud_count": 253,
+        "fraud_prevalence": 0.000625966474918043
+      },
+      {
+        "split": "train",
+        "simulated_hour": 16,
+        "transaction_count": 416416,
+        "fraud_count": 241,
+        "fraud_prevalence": 0.0005787481749020211
+      },
+      {
+        "split": "train",
+        "simulated_hour": 17,
+        "transaction_count": 432447,
+        "fraud_count": 253,
+        "fraud_prevalence": 0.0005850427913709656
+      },
+      {
+        "split": "train",
+        "simulated_hour": 18,
+        "transaction_count": 538788,
+        "fraud_count": 241,
+        "fraud_prevalence": 0.00044730023682784323
+      },
+      {
+        "split": "train",
+        "simulated_hour": 19,
+        "transaction_count": 624921,
+        "fraud_count": 216,
+        "fraud_prevalence": 0.0003456436893623354
+      },
+      {
+        "split": "train",
+        "simulated_hour": 20,
+        "transaction_count": 526711,
+        "fraud_count": 248,
+        "fraud_prevalence": 0.00047084644140714735
+      },
+      {
+        "split": "train",
+        "simulated_hour": 21,
+        "transaction_count": 231057,
+        "fraud_count": 245,
+        "fraud_prevalence": 0.0010603444171784452
+      },
+      {
+        "split": "train",
+        "simulated_hour": 22,
+        "transaction_count": 178207,
+        "fraud_count": 233,
+        "fraud_prevalence": 0.0013074682812684126
+      },
+      {
+        "split": "train",
+        "simulated_hour": 23,
+        "transaction_count": 132904,
+        "fraud_count": 219,
+        "fraud_prevalence": 0.0016478059351110576
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 0,
+        "transaction_count": 3359,
+        "fraud_count": 66,
+        "fraud_prevalence": 0.01964870497171777
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 1,
+        "transaction_count": 1294,
+        "fraud_count": 60,
+        "fraud_prevalence": 0.04636785162287481
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 2,
+        "transaction_count": 710,
+        "fraud_count": 60,
+        "fraud_prevalence": 0.08450704225352113
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 3,
+        "transaction_count": 422,
+        "fraud_count": 48,
+        "fraud_prevalence": 0.11374407582938388
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 4,
+        "transaction_count": 173,
+        "fraud_count": 36,
+        "fraud_prevalence": 0.20809248554913296
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 5,
+        "transaction_count": 78,
+        "fraud_count": 78,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 6,
+        "transaction_count": 1484,
+        "fraud_count": 60,
+        "fraud_prevalence": 0.04043126684636118
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 7,
+        "transaction_count": 52,
+        "fraud_count": 52,
+        "fraud_prevalence": 1.0
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 8,
+        "transaction_count": 1385,
+        "fraud_count": 46,
+        "fraud_prevalence": 0.0332129963898917
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 9,
+        "transaction_count": 2089,
+        "fraud_count": 48,
+        "fraud_prevalence": 0.022977501196744854
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 10,
+        "transaction_count": 5910,
+        "fraud_count": 44,
+        "fraud_prevalence": 0.007445008460236886
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 11,
+        "transaction_count": 6042,
+        "fraud_count": 42,
+        "fraud_prevalence": 0.006951340615690168
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 12,
+        "transaction_count": 16593,
+        "fraud_count": 46,
+        "fraud_prevalence": 0.0027722533598505393
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 13,
+        "transaction_count": 11727,
+        "fraud_count": 46,
+        "fraud_prevalence": 0.003922571842756033
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 14,
+        "transaction_count": 13758,
+        "fraud_count": 40,
+        "fraud_prevalence": 0.0029073993312981536
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 15,
+        "transaction_count": 4427,
+        "fraud_count": 36,
+        "fraud_prevalence": 0.008131917777275807
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 16,
+        "transaction_count": 14751,
+        "fraud_count": 36,
+        "fraud_prevalence": 0.0024405125076266015
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 17,
+        "transaction_count": 7442,
+        "fraud_count": 48,
+        "fraud_prevalence": 0.0064498790647675355
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 18,
+        "transaction_count": 34911,
+        "fraud_count": 52,
+        "fraud_prevalence": 0.0014895018761994787
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 19,
+        "transaction_count": 14781,
+        "fraud_count": 74,
+        "fraud_prevalence": 0.005006427170015561
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 20,
+        "transaction_count": 17698,
+        "fraud_count": 40,
+        "fraud_prevalence": 0.0022601423889705053
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 21,
+        "transaction_count": 15759,
+        "fraud_count": 46,
+        "fraud_prevalence": 0.0029189669395266195
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 22,
+        "transaction_count": 10826,
+        "fraud_count": 32,
+        "fraud_prevalence": 0.002955847034915943
+      },
+      {
+        "split": "validation",
+        "simulated_hour": 23,
+        "transaction_count": 5476,
+        "fraud_count": 44,
+        "fraud_prevalence": 0.008035062089116142
+      }
+    ]
+  },
+  "validation_evaluation": [
+    {
+      "split": "validation",
+      "method": "amount_raw",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.09999720744604604,
+      "roc_auc": 0.8039882216831058,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 46,
+      "false_positives_at_100": 54,
+      "precision_at_100": 0.46,
+      "recall_at_100": 0.03898305084745763,
+      "f1_at_100": 0.07187500000000001,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 115,
+      "false_positives_at_500": 385,
+      "precision_at_500": 0.23,
+      "recall_at_500": 0.09745762711864407,
+      "f1_at_500": 0.13690476190476192
+    },
+    {
+      "split": "validation",
+      "method": "amount_raw",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.1040388149163476,
+      "roc_auc": 0.698995985560173,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 46,
+      "false_positives_at_100": 54,
+      "precision_at_100": 0.46,
+      "recall_at_100": 0.03898305084745763,
+      "f1_at_100": 0.07187500000000001,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 115,
+      "false_positives_at_500": 385,
+      "precision_at_500": 0.23,
+      "recall_at_500": 0.09745762711864407,
+      "f1_at_500": 0.13690476190476192
+    },
+    {
+      "split": "validation",
+      "method": "amount_type_train_percentile",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.1430820980640011,
+      "roc_auc": 0.6265287623996781,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 63,
+      "false_positives_at_100": 37,
+      "precision_at_100": 0.63,
+      "recall_at_100": 0.053389830508474574,
+      "f1_at_100": 0.0984375,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 221,
+      "false_positives_at_500": 279,
+      "precision_at_500": 0.442,
+      "recall_at_500": 0.18728813559322033,
+      "f1_at_500": 0.2630952380952381
+    },
+    {
+      "split": "validation",
+      "method": "amount_type_train_percentile",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.2582713909083917,
+      "roc_auc": 0.6313831746848694,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.0847457627118644,
+      "f1_at_100": 0.15625,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 272,
+      "false_positives_at_500": 228,
+      "precision_at_500": 0.544,
+      "recall_at_500": 0.2305084745762712,
+      "f1_at_500": 0.32380952380952377
+    },
+    {
+      "split": "validation",
+      "method": "logistic_amount_type_balanced",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.05219355236605442,
+      "roc_auc": 0.893378727331143,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 28,
+      "false_positives_at_100": 72,
+      "precision_at_100": 0.28,
+      "recall_at_100": 0.023728813559322035,
+      "f1_at_100": 0.04375,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 61,
+      "false_positives_at_500": 439,
+      "precision_at_500": 0.122,
+      "recall_at_500": 0.051694915254237285,
+      "f1_at_500": 0.07261904761904762
+    },
+    {
+      "split": "validation",
+      "method": "logistic_amount_type_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.052193552366054434,
+      "roc_auc": 0.7387221100723063,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 28,
+      "false_positives_at_100": 72,
+      "precision_at_100": 0.28,
+      "recall_at_100": 0.023728813559322035,
+      "f1_at_100": 0.04375,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 61,
+      "false_positives_at_500": 439,
+      "precision_at_500": 0.122,
+      "recall_at_500": 0.051694915254237285,
+      "f1_at_500": 0.07261904761904762
+    },
+    {
+      "split": "validation",
+      "method": "logistic_plus_hour_balanced",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.2401520050780603,
+      "roc_auc": 0.9336745151008833,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 66,
+      "false_positives_at_100": 34,
+      "precision_at_100": 0.66,
+      "recall_at_100": 0.05593220338983051,
+      "f1_at_100": 0.103125,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 227,
+      "false_positives_at_500": 273,
+      "precision_at_500": 0.454,
+      "recall_at_500": 0.1923728813559322,
+      "f1_at_500": 0.2702380952380952
+    },
+    {
+      "split": "validation",
+      "method": "logistic_plus_hour_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.2401520050780603,
+      "roc_auc": 0.8374678681927412,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 66,
+      "false_positives_at_100": 34,
+      "precision_at_100": 0.66,
+      "recall_at_100": 0.05593220338983051,
+      "f1_at_100": 0.103125,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 227,
+      "false_positives_at_500": 273,
+      "precision_at_500": 0.454,
+      "recall_at_500": 0.1923728813559322,
+      "f1_at_500": 0.2702380952380952
+    },
+    {
+      "split": "validation",
+      "method": "logistic_plus_balance_balanced",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.8230300848869323,
+      "roc_auc": 0.9987620329775386,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 97,
+      "false_positives_at_100": 3,
+      "precision_at_100": 0.97,
+      "recall_at_100": 0.08220338983050847,
+      "f1_at_100": 0.15156249999999996,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 455,
+      "false_positives_at_500": 45,
+      "precision_at_500": 0.91,
+      "recall_at_500": 0.3855932203389831,
+      "f1_at_500": 0.5416666666666667
+    },
+    {
+      "split": "validation",
+      "method": "logistic_plus_balance_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.8230300848869323,
+      "roc_auc": 0.996966333234144,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 97,
+      "false_positives_at_100": 3,
+      "precision_at_100": 0.97,
+      "recall_at_100": 0.08220338983050847,
+      "f1_at_100": 0.15156249999999996,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 455,
+      "false_positives_at_500": 45,
+      "precision_at_500": 0.91,
+      "recall_at_500": 0.3855932203389831,
+      "f1_at_500": 0.5416666666666667
+    },
+    {
+      "split": "validation",
+      "method": "logistic_full_context_balanced",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.8402916684638574,
+      "roc_auc": 0.998561583354397,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 98,
+      "false_positives_at_100": 2,
+      "precision_at_100": 0.98,
+      "recall_at_100": 0.08305084745762711,
+      "f1_at_100": 0.15312499999999998,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 470,
+      "false_positives_at_500": 30,
+      "precision_at_500": 0.94,
+      "recall_at_500": 0.3983050847457627,
+      "f1_at_500": 0.5595238095238095
+    },
+    {
+      "split": "validation",
+      "method": "logistic_full_context_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.8402916684638574,
+      "roc_auc": 0.9964751268054429,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 98,
+      "false_positives_at_100": 2,
+      "precision_at_100": 0.98,
+      "recall_at_100": 0.08305084745762711,
+      "f1_at_100": 0.15312499999999998,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 470,
+      "false_positives_at_500": 30,
+      "precision_at_500": 0.94,
+      "recall_at_500": 0.3983050847457627,
+      "f1_at_500": 0.5595238095238095
+    },
+    {
+      "split": "validation",
+      "method": "logistic_full_context_unweighted",
+      "population": "all_transactions",
+      "transaction_count": 191147,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.006173259323975788,
+      "pr_auc_average_precision": 0.9137649228936273,
+      "roc_auc": 0.9991274844970843,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.0847457627118644,
+      "f1_at_100": 0.15625,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 495,
+      "false_positives_at_500": 5,
+      "precision_at_500": 0.99,
+      "recall_at_500": 0.4194915254237288,
+      "f1_at_500": 0.5892857142857142
+    },
+    {
+      "split": "validation",
+      "method": "logistic_full_context_unweighted",
+      "population": "transfer_cash_out",
+      "transaction_count": 78701,
+      "fraud_count": 1180,
+      "fraud_prevalence": 0.014993456245791032,
+      "pr_auc_average_precision": 0.9140202378032647,
+      "roc_auc": 0.997880104221076,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.0847457627118644,
+      "f1_at_100": 0.15625,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 495,
+      "false_positives_at_500": 5,
+      "precision_at_500": 0.99,
+      "recall_at_500": 0.4194915254237288,
+      "f1_at_500": 0.5892857142857142
+    }
+  ],
+  "test_evaluation": [
+    {
+      "split": "test",
+      "method": "amount_raw",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.21069584396000537,
+      "roc_auc": 0.7903347841811638,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 80,
+      "false_positives_at_100": 20,
+      "precision_at_100": 0.8,
+      "recall_at_100": 0.06389776357827476,
+      "f1_at_100": 0.11834319526627218,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 220,
+      "false_positives_at_500": 280,
+      "precision_at_500": 0.44,
+      "recall_at_500": 0.1757188498402556,
+      "f1_at_500": 0.25114155251141557
+    },
+    {
+      "split": "test",
+      "method": "amount_raw",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.21845271044525388,
+      "roc_auc": 0.6787182493470736,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 80,
+      "false_positives_at_100": 20,
+      "precision_at_100": 0.8,
+      "recall_at_100": 0.06389776357827476,
+      "f1_at_100": 0.11834319526627218,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 220,
+      "false_positives_at_500": 280,
+      "precision_at_500": 0.44,
+      "recall_at_500": 0.1757188498402556,
+      "f1_at_500": 0.25114155251141557
+    },
+    {
+      "split": "test",
+      "method": "amount_type_train_percentile",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.2509504051986197,
+      "roc_auc": 0.6120048808839902,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.07987220447284345,
+      "f1_at_100": 0.14792899408284022,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 288,
+      "false_positives_at_500": 212,
+      "precision_at_500": 0.576,
+      "recall_at_500": 0.23003194888178913,
+      "f1_at_500": 0.3287671232876712
+    },
+    {
+      "split": "test",
+      "method": "amount_type_train_percentile",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.2982853263519957,
+      "roc_auc": 0.613769231244331,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.07987220447284345,
+      "f1_at_100": 0.14792899408284022,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 305,
+      "false_positives_at_500": 195,
+      "precision_at_500": 0.61,
+      "recall_at_500": 0.24361022364217252,
+      "f1_at_500": 0.3481735159817351
+    },
+    {
+      "split": "test",
+      "method": "logistic_amount_type_balanced",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.12039080113522448,
+      "roc_auc": 0.886063482819988,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 51,
+      "false_positives_at_100": 49,
+      "precision_at_100": 0.51,
+      "recall_at_100": 0.04073482428115016,
+      "f1_at_100": 0.07544378698224852,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 128,
+      "false_positives_at_500": 372,
+      "precision_at_500": 0.256,
+      "recall_at_500": 0.10223642172523961,
+      "f1_at_500": 0.1461187214611872
+    },
+    {
+      "split": "test",
+      "method": "logistic_amount_type_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.12039080113522449,
+      "roc_auc": 0.726337682726126,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 51,
+      "false_positives_at_100": 49,
+      "precision_at_100": 0.51,
+      "recall_at_100": 0.04073482428115016,
+      "f1_at_100": 0.07544378698224852,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 128,
+      "false_positives_at_500": 372,
+      "precision_at_500": 0.256,
+      "recall_at_500": 0.10223642172523961,
+      "f1_at_500": 0.1461187214611872
+    },
+    {
+      "split": "test",
+      "method": "logistic_plus_hour_balanced",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.3259785528345561,
+      "roc_auc": 0.9209945792583545,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 87,
+      "false_positives_at_100": 13,
+      "precision_at_100": 0.87,
+      "recall_at_100": 0.0694888178913738,
+      "f1_at_100": 0.128698224852071,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 298,
+      "false_positives_at_500": 202,
+      "precision_at_500": 0.596,
+      "recall_at_500": 0.2380191693290735,
+      "f1_at_500": 0.3401826484018265
+    },
+    {
+      "split": "test",
+      "method": "logistic_plus_hour_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.32597855283455607,
+      "roc_auc": 0.8102381303862685,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 87,
+      "false_positives_at_100": 13,
+      "precision_at_100": 0.87,
+      "recall_at_100": 0.0694888178913738,
+      "f1_at_100": 0.128698224852071,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 298,
+      "false_positives_at_500": 202,
+      "precision_at_500": 0.596,
+      "recall_at_500": 0.2380191693290735,
+      "f1_at_500": 0.3401826484018265
+    },
+    {
+      "split": "test",
+      "method": "logistic_plus_balance_balanced",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.8708856184178181,
+      "roc_auc": 0.998360647766892,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 94,
+      "false_positives_at_100": 6,
+      "precision_at_100": 0.94,
+      "recall_at_100": 0.07507987220447285,
+      "f1_at_100": 0.13905325443786984,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 455,
+      "false_positives_at_500": 45,
+      "precision_at_500": 0.91,
+      "recall_at_500": 0.3634185303514377,
+      "f1_at_500": 0.5194063926940639
+    },
+    {
+      "split": "test",
+      "method": "logistic_plus_balance_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.870885618417818,
+      "roc_auc": 0.9960624658182979,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 94,
+      "false_positives_at_100": 6,
+      "precision_at_100": 0.94,
+      "recall_at_100": 0.07507987220447285,
+      "f1_at_100": 0.13905325443786984,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 455,
+      "false_positives_at_500": 45,
+      "precision_at_500": 0.91,
+      "recall_at_500": 0.3634185303514377,
+      "f1_at_500": 0.5194063926940639
+    },
+    {
+      "split": "test",
+      "method": "logistic_full_context_balanced",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.889085239444407,
+      "roc_auc": 0.998293305902702,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 95,
+      "false_positives_at_100": 5,
+      "precision_at_100": 0.95,
+      "recall_at_100": 0.07587859424920128,
+      "f1_at_100": 0.14053254437869822,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 476,
+      "false_positives_at_500": 24,
+      "precision_at_500": 0.952,
+      "recall_at_500": 0.3801916932907348,
+      "f1_at_500": 0.54337899543379
+    },
+    {
+      "split": "test",
+      "method": "logistic_full_context_balanced",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.8890852394444071,
+      "roc_auc": 0.9959007184605593,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 95,
+      "false_positives_at_100": 5,
+      "precision_at_100": 0.95,
+      "recall_at_100": 0.07587859424920128,
+      "f1_at_100": 0.14053254437869822,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 476,
+      "false_positives_at_500": 24,
+      "precision_at_500": 0.952,
+      "recall_at_500": 0.3801916932907348,
+      "f1_at_500": 0.54337899543379
+    },
+    {
+      "split": "test",
+      "method": "logistic_full_context_unweighted",
+      "population": "all_transactions",
+      "transaction_count": 89466,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.01399414302640109,
+      "pr_auc_average_precision": 0.950373391808602,
+      "roc_auc": 0.9989910626865789,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.07987220447284345,
+      "f1_at_100": 0.14792899408284022,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 499,
+      "false_positives_at_500": 1,
+      "precision_at_500": 0.998,
+      "recall_at_500": 0.3985623003194888,
+      "f1_at_500": 0.5696347031963471
+    },
+    {
+      "split": "test",
+      "method": "logistic_full_context_unweighted",
+      "population": "transfer_cash_out",
+      "transaction_count": 37979,
+      "fraud_count": 1252,
+      "fraud_prevalence": 0.03296558624503015,
+      "pr_auc_average_precision": 0.9504860639657644,
+      "roc_auc": 0.9976151425886415,
+      "alerts_at_100": 100,
+      "true_positives_at_100": 100,
+      "false_positives_at_100": 0,
+      "precision_at_100": 1.0,
+      "recall_at_100": 0.07987220447284345,
+      "f1_at_100": 0.14792899408284022,
+      "alerts_at_500": 500,
+      "true_positives_at_500": 499,
+      "false_positives_at_500": 1,
+      "precision_at_500": 0.998,
+      "recall_at_500": 0.3985623003194888,
+      "f1_at_500": 0.5696347031963471
+    }
+  ],
+  "validation_by_method": {
+    "amount_raw": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.09999720744604604,
+        "roc_auc": 0.8039882216831058,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 46,
+        "false_positives_at_100": 54,
+        "precision_at_100": 0.46,
+        "recall_at_100": 0.03898305084745763,
+        "f1_at_100": 0.07187500000000001,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 115,
+        "false_positives_at_500": 385,
+        "precision_at_500": 0.23,
+        "recall_at_500": 0.09745762711864407,
+        "f1_at_500": 0.13690476190476192
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.1040388149163476,
+        "roc_auc": 0.698995985560173,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 46,
+        "false_positives_at_100": 54,
+        "precision_at_100": 0.46,
+        "recall_at_100": 0.03898305084745763,
+        "f1_at_100": 0.07187500000000001,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 115,
+        "false_positives_at_500": 385,
+        "precision_at_500": 0.23,
+        "recall_at_500": 0.09745762711864407,
+        "f1_at_500": 0.13690476190476192
+      }
+    },
+    "amount_type_train_percentile": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.1430820980640011,
+        "roc_auc": 0.6265287623996781,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 63,
+        "false_positives_at_100": 37,
+        "precision_at_100": 0.63,
+        "recall_at_100": 0.053389830508474574,
+        "f1_at_100": 0.0984375,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 221,
+        "false_positives_at_500": 279,
+        "precision_at_500": 0.442,
+        "recall_at_500": 0.18728813559322033,
+        "f1_at_500": 0.2630952380952381
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.2582713909083917,
+        "roc_auc": 0.6313831746848694,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.0847457627118644,
+        "f1_at_100": 0.15625,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 272,
+        "false_positives_at_500": 228,
+        "precision_at_500": 0.544,
+        "recall_at_500": 0.2305084745762712,
+        "f1_at_500": 0.32380952380952377
+      }
+    },
+    "logistic_amount_type_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.05219355236605442,
+        "roc_auc": 0.893378727331143,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 28,
+        "false_positives_at_100": 72,
+        "precision_at_100": 0.28,
+        "recall_at_100": 0.023728813559322035,
+        "f1_at_100": 0.04375,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 61,
+        "false_positives_at_500": 439,
+        "precision_at_500": 0.122,
+        "recall_at_500": 0.051694915254237285,
+        "f1_at_500": 0.07261904761904762
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.052193552366054434,
+        "roc_auc": 0.7387221100723063,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 28,
+        "false_positives_at_100": 72,
+        "precision_at_100": 0.28,
+        "recall_at_100": 0.023728813559322035,
+        "f1_at_100": 0.04375,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 61,
+        "false_positives_at_500": 439,
+        "precision_at_500": 0.122,
+        "recall_at_500": 0.051694915254237285,
+        "f1_at_500": 0.07261904761904762
+      }
+    },
+    "logistic_plus_hour_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.2401520050780603,
+        "roc_auc": 0.9336745151008833,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 66,
+        "false_positives_at_100": 34,
+        "precision_at_100": 0.66,
+        "recall_at_100": 0.05593220338983051,
+        "f1_at_100": 0.103125,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 227,
+        "false_positives_at_500": 273,
+        "precision_at_500": 0.454,
+        "recall_at_500": 0.1923728813559322,
+        "f1_at_500": 0.2702380952380952
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.2401520050780603,
+        "roc_auc": 0.8374678681927412,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 66,
+        "false_positives_at_100": 34,
+        "precision_at_100": 0.66,
+        "recall_at_100": 0.05593220338983051,
+        "f1_at_100": 0.103125,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 227,
+        "false_positives_at_500": 273,
+        "precision_at_500": 0.454,
+        "recall_at_500": 0.1923728813559322,
+        "f1_at_500": 0.2702380952380952
+      }
+    },
+    "logistic_plus_balance_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.8230300848869323,
+        "roc_auc": 0.9987620329775386,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 97,
+        "false_positives_at_100": 3,
+        "precision_at_100": 0.97,
+        "recall_at_100": 0.08220338983050847,
+        "f1_at_100": 0.15156249999999996,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3855932203389831,
+        "f1_at_500": 0.5416666666666667
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.8230300848869323,
+        "roc_auc": 0.996966333234144,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 97,
+        "false_positives_at_100": 3,
+        "precision_at_100": 0.97,
+        "recall_at_100": 0.08220338983050847,
+        "f1_at_100": 0.15156249999999996,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3855932203389831,
+        "f1_at_500": 0.5416666666666667
+      }
+    },
+    "logistic_full_context_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.8402916684638574,
+        "roc_auc": 0.998561583354397,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 98,
+        "false_positives_at_100": 2,
+        "precision_at_100": 0.98,
+        "recall_at_100": 0.08305084745762711,
+        "f1_at_100": 0.15312499999999998,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 470,
+        "false_positives_at_500": 30,
+        "precision_at_500": 0.94,
+        "recall_at_500": 0.3983050847457627,
+        "f1_at_500": 0.5595238095238095
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.8402916684638574,
+        "roc_auc": 0.9964751268054429,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 98,
+        "false_positives_at_100": 2,
+        "precision_at_100": 0.98,
+        "recall_at_100": 0.08305084745762711,
+        "f1_at_100": 0.15312499999999998,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 470,
+        "false_positives_at_500": 30,
+        "precision_at_500": 0.94,
+        "recall_at_500": 0.3983050847457627,
+        "f1_at_500": 0.5595238095238095
+      }
+    },
+    "logistic_full_context_unweighted": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.9137649228936273,
+        "roc_auc": 0.9991274844970843,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.0847457627118644,
+        "f1_at_100": 0.15625,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 495,
+        "false_positives_at_500": 5,
+        "precision_at_500": 0.99,
+        "recall_at_500": 0.4194915254237288,
+        "f1_at_500": 0.5892857142857142
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.9140202378032647,
+        "roc_auc": 0.997880104221076,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.0847457627118644,
+        "f1_at_100": 0.15625,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 495,
+        "false_positives_at_500": 5,
+        "precision_at_500": 0.99,
+        "recall_at_500": 0.4194915254237288,
+        "f1_at_500": 0.5892857142857142
+      }
+    }
+  },
+  "test_by_method": {
+    "amount_raw": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.21069584396000537,
+        "roc_auc": 0.7903347841811638,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 80,
+        "false_positives_at_100": 20,
+        "precision_at_100": 0.8,
+        "recall_at_100": 0.06389776357827476,
+        "f1_at_100": 0.11834319526627218,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 220,
+        "false_positives_at_500": 280,
+        "precision_at_500": 0.44,
+        "recall_at_500": 0.1757188498402556,
+        "f1_at_500": 0.25114155251141557
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.21845271044525388,
+        "roc_auc": 0.6787182493470736,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 80,
+        "false_positives_at_100": 20,
+        "precision_at_100": 0.8,
+        "recall_at_100": 0.06389776357827476,
+        "f1_at_100": 0.11834319526627218,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 220,
+        "false_positives_at_500": 280,
+        "precision_at_500": 0.44,
+        "recall_at_500": 0.1757188498402556,
+        "f1_at_500": 0.25114155251141557
+      }
+    },
+    "amount_type_train_percentile": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.2509504051986197,
+        "roc_auc": 0.6120048808839902,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.07987220447284345,
+        "f1_at_100": 0.14792899408284022,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 288,
+        "false_positives_at_500": 212,
+        "precision_at_500": 0.576,
+        "recall_at_500": 0.23003194888178913,
+        "f1_at_500": 0.3287671232876712
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.2982853263519957,
+        "roc_auc": 0.613769231244331,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.07987220447284345,
+        "f1_at_100": 0.14792899408284022,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 305,
+        "false_positives_at_500": 195,
+        "precision_at_500": 0.61,
+        "recall_at_500": 0.24361022364217252,
+        "f1_at_500": 0.3481735159817351
+      }
+    },
+    "logistic_amount_type_balanced": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.12039080113522448,
+        "roc_auc": 0.886063482819988,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 51,
+        "false_positives_at_100": 49,
+        "precision_at_100": 0.51,
+        "recall_at_100": 0.04073482428115016,
+        "f1_at_100": 0.07544378698224852,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 128,
+        "false_positives_at_500": 372,
+        "precision_at_500": 0.256,
+        "recall_at_500": 0.10223642172523961,
+        "f1_at_500": 0.1461187214611872
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.12039080113522449,
+        "roc_auc": 0.726337682726126,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 51,
+        "false_positives_at_100": 49,
+        "precision_at_100": 0.51,
+        "recall_at_100": 0.04073482428115016,
+        "f1_at_100": 0.07544378698224852,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 128,
+        "false_positives_at_500": 372,
+        "precision_at_500": 0.256,
+        "recall_at_500": 0.10223642172523961,
+        "f1_at_500": 0.1461187214611872
+      }
+    },
+    "logistic_plus_hour_balanced": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.3259785528345561,
+        "roc_auc": 0.9209945792583545,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 87,
+        "false_positives_at_100": 13,
+        "precision_at_100": 0.87,
+        "recall_at_100": 0.0694888178913738,
+        "f1_at_100": 0.128698224852071,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 298,
+        "false_positives_at_500": 202,
+        "precision_at_500": 0.596,
+        "recall_at_500": 0.2380191693290735,
+        "f1_at_500": 0.3401826484018265
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.32597855283455607,
+        "roc_auc": 0.8102381303862685,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 87,
+        "false_positives_at_100": 13,
+        "precision_at_100": 0.87,
+        "recall_at_100": 0.0694888178913738,
+        "f1_at_100": 0.128698224852071,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 298,
+        "false_positives_at_500": 202,
+        "precision_at_500": 0.596,
+        "recall_at_500": 0.2380191693290735,
+        "f1_at_500": 0.3401826484018265
+      }
+    },
+    "logistic_plus_balance_balanced": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.8708856184178181,
+        "roc_auc": 0.998360647766892,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 94,
+        "false_positives_at_100": 6,
+        "precision_at_100": 0.94,
+        "recall_at_100": 0.07507987220447285,
+        "f1_at_100": 0.13905325443786984,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3634185303514377,
+        "f1_at_500": 0.5194063926940639
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.870885618417818,
+        "roc_auc": 0.9960624658182979,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 94,
+        "false_positives_at_100": 6,
+        "precision_at_100": 0.94,
+        "recall_at_100": 0.07507987220447285,
+        "f1_at_100": 0.13905325443786984,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3634185303514377,
+        "f1_at_500": 0.5194063926940639
+      }
+    },
+    "logistic_full_context_balanced": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.889085239444407,
+        "roc_auc": 0.998293305902702,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 95,
+        "false_positives_at_100": 5,
+        "precision_at_100": 0.95,
+        "recall_at_100": 0.07587859424920128,
+        "f1_at_100": 0.14053254437869822,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 476,
+        "false_positives_at_500": 24,
+        "precision_at_500": 0.952,
+        "recall_at_500": 0.3801916932907348,
+        "f1_at_500": 0.54337899543379
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.8890852394444071,
+        "roc_auc": 0.9959007184605593,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 95,
+        "false_positives_at_100": 5,
+        "precision_at_100": 0.95,
+        "recall_at_100": 0.07587859424920128,
+        "f1_at_100": 0.14053254437869822,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 476,
+        "false_positives_at_500": 24,
+        "precision_at_500": 0.952,
+        "recall_at_500": 0.3801916932907348,
+        "f1_at_500": 0.54337899543379
+      }
+    },
+    "logistic_full_context_unweighted": {
+      "all_transactions": {
+        "transaction_count": 89466,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.01399414302640109,
+        "pr_auc_average_precision": 0.950373391808602,
+        "roc_auc": 0.9989910626865789,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.07987220447284345,
+        "f1_at_100": 0.14792899408284022,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 499,
+        "false_positives_at_500": 1,
+        "precision_at_500": 0.998,
+        "recall_at_500": 0.3985623003194888,
+        "f1_at_500": 0.5696347031963471
+      },
+      "transfer_cash_out": {
+        "transaction_count": 37979,
+        "fraud_count": 1252,
+        "fraud_prevalence": 0.03296558624503015,
+        "pr_auc_average_precision": 0.9504860639657644,
+        "roc_auc": 0.9976151425886415,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.07987220447284345,
+        "f1_at_100": 0.14792899408284022,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 499,
+        "false_positives_at_500": 1,
+        "precision_at_500": 0.998,
+        "recall_at_500": 0.3985623003194888,
+        "f1_at_500": 0.5696347031963471
+      }
+    }
+  },
+  "feature_ablation_validation": {
+    "logistic_amount_type_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.05219355236605442,
+        "roc_auc": 0.893378727331143,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 28,
+        "false_positives_at_100": 72,
+        "precision_at_100": 0.28,
+        "recall_at_100": 0.023728813559322035,
+        "f1_at_100": 0.04375,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 61,
+        "false_positives_at_500": 439,
+        "precision_at_500": 0.122,
+        "recall_at_500": 0.051694915254237285,
+        "f1_at_500": 0.07261904761904762
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.052193552366054434,
+        "roc_auc": 0.7387221100723063,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 28,
+        "false_positives_at_100": 72,
+        "precision_at_100": 0.28,
+        "recall_at_100": 0.023728813559322035,
+        "f1_at_100": 0.04375,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 61,
+        "false_positives_at_500": 439,
+        "precision_at_500": 0.122,
+        "recall_at_500": 0.051694915254237285,
+        "f1_at_500": 0.07261904761904762
+      }
+    },
+    "logistic_plus_hour_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.2401520050780603,
+        "roc_auc": 0.9336745151008833,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 66,
+        "false_positives_at_100": 34,
+        "precision_at_100": 0.66,
+        "recall_at_100": 0.05593220338983051,
+        "f1_at_100": 0.103125,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 227,
+        "false_positives_at_500": 273,
+        "precision_at_500": 0.454,
+        "recall_at_500": 0.1923728813559322,
+        "f1_at_500": 0.2702380952380952
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.2401520050780603,
+        "roc_auc": 0.8374678681927412,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 66,
+        "false_positives_at_100": 34,
+        "precision_at_100": 0.66,
+        "recall_at_100": 0.05593220338983051,
+        "f1_at_100": 0.103125,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 227,
+        "false_positives_at_500": 273,
+        "precision_at_500": 0.454,
+        "recall_at_500": 0.1923728813559322,
+        "f1_at_500": 0.2702380952380952
+      }
+    },
+    "logistic_plus_balance_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.8230300848869323,
+        "roc_auc": 0.9987620329775386,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 97,
+        "false_positives_at_100": 3,
+        "precision_at_100": 0.97,
+        "recall_at_100": 0.08220338983050847,
+        "f1_at_100": 0.15156249999999996,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3855932203389831,
+        "f1_at_500": 0.5416666666666667
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.8230300848869323,
+        "roc_auc": 0.996966333234144,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 97,
+        "false_positives_at_100": 3,
+        "precision_at_100": 0.97,
+        "recall_at_100": 0.08220338983050847,
+        "f1_at_100": 0.15156249999999996,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 455,
+        "false_positives_at_500": 45,
+        "precision_at_500": 0.91,
+        "recall_at_500": 0.3855932203389831,
+        "f1_at_500": 0.5416666666666667
+      }
+    },
+    "logistic_full_context_balanced": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.8402916684638574,
+        "roc_auc": 0.998561583354397,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 98,
+        "false_positives_at_100": 2,
+        "precision_at_100": 0.98,
+        "recall_at_100": 0.08305084745762711,
+        "f1_at_100": 0.15312499999999998,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 470,
+        "false_positives_at_500": 30,
+        "precision_at_500": 0.94,
+        "recall_at_500": 0.3983050847457627,
+        "f1_at_500": 0.5595238095238095
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.8402916684638574,
+        "roc_auc": 0.9964751268054429,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 98,
+        "false_positives_at_100": 2,
+        "precision_at_100": 0.98,
+        "recall_at_100": 0.08305084745762711,
+        "f1_at_100": 0.15312499999999998,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 470,
+        "false_positives_at_500": 30,
+        "precision_at_500": 0.94,
+        "recall_at_500": 0.3983050847457627,
+        "f1_at_500": 0.5595238095238095
+      }
+    },
+    "logistic_full_context_unweighted": {
+      "all_transactions": {
+        "transaction_count": 191147,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.006173259323975788,
+        "pr_auc_average_precision": 0.9137649228936273,
+        "roc_auc": 0.9991274844970843,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.0847457627118644,
+        "f1_at_100": 0.15625,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 495,
+        "false_positives_at_500": 5,
+        "precision_at_500": 0.99,
+        "recall_at_500": 0.4194915254237288,
+        "f1_at_500": 0.5892857142857142
+      },
+      "transfer_cash_out": {
+        "transaction_count": 78701,
+        "fraud_count": 1180,
+        "fraud_prevalence": 0.014993456245791032,
+        "pr_auc_average_precision": 0.9140202378032647,
+        "roc_auc": 0.997880104221076,
+        "alerts_at_100": 100,
+        "true_positives_at_100": 100,
+        "false_positives_at_100": 0,
+        "precision_at_100": 1.0,
+        "recall_at_100": 0.0847457627118644,
+        "f1_at_100": 0.15625,
+        "alerts_at_500": 500,
+        "true_positives_at_500": 495,
+        "false_positives_at_500": 5,
+        "precision_at_500": 0.99,
+        "recall_at_500": 0.4194915254237288,
+        "f1_at_500": 0.5892857142857142
+      }
+    }
+  },
+  "fit_summary": {
+    "logistic_amount_type_balanced": {
+      "ablation": "amount_type",
+      "class_weight": "balanced",
+      "features": [
+        "amount",
+        "transaction_type"
+      ],
+      "training_rows": 6082007,
+      "positive_training_rows": 5781,
+      "iterations": 13,
+      "max_iter": 80,
+      "converged_before_max_iter": true,
+      "convergence_warnings": [],
+      "fit_seconds": 8.390145999990636
+    },
+    "logistic_plus_hour_balanced": {
+      "ablation": "plus_hour",
+      "class_weight": "balanced",
+      "features": [
+        "amount",
+        "transaction_type",
+        "simulated_hour"
+      ],
+      "training_rows": 6082007,
+      "positive_training_rows": 5781,
+      "iterations": 57,
+      "max_iter": 80,
+      "converged_before_max_iter": true,
+      "convergence_warnings": [],
+      "fit_seconds": 16.859979400003795
+    },
+    "logistic_plus_balance_balanced": {
+      "ablation": "plus_balance",
+      "class_weight": "balanced",
+      "features": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "transaction_type",
+        "simulated_hour"
+      ],
+      "training_rows": 6082007,
+      "positive_training_rows": 5781,
+      "iterations": 70,
+      "max_iter": 80,
+      "converged_before_max_iter": true,
+      "convergence_warnings": [],
+      "fit_seconds": 26.832462100021075
+    },
+    "logistic_full_context_balanced": {
+      "ablation": "full_context",
+      "class_weight": "balanced",
+      "features": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "recipient_prior_transaction_count",
+        "recipient_prior_received_amount",
+        "transaction_type",
+        "simulated_hour"
+      ],
+      "training_rows": 6082007,
+      "positive_training_rows": 5781,
+      "iterations": 76,
+      "max_iter": 80,
+      "converged_before_max_iter": true,
+      "convergence_warnings": [],
+      "fit_seconds": 27.98394449998159
+    },
+    "logistic_full_context_unweighted": {
+      "ablation": "full_context",
+      "class_weight": null,
+      "features": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "recipient_prior_transaction_count",
+        "recipient_prior_received_amount",
+        "transaction_type",
+        "simulated_hour"
+      ],
+      "training_rows": 6082007,
+      "positive_training_rows": 5781,
+      "iterations": 15,
+      "max_iter": 80,
+      "converged_before_max_iter": true,
+      "convergence_warnings": [],
+      "fit_seconds": 25.013635899988003
+    }
+  },
+  "selection": {
+    "selected_method": "logistic_full_context_unweighted",
+    "selection_population": "TRANSFER and CASH_OUT only",
+    "selection_metric": "validation PR-AUC (average precision)",
+    "validation_eligible_pr_auc": 0.9140202378032647,
+    "candidate_budgets": [
+      100,
+      500
+    ],
+    "selected_budget": 500,
+    "budget_selection_metric": "validation F1 at K; ties choose smaller K",
+    "validation_precision_at_selected_budget": 0.99,
+    "validation_recall_at_selected_budget": 0.4194915254237288,
+    "validation_false_positives_at_selected_budget": 5,
+    "test_labels_used_for_selection": false,
+    "frozen_before_test": true,
+    "risk_band_thresholds": {
+      "moderate": 3.387714605196379e-05,
+      "high": 0.3755722641944885,
+      "very_high": 0.9968135952949524
+    },
+    "risk_band_threshold_source": "validation TRANSFER/CASH_OUT scores only",
+    "feature_sets": {
+      "amount_type": {
+        "numeric": [
+          "amount"
+        ],
+        "categorical": [
+          "transaction_type"
+        ]
+      },
+      "plus_hour": {
+        "numeric": [
+          "amount"
+        ],
+        "categorical": [
+          "transaction_type",
+          "simulated_hour"
+        ]
+      },
+      "plus_balance": {
+        "numeric": [
+          "amount",
+          "sender_pre_balance",
+          "amount_to_sender_pre_balance",
+          "sender_balance_covers_amount"
+        ],
+        "categorical": [
+          "transaction_type",
+          "simulated_hour"
+        ]
+      },
+      "full_context": {
+        "numeric": [
+          "amount",
+          "sender_pre_balance",
+          "amount_to_sender_pre_balance",
+          "sender_balance_covers_amount",
+          "recipient_prior_transaction_count",
+          "recipient_prior_received_amount"
+        ],
+        "categorical": [
+          "transaction_type",
+          "simulated_hour"
+        ]
+      }
+    },
+    "split_steps": {
+      "train": 520,
+      "validation": 111,
+      "test": 112
+    }
+  },
+  "full_context_coefficients": {
+    "most_negative": [
+      {
+        "feature": "categorical__transaction_type_PAYMENT",
+        "coefficient": -9.155059814453125
+      },
+      {
+        "feature": "numeric__sender_pre_balance",
+        "coefficient": -9.07363510131836
+      },
+      {
+        "feature": "categorical__simulated_hour_19",
+        "coefficient": -2.2335257530212402
+      },
+      {
+        "feature": "categorical__simulated_hour_20",
+        "coefficient": -1.9244740009307861
+      },
+      {
+        "feature": "categorical__simulated_hour_18",
+        "coefficient": -1.8805307149887085
+      },
+      {
+        "feature": "categorical__simulated_hour_17",
+        "coefficient": -1.7152516841888428
+      },
+      {
+        "feature": "categorical__simulated_hour_16",
+        "coefficient": -1.6630210876464844
+      },
+      {
+        "feature": "categorical__simulated_hour_12",
+        "coefficient": -1.578296422958374
+      },
+      {
+        "feature": "categorical__simulated_hour_11",
+        "coefficient": -1.5660192966461182
+      },
+      {
+        "feature": "categorical__simulated_hour_10",
+        "coefficient": -1.5090491771697998
+      },
+      {
+        "feature": "categorical__simulated_hour_14",
+        "coefficient": -1.4314589500427246
+      },
+      {
+        "feature": "categorical__simulated_hour_13",
+        "coefficient": -1.391583800315857
+      }
+    ],
+    "most_positive": [
+      {
+        "feature": "numeric__sender_balance_covers_amount",
+        "coefficient": 15.641484260559082
+      },
+      {
+        "feature": "categorical__transaction_type_CASH_OUT",
+        "coefficient": 9.296159744262695
+      },
+      {
+        "feature": "categorical__transaction_type_TRANSFER",
+        "coefficient": 9.288952827453613
+      },
+      {
+        "feature": "numeric__amount",
+        "coefficient": 3.479111909866333
+      },
+      {
+        "feature": "categorical__simulated_hour_5",
+        "coefficient": 3.362208843231201
+      },
+      {
+        "feature": "categorical__simulated_hour_4",
+        "coefficient": 3.1968257427215576
+      },
+      {
+        "feature": "categorical__simulated_hour_3",
+        "coefficient": 2.98303484916687
+      },
+      {
+        "feature": "categorical__simulated_hour_6",
+        "coefficient": 2.9696459770202637
+      },
+      {
+        "feature": "categorical__simulated_hour_1",
+        "coefficient": 2.7927095890045166
+      },
+      {
+        "feature": "numeric__missingindicator_amount_to_sender_pre_balance",
+        "coefficient": 2.4307126998901367
+      },
+      {
+        "feature": "numeric__amount_to_sender_pre_balance",
+        "coefficient": 2.3385584354400635
+      },
+      {
+        "feature": "categorical__simulated_hour_2",
+        "coefficient": 2.128066062927246
+      }
+    ],
+    "interpretation": "Coefficients are on standardized log1p numeric and one-hot scales; association is not causation."
+  },
+  "risk_band_thresholds": {
+    "moderate": 3.387714605196379e-05,
+    "high": 0.3755722641944885,
+    "very_high": 0.9968135952949524
+  },
+  "risk_band_summaries": [
+    {
+      "split": "validation",
+      "population": "all_transactions",
+      "risk_band": "very_high",
+      "transaction_count": 79,
+      "fraud_count": 79,
+      "fraud_prevalence": 1.0,
+      "mean_score": 0.9984768033027649,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "all_transactions",
+      "risk_band": "high",
+      "transaction_count": 709,
+      "fraud_count": 675,
+      "fraud_prevalence": 0.9520451339915373,
+      "mean_score": 0.7784733772277832,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "all_transactions",
+      "risk_band": "moderate",
+      "transaction_count": 9321,
+      "fraud_count": 426,
+      "fraud_prevalence": 0.045703250724171224,
+      "mean_score": 0.014650427736341953,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "all_transactions",
+      "risk_band": "low",
+      "transaction_count": 181038,
+      "fraud_count": 0,
+      "fraud_prevalence": 0.0,
+      "mean_score": 4.7483933940384304e-07,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "transfer_cash_out",
+      "risk_band": "very_high",
+      "transaction_count": 79,
+      "fraud_count": 79,
+      "fraud_prevalence": 1.0,
+      "mean_score": 0.9984768033027649,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "transfer_cash_out",
+      "risk_band": "high",
+      "transaction_count": 709,
+      "fraud_count": 675,
+      "fraud_prevalence": 0.9520451339915373,
+      "mean_score": 0.7784733772277832,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "transfer_cash_out",
+      "risk_band": "moderate",
+      "transaction_count": 7083,
+      "fraud_count": 426,
+      "fraud_prevalence": 0.060144006776789494,
+      "mean_score": 0.019138826057314873,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "validation",
+      "population": "transfer_cash_out",
+      "risk_band": "low",
+      "transaction_count": 70830,
+      "fraud_count": 0,
+      "fraud_prevalence": 0.0,
+      "mean_score": 2.3290621697924507e-07,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "all_transactions",
+      "risk_band": "very_high",
+      "transaction_count": 60,
+      "fraud_count": 60,
+      "fraud_prevalence": 1.0,
+      "mean_score": 0.998519778251648,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "all_transactions",
+      "risk_band": "high",
+      "transaction_count": 694,
+      "fraud_count": 690,
+      "fraud_prevalence": 0.9942363112391931,
+      "mean_score": 0.7689249515533447,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "all_transactions",
+      "risk_band": "moderate",
+      "transaction_count": 4610,
+      "fraud_count": 502,
+      "fraud_prevalence": 0.10889370932754881,
+      "mean_score": 0.02298162505030632,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "all_transactions",
+      "risk_band": "low",
+      "transaction_count": 84102,
+      "fraud_count": 0,
+      "fraud_prevalence": 0.0,
+      "mean_score": 4.747909940761019e-07,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "transfer_cash_out",
+      "risk_band": "very_high",
+      "transaction_count": 60,
+      "fraud_count": 60,
+      "fraud_prevalence": 1.0,
+      "mean_score": 0.998519778251648,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "transfer_cash_out",
+      "risk_band": "high",
+      "transaction_count": 694,
+      "fraud_count": 690,
+      "fraud_prevalence": 0.9942363112391931,
+      "mean_score": 0.7689249515533447,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "transfer_cash_out",
+      "risk_band": "moderate",
+      "transaction_count": 3617,
+      "fraud_count": 502,
+      "fraud_prevalence": 0.13878905170030412,
+      "mean_score": 0.029217351227998734,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    },
+    {
+      "split": "test",
+      "population": "transfer_cash_out",
+      "risk_band": "low",
+      "transaction_count": 33608,
+      "fraud_count": 0,
+      "fraud_prevalence": 0.0,
+      "mean_score": 2.1638780367538857e-07,
+      "score_threshold_source": "validation eligible-population score quantiles"
+    }
+  ],
+  "investigation_table": {
+    "rows": 1000,
+    "cap_per_split": 500,
+    "population": "TRANSFER and CASH_OUT only",
+    "prevalence_warning": "Risk-ranked capped rows are not a population sample; do not interpret their fraud rate as population prevalence."
+  },
+  "powerbi_outputs": {
+    "transaction_overview": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_transaction_overview.csv",
+    "transaction_overview_parquet": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_transaction_overview.parquet",
+    "risk_bands": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_risk_bands.csv",
+    "risk_bands_parquet": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_risk_bands.parquet",
+    "evaluation_summary": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_evaluation_summary.csv",
+    "evaluation_summary_parquet": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_evaluation_summary.parquet",
+    "investigation_top500": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_investigation_top500.csv",
+    "investigation_top500_parquet": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\reports\\phase3_investigation_top500.parquet"
+  },
+  "model_artifacts": {
+    "rankers": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\models\\phase3_rankers.joblib",
+    "frozen_selection": "C:\\Users\\user4\\Desktop\\MONEYPRINT\\models\\phase3_selection.json"
+  },
+  "limitations": [
+    "The model and evaluation are for synthetic PaySim data only.",
+    "The chronological periods have strongly different row volume and fraud prevalence.",
+    "Fraud labels occur only in CASH_OUT and TRANSFER, making transaction type a simulation shortcut in all-population metrics.",
+    "Sender pre-balance and balance ratios are available at decision time but may encode PaySim balance-generation artifacts.",
+    "Post-event balances and flagged-fraud indicators are excluded from all predictors.",
+    "No confidence intervals are reported because transactions are dependent and account-level resampling was not performed."
+  ]
+}

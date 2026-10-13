@@ -1,0 +1,558 @@
+{
+  "Executive Overview": [
+    {
+      "name": "amount",
+      "position": {
+        "x": 208,
+        "y": 478,
+        "z": 15,
+        "height": 145,
+        "width": 510,
+        "tabOrder": 15
+      }
+    },
+    {
+      "name": "clear_slicers",
+      "position": {
+        "x": 16,
+        "y": 310,
+        "width": 152,
+        "height": 36,
+        "z": 30,
+        "tabOrder": 30
+      }
+    },
+    {
+      "name": "evidence",
+      "position": {
+        "x": 730,
+        "y": 478,
+        "width": 526,
+        "height": 145,
+        "z": 16,
+        "tabOrder": 16
+      }
+    },
+    {
+      "name": "footer",
+      "position": {
+        "x": 208,
+        "y": 694,
+        "width": 1048,
+        "height": 24,
+        "z": 5,
+        "tabOrder": 5
+      }
+    },
+    {
+      "name": "fraud",
+      "position": {
+        "x": 730,
+        "y": 327,
+        "z": 14,
+        "height": 145,
+        "width": 526,
+        "tabOrder": 14
+      }
+    },
+    {
+      "name": "heading",
+      "position": {
+        "x": 208,
+        "y": 12,
+        "width": 1048,
+        "height": 50,
+        "z": 4,
+        "tabOrder": 4
+      }
+    },
+    {
+      "name": "kpi_0",
+      "position": {
+        "x": 208,
+        "y": 94,
+        "z": 7,
+        "height": 76,
+        "width": 250,
+        "tabOrder": 7
+      }
+    },
+    {
+      "name": "kpi_1",
+      "position": {
+        "x": 470,
+        "y": 94,
+        "z": 8,
+        "height": 76,
+        "width": 250,
+        "tabOrder": 8
+      }
+    },
+    {
+      "name": "kpi_2",
+      "position": {
+        "x": 732,
+        "y": 94,
+        "z": 9,
+        "height": 76,
+        "width": 250,
+        "tabOrder": 9
+      }
+    },
+    {
+      "name": "kpi_3",
+      "position": {
+        "x": 994,
+        "y": 94,
+        "z": 10,
+        "height": 76,
+        "width": 250,
+        "tabOrder": 10
+      }
+    },
+    {
+      "name": "native_navigation",
+      "position": {
+        "x": 16,
+        "y": 126,
+        "width": 152,
+        "height": 164,
+        "z": 1,
+        "tabOrder": 1
+      }
+    },
+    {
+      "name": "sidebar",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 184,
+        "height": 720,
+        "z": 0,
+        "tabOrder": 0
+      }
+    },
+    {
+      "name": "sidebar_note",
+      "position": {
+        "x": 16,
+        "y": 500,
+        "width": 152,
+        "height": 150,
+        "z": 3,
+        "tabOrder": 3
+      }
+    },
+    {
+      "name": "step_filter",
+      "position": {
+        "x": 730,
+        "y": 632,
+        "z": 18,
+        "height": 60,
+        "width": 526,
+        "tabOrder": 18
+      }
+    },
+    {
+      "name": "subtitle",
+      "position": {
+        "x": 208,
+        "y": 58,
+        "width": 1048,
+        "height": 24,
+        "z": 6,
+        "tabOrder": 6
+      }
+    },
+    {
+      "name": "trend",
+      "position": {
+        "x": 730,
+        "y": 176,
+        "z": 12,
+        "height": 145,
+        "width": 526,
+        "tabOrder": 12
+      }
+    },
+    {
+      "name": "type_filter",
+      "position": {
+        "x": 208,
+        "y": 632,
+        "z": 17,
+        "height": 60,
+        "width": 510,
+        "tabOrder": 17
+      }
+    },
+    {
+      "name": "value",
+      "position": {
+        "x": 208,
+        "y": 327,
+        "z": 13,
+        "height": 145,
+        "width": 510,
+        "tabOrder": 13
+      }
+    },
+    {
+      "name": "volume",
+      "position": {
+        "x": 208,
+        "y": 176,
+        "z": 11,
+        "height": 145,
+        "width": 510,
+        "tabOrder": 11
+      }
+    }
+  ],
+  "Investigation Desk": [
+    {
+      "name": "capacity",
+      "position": {
+        "x": 450,
+        "y": 90,
+        "z": 8,
+        "height": 62,
+        "width": 210,
+        "tabOrder": 8
+      }
+    },
+    {
+      "name": "capacity_0",
+      "position": {
+        "x": 672,
+        "y": 90,
+        "z": 9,
+        "height": 62,
+        "width": 185,
+        "tabOrder": 9
+      }
+    },
+    {
+      "name": "capacity_1",
+      "position": {
+        "x": 868,
+        "y": 90,
+        "z": 10,
+        "height": 62,
+        "width": 185,
+        "tabOrder": 10
+      }
+    },
+    {
+      "name": "capacity_2",
+      "position": {
+        "x": 1064,
+        "y": 90,
+        "z": 11,
+        "height": 62,
+        "width": 185,
+        "tabOrder": 11
+      }
+    },
+    {
+      "name": "case_detail",
+      "position": {
+        "x": 910,
+        "y": 168,
+        "width": 346,
+        "height": 220,
+        "z": 13,
+        "tabOrder": 13
+      }
+    },
+    {
+      "name": "clear_slicers",
+      "position": {
+        "x": 16,
+        "y": 310,
+        "width": 152,
+        "height": 36,
+        "z": 30,
+        "tabOrder": 30
+      }
+    },
+    {
+      "name": "contributions",
+      "position": {
+        "x": 910,
+        "y": 400,
+        "width": 346,
+        "height": 150,
+        "z": 14,
+        "tabOrder": 14
+      }
+    },
+    {
+      "name": "footer",
+      "position": {
+        "x": 208,
+        "y": 687,
+        "width": 1048,
+        "height": 24,
+        "z": 5,
+        "tabOrder": 5
+      }
+    },
+    {
+      "name": "heading",
+      "position": {
+        "x": 208,
+        "y": 12,
+        "width": 1048,
+        "height": 50,
+        "z": 4,
+        "tabOrder": 4
+      }
+    },
+    {
+      "name": "native_navigation",
+      "position": {
+        "x": 16,
+        "y": 126,
+        "width": 152,
+        "height": 164,
+        "z": 1,
+        "tabOrder": 1
+      }
+    },
+    {
+      "name": "note",
+      "position": {
+        "x": 208,
+        "y": 612,
+        "width": 1048,
+        "height": 65,
+        "z": 16,
+        "tabOrder": 16
+      }
+    },
+    {
+      "name": "queue",
+      "position": {
+        "x": 208,
+        "y": 168,
+        "z": 12,
+        "height": 356,
+        "width": 690,
+        "tabOrder": 12
+      }
+    },
+    {
+      "name": "sidebar",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 184,
+        "height": 720,
+        "z": 0,
+        "tabOrder": 0
+      }
+    },
+    {
+      "name": "sidebar_note",
+      "position": {
+        "x": 16,
+        "y": 500,
+        "width": 152,
+        "height": 150,
+        "z": 3,
+        "tabOrder": 3
+      }
+    },
+    {
+      "name": "subtitle",
+      "position": {
+        "x": 208,
+        "y": 58,
+        "width": 1048,
+        "height": 24,
+        "z": 6,
+        "tabOrder": 6
+      }
+    },
+    {
+      "name": "topk",
+      "position": {
+        "x": 208,
+        "y": 528,
+        "z": 15,
+        "height": 80,
+        "width": 690,
+        "tabOrder": 15
+      }
+    },
+    {
+      "name": "window",
+      "position": {
+        "x": 208,
+        "y": 90,
+        "z": 7,
+        "height": 62,
+        "width": 230,
+        "tabOrder": 7
+      }
+    }
+  ],
+  "Behind the Score": [
+    {
+      "name": "ablation",
+      "position": {
+        "x": 208,
+        "y": 276,
+        "z": 9,
+        "height": 174,
+        "width": 510,
+        "tabOrder": 9
+      }
+    },
+    {
+      "name": "caveats",
+      "position": {
+        "x": 730,
+        "y": 462,
+        "width": 526,
+        "height": 150,
+        "z": 12,
+        "tabOrder": 12
+      }
+    },
+    {
+      "name": "clear_slicers",
+      "position": {
+        "x": 16,
+        "y": 310,
+        "width": 152,
+        "height": 36,
+        "z": 30,
+        "tabOrder": 30
+      }
+    },
+    {
+      "name": "folds",
+      "position": {
+        "x": 208,
+        "y": 90,
+        "z": 7,
+        "height": 174,
+        "width": 510,
+        "tabOrder": 7
+      }
+    },
+    {
+      "name": "footer",
+      "position": {
+        "x": 208,
+        "y": 687,
+        "width": 1048,
+        "height": 24,
+        "z": 5,
+        "tabOrder": 5
+      }
+    },
+    {
+      "name": "heading",
+      "position": {
+        "x": 208,
+        "y": 12,
+        "width": 1048,
+        "height": 50,
+        "z": 4,
+        "tabOrder": 4
+      }
+    },
+    {
+      "name": "native_navigation",
+      "position": {
+        "x": 16,
+        "y": 126,
+        "width": 152,
+        "height": 164,
+        "z": 1,
+        "tabOrder": 1
+      }
+    },
+    {
+      "name": "prevalence",
+      "position": {
+        "x": 730,
+        "y": 90,
+        "z": 8,
+        "height": 174,
+        "width": 526,
+        "tabOrder": 8
+      }
+    },
+    {
+      "name": "reliability_note",
+      "position": {
+        "x": 208,
+        "y": 624,
+        "width": 1048,
+        "height": 54,
+        "z": 13,
+        "tabOrder": 13
+      }
+    },
+    {
+      "name": "sidebar",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 184,
+        "height": 720,
+        "z": 0,
+        "tabOrder": 0
+      }
+    },
+    {
+      "name": "sidebar_note",
+      "position": {
+        "x": 16,
+        "y": 500,
+        "width": 152,
+        "height": 150,
+        "z": 3,
+        "tabOrder": 3
+      }
+    },
+    {
+      "name": "split",
+      "position": {
+        "x": 208,
+        "y": 462,
+        "z": 11,
+        "height": 150,
+        "width": 510,
+        "tabOrder": 11
+      }
+    },
+    {
+      "name": "subtitle",
+      "position": {
+        "x": 208,
+        "y": 58,
+        "width": 1048,
+        "height": 24,
+        "z": 6,
+        "tabOrder": 6
+      }
+    },
+    {
+      "name": "windows",
+      "position": {
+        "x": 730,
+        "y": 276,
+        "width": 526,
+        "height": 174,
+        "z": 10,
+        "tabOrder": 10
+      }
+    }
+  ]
+}

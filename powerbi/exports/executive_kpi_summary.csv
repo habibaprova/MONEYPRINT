@@ -1,0 +1,5 @@
+metric_key,metric_label,metric_value,unit,data_scope,source_provenance
+total_transactions,Total transactions,6362620.0,records,full_dataset_population,transaction_features.parquet
+fraud_labels,Fraud labels,8213.0,synthetic labeled records,full_dataset_population,transaction_features.parquet
+fraud_label_prevalence,Fraud-label prevalence,0.001290820448180152,proportion,full_dataset_population,transaction_features.parquet
+total_synthetic_amount,Total transaction value,1144392944759.771,synthetic amount units; currency unspecified,full_dataset_population,transaction_features.parquet

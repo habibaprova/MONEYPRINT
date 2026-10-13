@@ -1,0 +1,98 @@
+table transaction_amount_distribution
+	lineageTag: 2f22c659-120f-4763-8160-bd9dbd19182d
+
+	column transaction_type
+		dataType: string
+		lineageTag: e89dd667-4ad5-4801-9a7e-e146d12bc41e
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_band
+		dataType: string
+		lineageTag: ad2ce423-426e-4540-99c3-febe9d75a0f7
+		summarizeBy: none
+		sourceColumn: amount_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 17f80392-f9d0-40dd-b9d7-ded847e9aa7c
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_synthetic_amount
+		dataType: double
+		lineageTag: 4539ae10-d021-430c-ab3f-02e01f594609
+		summarizeBy: sum
+		sourceColumn: total_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 6366539c-1dc3-4229-8cec-b9f9b89724ae
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_share_within_type
+		dataType: double
+		lineageTag: 5c9b3c30-6746-426b-8515-1a0678f21f34
+		summarizeBy: sum
+		sourceColumn: transaction_share_within_type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_provenance
+		dataType: string
+		lineageTag: 09a18092-93c7-4f0a-a26b-ebd3eea8e807
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount Band Label'
+		dataType: string
+		lineageTag: b0fd6640-a1f4-4588-a566-10738c630c2d
+		summarizeBy: none
+		sourceColumn: amount_band_label
+		sortByColumn: amount_band
+
+	partition transaction_amount_distribution = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\transaction_amount_distribution.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"transaction_type", type text},
+				        {"amount_band", type text},
+				        {"transaction_count", Int64.Type},
+				        {"total_synthetic_amount", type number},
+				        {"fraud_count", Int64.Type},
+				        {"transaction_share_within_type", type number},
+				        {"source_provenance", type text}
+				    }),
+				    WithVisualLabel = Table.AddColumn(Typed, "amount_band_label", each let Code = Text.Start([amount_band], 2) in if Code = "01" then "<1K" else if Code = "02" then "1–10K" else if Code = "03" then "10–100K" else if Code = "04" then "100–500K" else if Code = "05" then "500K–1M" else if Code = "06" then "1–5M" else if Code = "07" then "5–10M" else if Code = "08" then "10M+" else [amount_band], type text)
+				in
+				    WithVisualLabel
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

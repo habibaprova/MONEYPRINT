@@ -1,0 +1,139 @@
+table transaction_trends_by_step
+	lineageTag: b90770c1-4428-440e-9639-4a7ed74a227c
+
+	column simulated_step
+		dataType: int64
+		formatString: 0
+		lineageTag: 24cd96d7-dc50-4b14-a8bf-502fcb940ec4
+		summarizeBy: sum
+		sourceColumn: simulated_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column simulated_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ab0a8c6-b92a-4dab-8f8d-583fa187afa6
+		summarizeBy: none
+		sourceColumn: simulated_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_type
+		dataType: string
+		lineageTag: 0e1349bc-b455-4fe4-943b-80d8f7f59e68
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 82ecd3f7-9fce-4bef-97cd-2b2f9c5571ff
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_synthetic_amount
+		dataType: double
+		lineageTag: d6f38656-6631-4af1-b6d9-5e3c1baaf56d
+		summarizeBy: sum
+		sourceColumn: total_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_synthetic_amount
+		dataType: double
+		lineageTag: 0e6e1e8d-9b94-4363-8a3a-aa1046b438e7
+		summarizeBy: sum
+		sourceColumn: mean_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: e02e69f8-bf1a-401a-9e05-6995e01789dd
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_label_prevalence
+		dataType: double
+		lineageTag: 80d8b92f-4a71-410b-9f9c-b4b4e249b1cb
+		summarizeBy: sum
+		sourceColumn: fraud_label_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column original_phase3_split
+		dataType: string
+		lineageTag: ea654b6b-8e9c-41a0-82e7-543af38ebf11
+		summarizeBy: none
+		sourceColumn: original_phase3_split
+
+		annotation SummarizationSetBy = Automatic
+
+	column phase4_role
+		dataType: string
+		lineageTag: 8103fb9d-b805-4574-8e26-285e04cca70a
+		summarizeBy: none
+		sourceColumn: phase4_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_provenance
+		dataType: string
+		lineageTag: b9db6ca1-a2d9-4c80-93b8-8c2374ecbfa8
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_interpretation
+		dataType: string
+		lineageTag: 5d0ab200-0503-4d6b-88e3-14f7f4f308d6
+		summarizeBy: none
+		sourceColumn: time_interpretation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transaction_trends_by_step = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\transaction_trends_by_step.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"simulated_step", Int64.Type},
+				        {"simulated_hour", Int64.Type},
+				        {"transaction_type", type text},
+				        {"transaction_count", Int64.Type},
+				        {"total_synthetic_amount", type number},
+				        {"mean_synthetic_amount", type number},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_label_prevalence", type number},
+				        {"original_phase3_split", type text},
+				        {"phase4_role", type text},
+				        {"source_provenance", type text},
+				        {"time_interpretation", type text}
+				    })
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

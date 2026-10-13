@@ -1,0 +1,40 @@
+table dim_transaction_type
+	lineageTag: f25dce1d-73c2-449f-86c9-6549d835cd6e
+
+	column transaction_type
+		dataType: string
+		lineageTag: 0ff5b39e-a34c-4dce-9096-aef183bda57f
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 58fd6df4-b750-4f1e-a581-061cee75c0f5
+		summarizeBy: sum
+		sourceColumn: type_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_transaction_type = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\dim_transaction_type.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"transaction_type", type text},
+				        {"type_sort", Int64.Type}
+				    })
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

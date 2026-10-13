@@ -1,0 +1,41 @@
+{
+  "name": "MONEYPRINT Muted Earth",
+  "dataColors": [
+    "#9D9D78",
+    "#BC858A",
+    "#6E8F87",
+    "#C38E57",
+    "#72768B",
+    "#A9A27A",
+    "#8E746A",
+    "#6B8B9A"
+  ],
+  "background": "#F0EDCF",
+  "foreground": "#474538",
+  "tableAccent": "#9D9D78",
+  "good": "#6E8F87",
+  "neutral": "#C38E57",
+  "bad": "#BC858A",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#474538"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#474538"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#474538"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#474538"
+    }
+  }
+}

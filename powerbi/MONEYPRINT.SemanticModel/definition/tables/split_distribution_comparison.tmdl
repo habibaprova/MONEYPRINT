@@ -1,0 +1,181 @@
+table split_distribution_comparison
+	lineageTag: cacc90f4-1c68-4231-9c3e-b4e67e92acb6
+
+	column split_protocol
+		dataType: string
+		lineageTag: bd59892d-156a-4fc6-9a96-18859e62ad26
+		summarizeBy: none
+		sourceColumn: split_protocol
+
+		annotation SummarizationSetBy = Automatic
+
+	column split
+		dataType: string
+		lineageTag: bb241427-12c1-4232-865a-ef00ecb60134
+		summarizeBy: none
+		sourceColumn: split
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_type
+		dataType: string
+		lineageTag: 844893b5-f175-44a2-8eb0-43e737b6cff2
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column step_start
+		dataType: int64
+		formatString: 0
+		lineageTag: a235fc01-7331-4db3-8a81-e1e8ec6ce1d5
+		summarizeBy: sum
+		sourceColumn: step_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column step_end
+		dataType: int64
+		formatString: 0
+		lineageTag: f24f5fb9-b6dc-462e-aa93-dba4b25826e8
+		summarizeBy: sum
+		sourceColumn: step_end
+
+		annotation SummarizationSetBy = Automatic
+
+	column step_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 3576b61d-1ef2-4f85-8258-9ab5879ac00e
+		summarizeBy: sum
+		sourceColumn: step_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 3343b615-252c-463e-ab8a-43c047532d49
+		summarizeBy: sum
+		sourceColumn: transaction_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_share
+		dataType: double
+		lineageTag: 55995d7a-c353-45d9-a8a1-5a51375a4f1c
+		summarizeBy: sum
+		sourceColumn: transaction_share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 0444fd64-c87e-4231-8565-349f8e1d8530
+		summarizeBy: sum
+		sourceColumn: fraud_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_label_prevalence
+		dataType: double
+		lineageTag: 0ef63b20-0c82-4352-8c6a-17d3cd4e33a6
+		summarizeBy: sum
+		sourceColumn: fraud_label_prevalence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column share_of_all_fraud_labels
+		dataType: double
+		lineageTag: c840b612-e539-4442-95af-e74e98153681
+		summarizeBy: sum
+		sourceColumn: share_of_all_fraud_labels
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mean_synthetic_amount
+		dataType: double
+		lineageTag: f4e2f35b-0448-47a8-85d6-4c1d8f4ca277
+		summarizeBy: sum
+		sourceColumn: mean_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column median_synthetic_amount
+		dataType: double
+		lineageTag: 9d692763-1c80-40e6-ae1e-ce1685e23797
+		summarizeBy: sum
+		sourceColumn: median_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column p95_synthetic_amount
+		dataType: double
+		lineageTag: d05ca1b6-c60e-4191-9687-5c66b39fdd54
+		summarizeBy: sum
+		sourceColumn: p95_synthetic_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_provenance
+		dataType: string
+		lineageTag: 679e95a6-999b-43fa-9859-b90b72d46792
+		summarizeBy: none
+		sourceColumn: source_provenance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Protocol Label'
+		dataType: string
+		lineageTag: f55c1c61-c1c2-4da4-a4c8-51a02ffb96a4
+		summarizeBy: none
+		sourceColumn: protocol_label
+		sortByColumn: split_protocol
+
+	partition split_distribution_comparison = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\split_distribution_comparison.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(PromoteHeaders, {
+				        {"split_protocol", type text},
+				        {"split", type text},
+				        {"transaction_type", type text},
+				        {"step_start", Int64.Type},
+				        {"step_end", Int64.Type},
+				        {"step_count", Int64.Type},
+				        {"transaction_count", Int64.Type},
+				        {"transaction_share", type number},
+				        {"fraud_count", Int64.Type},
+				        {"fraud_label_prevalence", type number},
+				        {"share_of_all_fraud_labels", type number},
+				        {"mean_synthetic_amount", type number},
+				        {"median_synthetic_amount", type number},
+				        {"p95_synthetic_amount", type number},
+				        {"source_provenance", type text}
+				    }),
+				    WithVisualLabel = Table.AddColumn(Typed, "protocol_label", each if [split_protocol] = "phase3_alternative_cumulative_row_split" then "Cumulative rows" else if [split_protocol] = "phase3_original_step_split" then "Original steps" else [split_protocol], type text)
+				in
+				    WithVisualLabel
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

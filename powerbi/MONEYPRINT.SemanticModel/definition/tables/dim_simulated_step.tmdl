@@ -1,0 +1,49 @@
+table dim_simulated_step
+	lineageTag: c3d48464-cba2-495a-85cd-82c67dca4c9a
+
+	column simulated_step
+		dataType: int64
+		formatString: 0
+		lineageTag: d2284eb8-a859-4c8b-9e2e-5fed6391cf49
+		summarizeBy: sum
+		sourceColumn: simulated_step
+
+		annotation SummarizationSetBy = Automatic
+
+	column simulated_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b515acc-5105-42fb-8652-4577c684e02a
+		summarizeBy: none
+		sourceColumn: simulated_hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_phase3_split
+		dataType: string
+		lineageTag: aba6df03-2ce1-4d02-b194-ed3c25d7f8de
+		summarizeBy: none
+		sourceColumn: original_phase3_split
+
+		annotation SummarizationSetBy = Automatic
+
+	column phase4_role
+		dataType: string
+		lineageTag: 3b8a15e0-a7b9-4c26-92bc-162c64b1472b
+		summarizeBy: none
+		sourceColumn: phase4_role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_simulated_step = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\user4\Desktop\MONEYPRINT\powerbi\exports\dim_simulated_step.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"simulated_step", Int64.Type}, {"simulated_hour", Int64.Type}, {"original_phase3_split", type text}, {"phase4_role", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MONEYPRINT_UX"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1f837ee7-58e7-40c5-99eb-55a446737b7b"
+  }
+}

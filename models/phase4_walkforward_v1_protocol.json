@@ -1,0 +1,97 @@
+{
+  "protocol_version": "phase4_walkforward_v1",
+  "folds": [
+    {
+      "fold": "fold_1",
+      "train_start": 1,
+      "train_end": 250,
+      "validation_start": 251,
+      "validation_end": 350
+    },
+    {
+      "fold": "fold_2",
+      "train_start": 1,
+      "train_end": 350,
+      "validation_start": 351,
+      "validation_end": 450
+    },
+    {
+      "fold": "fold_3",
+      "train_start": 1,
+      "train_end": 450,
+      "validation_start": 451,
+      "validation_end": 540
+    },
+    {
+      "fold": "fold_4",
+      "train_start": 1,
+      "train_end": 540,
+      "validation_start": 541,
+      "validation_end": 631
+    }
+  ],
+  "reserved_final_period": {
+    "start_step": 632,
+    "end_step": 743
+  },
+  "boundary_rationale": "Fixed chronological windows selected for expanding historical coverage and >=200 validation fraud labels; no model metric used.",
+  "selection_rule": "highest mean TRANSFER/CASH_OUT validation ROC-AUC across four folds; all folds' PR-AUCs retained in reports",
+  "feature_sets": {
+    "amount_type": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type"
+      ]
+    },
+    "plus_hour": {
+      "numeric": [
+        "amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "plus_balance": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    },
+    "full_context": {
+      "numeric": [
+        "amount",
+        "sender_pre_balance",
+        "amount_to_sender_pre_balance",
+        "sender_balance_covers_amount",
+        "recipient_prior_transaction_count",
+        "recipient_prior_received_amount"
+      ],
+      "categorical": [
+        "transaction_type",
+        "simulated_hour"
+      ]
+    }
+  },
+  "model": {
+    "estimator": "LogisticRegression",
+    "solver": "newton-cholesky",
+    "class_weight": "balanced",
+    "C": 1.0,
+    "max_iter": 640
+  },
+  "fixed_alert_rate": 0.005,
+  "top_k": [
+    100,
+    500
+  ],
+  "reserved_period_previously_accessed": true
+}

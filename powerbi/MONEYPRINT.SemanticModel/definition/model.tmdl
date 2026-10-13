@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dim_evaluation_window","dim_model_method","dim_simulated_hour","dim_simulated_step","executive_kpi_summary","dim_transaction_type","fraud_by_transaction_type","phase4_investigation_capacity","phase4_model_feature_ablation","phase4_selected_model_investigation_examples","phase4_walkforward_fold_metrics","split_distribution_comparison","transaction_amount_distribution","transaction_trends_by_hour","transaction_trends_by_step","transaction_type_overview","ux_metric_selector"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_evaluation_window
+ref table dim_model_method
+ref table dim_simulated_hour
+ref table dim_simulated_step
+ref table executive_kpi_summary
+ref table dim_transaction_type
+ref table fraud_by_transaction_type
+ref table phase4_investigation_capacity
+ref table phase4_model_feature_ablation
+ref table phase4_selected_model_investigation_examples
+ref table phase4_walkforward_fold_metrics
+ref table split_distribution_comparison
+ref table transaction_amount_distribution
+ref table transaction_trends_by_hour
+ref table transaction_trends_by_step
+ref table transaction_type_overview
+ref table ux_metric_selector
+
+ref cultureInfo en-US
+

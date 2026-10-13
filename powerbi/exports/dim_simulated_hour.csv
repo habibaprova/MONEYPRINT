@@ -1,0 +1,25 @@
+simulated_hour,hour_label,time_basis
+0,Simulated hour 00,step modulo 24; not a wall-clock timestamp
+1,Simulated hour 01,step modulo 24; not a wall-clock timestamp
+2,Simulated hour 02,step modulo 24; not a wall-clock timestamp
+3,Simulated hour 03,step modulo 24; not a wall-clock timestamp
+4,Simulated hour 04,step modulo 24; not a wall-clock timestamp
+5,Simulated hour 05,step modulo 24; not a wall-clock timestamp
+6,Simulated hour 06,step modulo 24; not a wall-clock timestamp
+7,Simulated hour 07,step modulo 24; not a wall-clock timestamp
+8,Simulated hour 08,step modulo 24; not a wall-clock timestamp
+9,Simulated hour 09,step modulo 24; not a wall-clock timestamp
+10,Simulated hour 10,step modulo 24; not a wall-clock timestamp
+11,Simulated hour 11,step modulo 24; not a wall-clock timestamp
+12,Simulated hour 12,step modulo 24; not a wall-clock timestamp
+13,Simulated hour 13,step modulo 24; not a wall-clock timestamp
+14,Simulated hour 14,step modulo 24; not a wall-clock timestamp
+15,Simulated hour 15,step modulo 24; not a wall-clock timestamp
+16,Simulated hour 16,step modulo 24; not a wall-clock timestamp
+17,Simulated hour 17,step modulo 24; not a wall-clock timestamp
+18,Simulated hour 18,step modulo 24; not a wall-clock timestamp
+19,Simulated hour 19,step modulo 24; not a wall-clock timestamp
+20,Simulated hour 20,step modulo 24; not a wall-clock timestamp
+21,Simulated hour 21,step modulo 24; not a wall-clock timestamp
+22,Simulated hour 22,step modulo 24; not a wall-clock timestamp
+23,Simulated hour 23,step modulo 24; not a wall-clock timestamp
